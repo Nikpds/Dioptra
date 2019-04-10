@@ -1,0 +1,17 @@
+import React, { Suspense, useContext } from 'react';
+import { withRouter } from 'react-router-dom';
+import LayoutContainer from './components/layout/Layout';
+import { AuthContext } from './auth/AuthContext';
+import { fullAccess, unAuthorized } from './services/Routes';
+import './styles/Utilities.sass';
+const App = props => {
+  const authContext = useContext(AuthContext);
+  const routes = authContext.isAuthenticated ? fullAccess : unAuthorized;
+  return (
+    <LayoutContainer className="is-fullheight">
+      <Suspense fallback={<p>Loading...</p>}>{routes}</Suspense>
+    </LayoutContainer>
+  )
+};
+
+export default withRouter(App);
