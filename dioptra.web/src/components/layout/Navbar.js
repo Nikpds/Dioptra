@@ -9,7 +9,7 @@ const Navbar = props => {
     const auth = useContext(AuthContext);
     return (
         <Header className="header">
-            <Menu mode="horizontal header" className="menu">
+            <Menu mode="horizontal" className="menu">
                 <Menu.Item key="1" className="menu-item">
                     <NavLink to="/" className="menu-item"><Icon type="home" />Αρχική</NavLink>
                 </Menu.Item>             
