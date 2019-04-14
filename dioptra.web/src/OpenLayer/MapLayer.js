@@ -9,20 +9,23 @@ const MapLayer = props => {
 
     useEffect(() => {
         const center = transform([23.727539, 37.983810], 'EPSG:4326', 'EPSG:3857');
-        new Map({
-            target: 'genericmap',
-            layers: [
-                new TileLayer({
-                    source: new XYZ({
-                        url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        setTimeout(() => {
+            new Map({
+                target: 'genericmap',
+                layers: [
+                    new TileLayer({
+                        source: new XYZ({
+                            url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                        })
                     })
+                ],
+                view: new View({
+                    center: center,
+                    zoom: 8
                 })
-            ],
-            view: new View({
-                center: center,
-                zoom: 8
-            })
-        });
+            });
+        }, 20);
+
     })
     return <div style={{ height: props.height, width: props.width }} id="genericmap"></div>;
 };

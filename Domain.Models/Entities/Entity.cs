@@ -1,14 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
+using System;
 
-namespace Dioptra.Api.Shared.Domain
+namespace Domain.Models.Entities
 {
     public abstract class Entity
     {
-        string _Id;
-        DateTime _Created;
+        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        private string _Id;
+        private DateTime _Created;
+
+        protected Entity()
+        {
+            _Created = DateTime.UtcNow;
+        }
+
+        [BsonIgnore]
         public virtual string Id
         {
             get { return _Id; }

@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Dioptra.Api.Shared.Domain
+namespace Domain.Models.Entities
 {
     public class JRFLType : Entity
     {
-      
+
         public JRFLType()
         {
             Created = DateTime.UtcNow;

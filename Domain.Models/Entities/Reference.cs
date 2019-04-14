@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Dioptra.Api.Shared.Domain
+﻿namespace Domain.Models.Entities
 {
-    public class Reference 
+    public class Reference
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -15,6 +10,6 @@ namespace Dioptra.Api.Shared.Domain
             Id = id;
             Name = name;
         }
-        
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using Domain.Models.Entities;
+using MongoDB.Driver;
 using System;
 
 namespace MongoContext
@@ -6,7 +7,7 @@ namespace MongoContext
     public class DataContext
     {
         public IMongoDatabase Database { get; private set; }
-        // public MongoDbRepository<CertificateRequest> Certificates { get; private set; }
+        public MongoDbRepository<User> Users { get; private set; }
 
         public DataContext(string connectionString)
         {
@@ -18,9 +19,9 @@ namespace MongoContext
             {
                 throw new ArgumentException("Your connection string must contain a database name", connectionString);
             }
-            this.Database = client.GetDatabase(url.DatabaseName);
+            Database = client.GetDatabase(url.DatabaseName);
 
-            //Certificates = new MongoDbRepository<CertificateRequest>(this.Database, "Certificates");
+            Users = new MongoDbRepository<User>(Database, "Users");
         }
     }
 }

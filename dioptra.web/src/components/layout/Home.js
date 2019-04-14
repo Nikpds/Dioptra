@@ -1,8 +1,7 @@
 import React, { } from 'react';
 import { } from 'antd';
-import { Typography, Row, Col, Icon } from 'antd';
 import Map from '../../OpenLayer/MapLayer';
-const { Title, Paragraph } = Typography;
+// const { Title, Paragraph } = Typography;
 
 
 const Home = () => {

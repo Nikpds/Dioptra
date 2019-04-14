@@ -12,10 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Shared\DTO\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Domain.Models\Domain.Models.csproj" />
     <ProjectReference Include="..\MongoContext\MongoContext.csproj" />
   </ItemGroup>
 
