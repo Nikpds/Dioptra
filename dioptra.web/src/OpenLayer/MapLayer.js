@@ -4,7 +4,7 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
-import 'ol/ol.css'
+import 'ol/ol.css';
 const MapLayer = props => {
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const MapLayer = props => {
             });
         }, 20);
 
-    })
+    }, [])
     return <div style={{ height: props.height, width: props.width }} id="genericmap"></div>;
 };
 

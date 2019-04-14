@@ -1,0 +1,14 @@
+{
+    "logout": "Αποσύνδεση",
+    "en": "English",
+    "gr": "Ελληνικά",
+    "sidebar": {
+        "home": "Αρχική",
+        "eob": "ΗΔΜ",
+        "jrfl": "JRFL",
+        "jrfltypes": "Τύποι JRFL",
+        "jrflfreq": "Συχνότητες JRFL",
+        "close": "Κλείσιμο",
+        "thales": " Θαλής"
+    }
+}

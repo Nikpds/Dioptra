@@ -1,9 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../../auth/AuthContext';
 import { Form, Icon, Input, Button, Row, Col, Card, Typography } from 'antd';
 import '../../styles/Utilities.sass';
 import './Login.sass';
 
 const Login = props => {
+    const authContext = useContext(AuthContext);
     const [loginModel, setLoginModel] = useState({
         username: '',
         password: ''
@@ -14,19 +16,15 @@ const Login = props => {
             [e.target.name]: e.target.value
         });
     }
-
     const clearUsernameHandler = () => {
-        setLoginModel({
-            ...loginModel,
-            username: ''
-        });
+        setLoginModel({ ...loginModel, username: '' });
     }
-    const formItemLayout = {
-        labelCol: { span: 24 },
-        wrapperCol: { span: 24 },
-    };
+    const formItemLayout = { labelCol: { span: 24 }, wrapperCol: { span: 24 } };
     const loginHandler = async () => {
-        const body = { username: loginModel.username, password: loginModel.password }
+        const body = {
+            username: loginModel.username,
+            password: loginModel.password
+        }
         const res = await fetch('http://localhost:50971/api/auth/token', {
             body: JSON.stringify(body),
             method: 'POST',
@@ -34,9 +32,12 @@ const Login = props => {
                 "Content-Type": "application/json"
             }
         });
-        const data = await res.json();
-        console.log(data);
-
+        if (res.ok) {
+            const data = await res.json();
+            if (data && data.token) {
+                authContext.signIn(data.token);
+            }
+        }
     }
     const clearButton = loginModel.username ? <Icon type="close-circle" onClick={clearUsernameHandler} /> : null;
     return (
@@ -69,7 +70,8 @@ const Login = props => {
                                 prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                 value={loginModel.password}
                                 onChange={inputsHandler}
-                                placeholder="Your password" />
+                                placeholder="Your password"
+                                onPressEnter={loginHandler} />
                         </Form.Item>
                         <Form.Item className="mb-5">
                             <span className="" >Ξέχασα τον κωδικό μου</span>

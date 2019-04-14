@@ -5,12 +5,14 @@ import './styles/Index.sass';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import AuthProvider from './auth/AuthProvider';
-
+import LocalizationProvider from './localization//LocalizationProvider';
 const app = (
     <BrowserRouter>
-        <AuthProvider>
-            <App />
-        </AuthProvider>
+        <LocalizationProvider>
+            <AuthProvider>
+                <App />
+            </AuthProvider>
+        </LocalizationProvider>
     </BrowserRouter>
 );
 ReactDOM.render(app, document.getElementById('root'));

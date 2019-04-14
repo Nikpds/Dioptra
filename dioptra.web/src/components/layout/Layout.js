@@ -9,19 +9,19 @@ const { Content } = LayoutC;
 
 const Layout = props => {
     const auth = useContext(AuthContext)
-    const cssHeight = auth.isAuthenticated ? 'calc-h' : 'is-fullheight';
+    //const cssHeight = auth.isAuthenticated ? 'calc-h' : 'is-fullheight';
     const navbar = auth.isAuthenticated ? <Navbar /> : null;
     const sidebar = auth.isAuthenticated ? <Sidebar /> : null;
     return (
         <React.Fragment>
-            <LayoutC>
-                {navbar}
-            </LayoutC>
-            <LayoutC className={cssHeight}>
+            <LayoutC className="is-fullheight">
                 {sidebar}
-                <Content className="is-fullheight">
-                    {props.children}
-                </Content>
+                <LayoutC>
+                    {navbar}
+                    <Content className="calc-h">
+                        {props.children}
+                    </Content>
+                </LayoutC>
             </LayoutC>
         </React.Fragment>
     );

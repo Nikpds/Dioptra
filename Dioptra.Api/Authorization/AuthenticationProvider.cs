@@ -27,9 +27,9 @@ namespace Dioptra.Api.Authorization
         {
             var claims = new List<Claim>();
 
-            claims.Add(new Claim("Id", user.Id));
-            claims.Add(new Claim("Name", user.Name));
-            claims.Add(new Claim("Username", user.UserName));
+            claims.Add(new Claim("id", user.Id));
+            claims.Add(new Claim("name", user.Name));
+            claims.Add(new Claim("username", user.UserName));
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Tokens:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
