@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../auth/AuthContext';
 import { strings } from '../../localization/LocalizationProvider';
 import { Menu, Icon, Layout } from 'antd';
@@ -13,7 +13,7 @@ const Navbar = props => {
     const lang = local.lang === 'gr' ? 'GR' : "EN";
     return (
         <Header className="header">
-            <Menu mode="horizontal" className="menu" selectable={false}>                
+            <Menu mode="horizontal" className="menu" selectable={false}>
                 <Menu.Item key="99" className="menu-item is-right" onClick={auth.signOut}>
                     <Icon type="logout" />{strings.logout}
                 </Menu.Item>

@@ -3,12 +3,9 @@ import LocalizedStrings from 'react-localization';
 import { LocaleProvider } from 'antd';
 import el_GR from 'antd/lib/locale-provider/el_GR';
 import en_GB from 'antd/lib/locale-provider/en_GB';
-import moment from 'moment';
 
 import en from './en';
 import gr from './gr';
-import 'moment/locale/fr';
-moment.locale('fr');
 export const LocalizationContext = React.createContext({
     changeLocalization: () => { },
     lang: ''

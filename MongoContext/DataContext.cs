@@ -8,6 +8,7 @@ namespace MongoContext
     {
         public IMongoDatabase Database { get; private set; }
         public MongoDbRepository<User> Users { get; private set; }
+        public MongoDbRepository<JRFLType> JRFLTypes { get; private set; }
 
         public DataContext(string connectionString)
         {
@@ -22,6 +23,7 @@ namespace MongoContext
             Database = client.GetDatabase(url.DatabaseName);
 
             Users = new MongoDbRepository<User>(Database, "Users");
+            JRFLTypes = new MongoDbRepository<JRFLType>(Database, "JRFLTypes");
         }
     }
 }

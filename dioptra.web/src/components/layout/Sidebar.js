@@ -38,12 +38,12 @@ const Sidebar = props => {
                 <Menu.SubMenu key="sub1" title={<span><Icon type="appstore" />
                     <span>{strings.sidebar.jrfl}</span></span>}>
                     <Menu.Item key="sub1.1">
-                        <NavLink to="/">
+                        <NavLink to="/jrflFrequencies">
                             {strings.sidebar.jrflfreq}
                         </NavLink>
                     </Menu.Item>
                     <Menu.Item key="sub1.2">
-                        <NavLink to="/">
+                        <NavLink to="/jrflType">
                             {strings.sidebar.jrfltypes}
                         </NavLink>
                     </Menu.Item>

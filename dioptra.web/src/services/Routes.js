@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Login from '../components/login/Login';
 import Home from '../components/layout/Home';
-import  JrflType from '../components/jrfl/jrflType/JrflType';
-import JrflFrequencies from '../components/jrfl/jrflFrequencies/JrflFrequencies';
+import  JrflType from '../components/jrfl/JrflType';
+import JrflFrequencies from '../components/jrfl/JrflFrequencies';
 import EOB from '../components/eob/EOB';
 
 export const fullAccess = (

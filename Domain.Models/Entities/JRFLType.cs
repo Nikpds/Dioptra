@@ -2,9 +2,8 @@
 
 namespace Domain.Models.Entities
 {
-    public class JRFLType : Entity
+    public class JRFLType : NameEntity
     {
-
         public JRFLType()
         {
             Created = DateTime.UtcNow;
