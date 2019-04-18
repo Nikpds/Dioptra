@@ -1,4 +1,4 @@
-import { notification } from 'antd';
+// import { notification } from 'antd';
 const syncFetch = async (url, method, data) => {
     const request = await fetch(url, {
         method: method,

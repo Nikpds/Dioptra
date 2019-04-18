@@ -7,10 +7,11 @@
       padding-top: 20px;
       position: relative;
       transition: all 0.5s;
+      margin-left: -30px;
   }
 
-  p {
-      text-align: left
+  .ant-card-body > p {
+      text-align: left;
   }
 
   .tree .li-tree {
@@ -75,7 +76,6 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 50%;
       border-left: 1px solid #ccc;
       width: 0;
       height: 20px;
