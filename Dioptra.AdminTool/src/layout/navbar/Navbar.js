@@ -11,7 +11,7 @@ const navbar = props => {
             <Menu mode="horizontal" className="menu">
                 <Menu.Item key="1" className="menu-item-hover">
                     <NavLink to="/" className="menu-item">
-                        <img src={logo} />
+                        <img src={logo} alt='...' />
                         Thales Monitor
                     </NavLink>
                 </Menu.Item>

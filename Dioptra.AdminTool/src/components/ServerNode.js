@@ -4,8 +4,8 @@ import '../styles/tree.css';
 import { ErrorContext } from '../layout/Home';
 import { callFetch } from '../services/HttpService';
 const ServerNode = props => {
-    //const url = props.server.protocol + '://' + props.server.ip + ':9000/api';
-    const url = 'http://192.168.48.62:9001/api';
+    const currentIp = (window.location.href.substr(7)).split(':')[0];
+    const url = 'https://'+ currentIp +':9000/api';
     const ctx = useContext(ErrorContext);
     const [reload, setReload] = useState(false);
     const [status, setStatus] = useState({
@@ -14,8 +14,7 @@ const ServerNode = props => {
         apiUp: false
     });
 
-    useEffect(() => {
-        console.log('[Debug]', 'Starting Server Requests for ', props.server.ip);
+    useEffect(() => {      
         serverCheck();
         nginxCheck();
         apiCheck();
@@ -34,8 +33,8 @@ const ServerNode = props => {
                     }
                 });
             } else {
-                ctx.addError('Σφαλμα δικτύου '  + props.server.name,
-                'Δίκτυο μη προσβάσιμο');
+                ctx.addError('Nginx Error ' + props.server.name,
+                    'Δίκτυο μη προσβάσιμο');
             }
         });
     }
@@ -49,6 +48,10 @@ const ServerNode = props => {
                     serverUp: res
                 }
             });
+            if (!res) {
+                ctx.addError('Ping Error ' + props.server.name,
+                    'Server Down or unreachable');
+            }
         });
 
     }
@@ -67,8 +70,8 @@ const ServerNode = props => {
                     }
                 });
             } else {
-                ctx.addError('Thales Application ' + props.server.name,
-                 'Application is down or not responding');
+                ctx.addError('Https Error  ' + props.server.name,
+                    'Application is down or not responding');
             }
         });
     }
@@ -85,7 +88,7 @@ const ServerNode = props => {
             <Card
                 className="panel"
                 size="small"
-                title={<div><Icon type="hdd" theme="twoTone" /> {props.server.name} </div>}
+                title={<div><Icon type="hdd" theme="twoTone" title={props.server.ip} /> {props.server.name} </div>}
                 actions={[
                     <span onClick={reloadHandler}><Icon type="redo" title="Refresh" /> Ανανέωση</span>]}
                 style={{ width: 150 }}>
