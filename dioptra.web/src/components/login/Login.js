@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../auth/AuthContext';
 import { Form, Icon, Input, Button, Row, Col, Card, Typography } from 'antd';
+import { callFetch } from '../../services/common/HttpService';
 import '../../styles/Utilities.sass';
 import './Login.sass';
 
@@ -25,19 +26,12 @@ const Login = props => {
             username: loginModel.username,
             password: loginModel.password
         }
-        const res = await fetch('http://localhost:50971/api/auth/token', {
-            body: JSON.stringify(body),
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
+        callFetch('http://localhost:50971/api/auth/token', 'POST', body).then(res => {
+            if (res && res.token) {
+                authContext.signIn(res.token);
             }
         });
-        if (res.ok) {
-            const data = await res.json();
-            if (data && data.token) {
-                authContext.signIn(data.token);
-            }
-        }
+
     }
     const clearButton = loginModel.username ? <Icon type="close-circle" onClick={clearUsernameHandler} /> : null;
     return (

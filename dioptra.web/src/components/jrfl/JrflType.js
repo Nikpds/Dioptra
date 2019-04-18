@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PageHeader, Input, Table, Button, Icon, } from 'antd';
+import { PageHeader, Input, Table, Button, Icon, Row, Col } from 'antd';
 import Highlighter from 'react-highlight-words';
 import SharedModal from '../../shared/components//SharedModal';
 import GFrom from '../../shared/components/GForm';
@@ -14,21 +14,11 @@ const JrflType = () => {
     const saveHandler = async () => {
 
     }
-
+    const model = [
+        { label: 'Title', type: 'text', placeholder: 'Some title' },
+    ]
     let searchInput = '';
-    const data = [{
-        key: '2',
-        name: 'Joe Black',
-        address: 'London No. 1 Lake Park',
-    }, {
-        key: '3',
-        name: 'Jim Green',
-        address: 'Sidney No. 1 Lake Park',
-    }, {
-        key: '4',
-        name: 'Jim Red',
-        address: 'London No. 2 Lake Park',
-    }];
+    const data = [];
     const getColumnSearchProps = (dataIndex) => ({
         filterDropdown: ({
             setSelectedKeys, selectedKeys, confirm, clearFilters,
@@ -97,28 +87,26 @@ const JrflType = () => {
         key: 'name',
         sadad: 'asdasd',
         ...getColumnSearchProps('name'),
-    }, {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-        ...getColumnSearchProps('address'),
     }];
     return (
-        <React.Fragment>
-            <SharedModal title="Εισαγωγή Τύπου"
-                visible={modalIsOpen} onCancel={modalHandler} onSave={saveHandler}><GFrom />
-            </SharedModal>
-            <PageHeader
-                onBack={() => window.history.back()}
-                title="JRFL Types"
-                subTitle="Search the type your are looking for"
-                extra={[
-                    <Button key="3">Ανανέωση</Button>,
-                    <Button key="1" type="primary" onClick={modalHandler}> Νέο </Button>
-                ]} >
-            </PageHeader>
-            <Table columns={columns} dataSource={data} />
-        </React.Fragment>
+        <Row type="flex" justify="center" align="middle">
+            <Col md={24} xl={20} xxl={16}>
+                <SharedModal title="Εισαγωγή Τύπου" columns=""
+                    visible={modalIsOpen} onCancel={modalHandler} onSave={saveHandler}>
+                    <GFrom formFields={model} />
+                </SharedModal>
+                <PageHeader
+                    onBack={() => window.history.back()}
+                    title="JRFL Types"
+                    subTitle="Search the type your are looking for"
+                    extra={[
+                        <Button key="3">Ανανέωση</Button>,
+                        <Button key="1" type="primary" onClick={modalHandler}> Νέο </Button>
+                    ]} >
+                </PageHeader>
+                <Table columns={columns} dataSource={data} />
+            </Col>
+        </Row>
     );
 };
 

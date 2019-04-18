@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from 'antd';
+
 const SharedModal = props => {
     const [confirmLoading, setConfirmLoading] = useState(false);
 

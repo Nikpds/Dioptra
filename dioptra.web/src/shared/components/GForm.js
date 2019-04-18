@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form, Input } from 'antd';
-
+import { Form, Input,Button } from 'antd';
+import { callFetch } from '../../services/common/HttpService';
 const GForm = props => {
     const { getFieldDecorator } = props.form;
     const formItemLayout = {
@@ -13,11 +13,21 @@ const GForm = props => {
             sm: { span: 16 },
         },
     };
-    const bla = [{ label: 'Title', type: 'text', placeholder: 'Some title' },
-    { label: 'Description', type: 'text', placeholder: 'Some Description' }]
-    const handleSubmit = () => { }
 
-    const fields = bla.map((item, i) => <Form.Item key={i} label={item.label} >
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }
+            console.log('Received', values);
+        });
+        // callFetch('http://localhost:50971/api/jrfl','POST')
+    }
+
+
+
+    const fields = props.formFields.map((item, i) => <Form.Item key={i} label={item.label} >
         {getFieldDecorator('password', {
             rules: [{
                 required: true, message: 'Please input your password!',
@@ -29,6 +39,7 @@ const GForm = props => {
     return (
         <Form {...formItemLayout} onSubmit={handleSubmit}>
             {fields}
+            <Button type="primary" htmlType="submit">Register</Button>
         </Form>
     );
 };

@@ -9,7 +9,7 @@ const { Content } = LayoutC;
 
 const Layout = props => {
     const auth = useContext(AuthContext)
-    //const cssHeight = auth.isAuthenticated ? 'calc-h' : 'is-fullheight';
+    const contentPadding = auth.isAuthenticated ? 'pt-4' : '';
     const navbar = auth.isAuthenticated ? <Navbar /> : null;
     const sidebar = auth.isAuthenticated ? <Sidebar /> : null;
     return (
@@ -18,7 +18,7 @@ const Layout = props => {
                 {sidebar}
                 <LayoutC>
                     {navbar}
-                    <Content className="calc-h">
+                    <Content className={[contentPadding, 'calc-h'].join(' ')}>
                         {props.children}
                     </Content>
                 </LayoutC>

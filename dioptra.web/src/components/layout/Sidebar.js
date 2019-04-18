@@ -16,7 +16,7 @@ const Sidebar = props => {
                 mode="vertical"
                 className="is-fullheight">
                 <div className="logo-item" key="0">
-                    <img src={logo} />
+                    <img src={logo}  alt='..'/>
                     <span className="logo" >{strings.sidebar.thales}</span>
                 </div>
                 <Menu.Item key="1" onClick={toggleCollapsed}>

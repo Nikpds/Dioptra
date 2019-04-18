@@ -40,7 +40,7 @@ namespace Dioptra.Api.Controllers
                         }
                         else
                         {
-                            return BadRequest("Λάθος όνομα χρήστη ή κωδικός");
+                            return BadRequest(new { error = "Λάθος όνομα χρήστη ή κωδικός" });
                         }
                     }
                     else
