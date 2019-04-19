@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { PageHeader, Input, Table, Button, Icon, Row, Col } from 'antd';
 import Highlighter from 'react-highlight-words';
 import SharedModal from '../../shared/components//SharedModal';
@@ -6,17 +6,39 @@ import GFrom from '../../shared/components/GForm';
 const JrflType = () => {
     const [searchText, setSearchText] = useState('');
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalLoading, setModalLoading] = useState(false);
+    const modalForm = useRef(null);
 
     const modalHandler = () => {
         setModalIsOpen(previous => !previous);
     }
 
-    const saveHandler = async () => {
-
+    const onModalCancel = () => {
+        setModalLoading(false);
+        setModalIsOpen(previous => !previous);
     }
-    const model = [
-        { label: 'Title', type: 'text', placeholder: 'Some title' },
-    ]
+
+    const onModalOk = async () => {
+        console.log(modalForm.current.props);
+        modalForm.current.dispatch(new Event('submit'));
+    }
+
+    const formSubmit = (data) => {
+        setModalLoading(true);
+        console.log('The following data will be posted', data);
+        // call save method
+        setTimeout(() => {
+            onModalCancel();
+        }, 1000);
+    }
+
+    const modalFields = [{ 
+        label: 'Τύπος', 
+        type: 'text', 
+        model: 'type', 
+        rules: [{required: true, message: 'To πεδίο είναι υποχρεωτικό'}]
+    }];
+
     let searchInput = '';
     const data = [];
     const getColumnSearchProps = (dataIndex) => ({
@@ -91,9 +113,9 @@ const JrflType = () => {
     return (
         <Row type="flex" justify="center" align="middle">
             <Col md={24} xl={20} xxl={16}>
-                <SharedModal title="Εισαγωγή Τύπου" columns=""
-                    visible={modalIsOpen} onCancel={modalHandler} onSave={saveHandler}>
-                    <GFrom formFields={model} />
+                <SharedModal title="Εισαγωγή Τύπου"
+                    visible={modalIsOpen} onCancel={onModalCancel} onOk={onModalOk} loading={modalLoading}>
+                    <GFrom formFields={modalFields} ref={modalForm} onSubmit={formSubmit}/>
                 </SharedModal>
                 <PageHeader
                     onBack={() => window.history.back()}
