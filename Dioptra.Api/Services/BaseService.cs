@@ -32,7 +32,8 @@ namespace Dioptra.Api.Services
 
         public Task<T> Insert(T entity)
         {
-            throw new NotImplementedException();
+
+            _ctx..Insert(entity);
         }
 
         public Task<T> Update(string id, T entity)

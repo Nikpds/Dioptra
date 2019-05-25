@@ -20,7 +20,7 @@ namespace Dioptra.Api.Controllers
         }
         #region JRFLType 
 
-        [HttpGet("")]
+        [HttpGet("type")]
         public async Task<IActionResult> GetJRFLTypes()
         {
             IEnumerable<JRFLType> types = await _srv.GetAll();
@@ -28,7 +28,7 @@ namespace Dioptra.Api.Controllers
             return Ok(types);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("type/{id}")]
         public async Task<IActionResult> GetJRFLType(string id)
         {
             JRFLType type = await _srv.GetById(id);
@@ -36,7 +36,7 @@ namespace Dioptra.Api.Controllers
             return Ok(type);
         }
 
-        [HttpPost("{id}")]
+        [HttpPost("type")]
         public async Task<IActionResult> CreateJRFLType([FromBody] JRFLType grfltype)
         {
 
@@ -45,7 +45,7 @@ namespace Dioptra.Api.Controllers
             return Ok(type);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("type/{id}")]
         public async Task<IActionResult> UpdateJRFLType([FromBody] JRFLType grfltype, string id)
         {
             JRFLType original = await _srv.GetById(id);
@@ -56,7 +56,7 @@ namespace Dioptra.Api.Controllers
             return Ok(type);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("type/{id}")]
         public async Task<IActionResult> DeleteJRFLType(string id)
         {
             JRFLType original = await _srv.GetById(id);
