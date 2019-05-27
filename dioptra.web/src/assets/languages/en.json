@@ -1,0 +1,19 @@
+{
+  "logout": "logout",
+  "app": "Thales",
+  "en": "English",
+  "gr": "Ελληνικά",
+  "login": {
+    "loginSubtitle": "Διακλαδικό Σύστημα Διοίκησης & Ελέγχου για την υποστήριξη του Ηλεκτρονικού Πολέμου (ΔΣΔΕΗΠ)",
+    "warning": "Warning"
+  },
+  "sidebar": {
+    "home": "Home",
+    "eob": "EOB",
+    "jrfl": "JRFL",
+    "jrfltypes": "JRFL Types",
+    "jrflfreq": "JRFL Frequencies",
+    "close": "Close",
+    "thales": " Thales"
+  }
+}
