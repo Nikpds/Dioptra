@@ -1,7 +1,10 @@
 import React from 'react'
 import { Col, Typography, Row } from 'antd'
 import LoginForm from './LoginForm'
+import { strings } from '../../../contexts/LocalizationProvider'
+
 const LoginInfo = () => {
+  const thisYear = new Date().getFullYear()
   return (
     <div style={{ height: 'calc(100vh - 80px)' }}>
       <Row
@@ -15,32 +18,21 @@ const LoginInfo = () => {
             strong
             style={{ textAlign: 'justify', color: 'lightgrey' }}>
             <Typography.Title underline={true} style={{ color: 'white' }}>
-              Προειδοποίηση
+              {strings.login.warning}
             </Typography.Title>
-            Το παρόν σύστημα και όλα τα υποσυστήματα που έχουν σχέση ή απορρέουν
-            από αυτό είναι σχεδιασμένα σύμφωνα με εθνικά και ΝΑΤΟικά πρότυπα που
-            αναφέρονται σε διαβαθμισμένα έγγραφα και είναι διαβαθμισμένο ως{' '}
+            {strings.login.warningmessage1}{' '}
             <Typography.Text strong style={{ color: 'red' }}>
-              ΑΠΟΡΡΗΤΟ
+              {strings.login.classafied}
             </Typography.Text>
           </Typography.Paragraph>
           <Typography.Paragraph
             strong
             style={{ textAlign: 'justify', color: 'lightgrey' }}>
-            Χρήση του συστήματος και των πόρων του επιτρέπεται μόνο για
-            επιχειρησιακούς λόγους και μόνο σε εξουσιοδοτημένο προσωπικό με την
-            ανωτέρω διαβάθμιση. Με τη σύνδεση η/και χρήση του συστήματος και του
-            API του, διαβεβαιώνετε και αποδέχεστε ότι:
+            {strings.login.warningmessage2}
             <ul style={{ marginLeft: 20, marginTop: 10 }}>
-              <li>Είστε ενεργό προσωπικό των Ελληνικών Ενόπλων Δυνάμεων</li>
-              <li>
-                Η διαβάθμιση που κατέχετε είναι ίση ή μεγαλύτερη από την
-                διαβάθμιση του συστήματος
-              </li>
-              <li>
-                Η χρήση του συστήματος αποτελεί μέρος των καθηκόντων της θέσης
-                που κατέχετε
-              </li>
+              <li> {strings.login.warningmessage3}</li>
+              <li> {strings.login.warningmessage4} </li>
+              <li> {strings.login.warningmessage5}</li>
             </ul>
           </Typography.Paragraph>
         </Col>
@@ -56,12 +48,12 @@ const LoginInfo = () => {
         align="middle">
         <Col span={10}>
           <Typography.Paragraph style={{ color: 'lightgrey' }}>
-            Copyright © 2015-2018, ΚΜΗ/ΓΕΑ
+            Copyright © 2015-{thisYear}, ΚΜΗ/ΓΕΑ
           </Typography.Paragraph>
         </Col>
         <Col span={10}>
           <Typography.Paragraph style={{ color: 'lightgrey', float: 'right' }}>
-            Έκδοση: 2.2.0
+            {strings.login.version}: 2.2.0
           </Typography.Paragraph>
         </Col>
       </Row>

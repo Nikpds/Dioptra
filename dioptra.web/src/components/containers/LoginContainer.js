@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 import LoginHeader from '../layouts/login/LoginHeader'
 import LoginInfo from '../layouts/login/LoginInfo'
 const LoginContainer = () => {

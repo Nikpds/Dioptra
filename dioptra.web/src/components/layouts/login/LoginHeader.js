@@ -1,9 +1,23 @@
-import React from 'react'
-import { Col, Typography, Row, Avatar } from 'antd'
-import { strings } from '../../../contexts/LocalizationProvider'
+import React, { useContext } from 'react'
+import { Col, Typography, Row, Dropdown, Icon, Menu } from 'antd'
+import {
+  strings,
+  LocalizationContext
+} from '../../../contexts/LocalizationProvider'
 import logo from '../../../assets/logo.png'
 import '../layout.less'
 const LoginHeader = () => {
+  const local = useContext(LocalizationContext)
+  const menu = (
+    <Menu>
+      <Menu.Item key="1" onClick={() => local.changeLocalization('en')}>
+        {strings.en}
+      </Menu.Item>
+      <Menu.Item key="2" onClick={() => local.changeLocalization('gr')}>
+        {strings.gr}
+      </Menu.Item>
+    </Menu>
+  )
   return (
     <Row
       className="login-header-background"
@@ -11,7 +25,7 @@ const LoginHeader = () => {
       type="flex"
       justify="space-around"
       align="middle">
-      <Col span={22}>
+      <Col span={20}>
         <Typography.Title
           level={3}
           type="secondary"
@@ -24,6 +38,13 @@ const LoginHeader = () => {
           style={{ marginBottom: 0, color: 'white', marginLeft: 10 }}>
           {strings.login.loginSubtitle}
         </Typography.Paragraph>
+      </Col>
+      <Col span={2}>
+        <Dropdown overlay={menu} trigger={['click']}>
+          <span className="is-link">
+            <Icon type="global" /> {strings.language} <Icon type="down" />
+          </span>
+        </Dropdown>
       </Col>
     </Row>
   )

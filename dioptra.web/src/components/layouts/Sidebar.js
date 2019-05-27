@@ -1,70 +1,68 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import {
-  Layout as AntdLayout,
-  Menu as AntdMenu,
-  Icon as AntdIcon,
-  Avatar as AntdAvatar
-} from 'antd'
-
+import { Layout, Menu, Icon, Avatar } from 'antd'
+import { strings } from '../../contexts/LocalizationProvider'
 import { useAuth } from '../../contexts/AuthProvider'
-
+import logo from '../../assets/ThalesLogo.png'
+import minlogo from '../../assets/logo.png'
+import storage from '../../services/storage'
 const items = [
   {
     path: '/map',
     icon: 'global',
-    caption: 'Χάρτης'
-  },
-  {
-    path: '/logbooks',
-    icon: 'notification',
-    caption: 'Συμβάντα'
-  },
-  {
-    path: '/admin/users',
-    icon: 'team',
-    caption: 'Διαχείριση Χρηστών'
-  },
-  {
-    path: '/admin/sites',
-    icon: 'file-protect',
-    caption: 'Διαχείριση Ιστοσελίδων'
+    caption: strings.sidebar.eob
   }
 ]
-const Sidebar = () => {
+const Sidebar = ({ open }) => {
+  const user = storage.get('auth')
   const auth = useAuth()
   return (
-    <AntdLayout.Sider collapsed={true}>
+    <Layout.Sider collapsed={open}>
       <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-        <AntdMenu selectable={false} mode="vertical" className="sidebar-menu">
+        {!open ? (
+          <Avatar
+            size={96}
+            src={logo}
+            shape="square"
+            alt="Thales"
+            style={{ margin: '20px auto' }}           
+          />
+        ) : (
+          <img
+            height="28"
+            src={minlogo}
+            alt="Thales"
+            style={{ margin: '10px auto' }}           
+          />
+        )}
+        <Menu selectable={false} mode="vertical">
+          <Menu.Item key="0">
+            {open ? <Icon type="user" /> : null}
+            <span>{user.name}</span>
+          </Menu.Item>
           {items.map(item => (
-            <AntdMenu.Item key={item.path} className="sidebar-menu-item">
+            <Menu.Item key={item.path}>
               <NavLink to={item.path}>
-                <AntdIcon type={item.icon} />
+                <Icon type={item.icon} />
                 <span>{item.caption}</span>
               </NavLink>
-            </AntdMenu.Item>
+            </Menu.Item>
           ))}
-        </AntdMenu>
+        </Menu>
         <div style={{ flexGrow: '1' }} />
-        <AntdMenu
-          selectable={false}
-          mode="vertical"
-          style={{ backgroundColor: 'unset' }}
-          className="sidebar-menu">
-          <AntdMenu.Item
+        <Menu selectable={false} mode="vertical">
+          <Menu.Item
             key="/logout"
             onClick={auth.signOut}
-            style={{ justifySelf: 'flex-end' }}
-            className="sidebar-logout">
+            style={{ justifySelf: 'flex-end' }}>
             <span>
-              <AntdIcon type="logout" />
+              <Icon type="logout" />
               <span>Αποσύνδεση</span>
             </span>
-          </AntdMenu.Item>
-        </AntdMenu>
+          </Menu.Item>
+        </Menu>
       </div>
-    </AntdLayout.Sider>
+    </Layout.Sider>
   )
 }
 

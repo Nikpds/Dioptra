@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Form, Card, Input, Icon, Button, Avatar } from 'antd'
 import { useAuth } from '../../../contexts/AuthProvider'
+import { strings } from '../../../contexts/LocalizationProvider'
 import api from '../../../services/api'
 import '../layout.less'
 import logo from '../../../assets/ThalesLogo.png'
-
 const LoginForm = () => {
   const auth = useAuth()
   const [username, setUsername] = useState('')
@@ -28,7 +28,7 @@ const LoginForm = () => {
         <Avatar size={124} src={logo} shape="square" alt="Thales" />
       </div>
       <Form onSubmit={handleSubmit}>
-        <Form.Item label="Username">
+        <Form.Item label={strings.login.username}>
           <Input
             name="username"
             autoComplete="username"
@@ -38,7 +38,7 @@ const LoginForm = () => {
             onChange={evt => setUsername(evt.target.value)}
           />
         </Form.Item>
-        <Form.Item label="Password">
+        <Form.Item label={strings.login.password}>
           <Input.Password
             name="password"
             autoComplete="password"
@@ -51,7 +51,7 @@ const LoginForm = () => {
         </Form.Item>
         <Form.Item>
           <Button type="primary" block size="large" htmlType="submit">
-            login
+            {strings.login.login}
           </Button>
         </Form.Item>
       </Form>
