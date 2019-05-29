@@ -6,18 +6,26 @@ import Navbar from './Navbar'
 const Layout = props => {
   const [open, setOpen] = useState(false)
   const auth = useAuth()
-  const toolbar = auth.isAuthenticated ? (
+  const navbar = auth.isAuthenticated ? (
     <Navbar setOpen={setOpen} open={open} />
   ) : null
-  const sidebar = auth.isAuthenticated ? <Sidebar open={open} /> : null
+  const sidebar = auth.isAuthenticated ? (
+    <AntdLayout.Sider width={150}>
+      <Sidebar open={open} />
+    </AntdLayout.Sider>
+  ) : null
   return (
     <div style={{ height: '100vh', overflow: 'hidden' }}>
       <AntdLayout>
         {sidebar}
-        <AntdLayout.Content style={{ height: '100vh' }}>
-          <AntdLayout>{toolbar}</AntdLayout>
-          <Suspense fallback={<div>Loading...</div>}>{props.children}</Suspense>
-        </AntdLayout.Content>
+        <AntdLayout>
+          <AntdLayout.Content style={{ height: '100vh' }}>
+            {navbar}
+            <Suspense fallback={<div>Loading...</div>}>
+              {props.children}
+            </Suspense>
+          </AntdLayout.Content>
+        </AntdLayout>
       </AntdLayout>
     </div>
   )

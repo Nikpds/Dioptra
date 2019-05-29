@@ -1,68 +1,91 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Layout, Menu, Icon, Avatar } from 'antd'
+import { Menu, Icon, Avatar, Divider } from 'antd'
 import { strings } from '../../contexts/LocalizationProvider'
-import { useAuth } from '../../contexts/AuthProvider'
+
 import logo from '../../assets/ThalesLogo.png'
 import minlogo from '../../assets/logo.png'
-import storage from '../../services/storage'
-const items = [
-  {
-    path: '/map',
-    icon: 'global',
-    caption: strings.sidebar.eob
-  }
-]
+import './layout.less'
+
 const Sidebar = ({ open }) => {
-  const user = storage.get('auth')
-  const auth = useAuth()
+  const items = [
+    {
+      path: '/home',
+      icon: 'home',
+      hasSubMenu: false,
+      caption: strings.sidebar.home
+    },
+    {
+      path: '/managment',
+      icon: 'plus',
+      hasSubMenu: true,
+      caption: strings.sidebar.managment,
+      submenu: [
+        {
+          path: '/users',
+          icon: 'user',
+          caption: strings.sidebar.users
+        }
+      ]
+    },
+    {
+      path: '/eob',
+      icon: 'global',
+      hasSubMenu: false,
+      caption: strings.sidebar.eob
+    }
+  ]
+
   return (
-    <Layout.Sider collapsed={open}>
-      <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-        {!open ? (
+    <Menu selectable={false} mode="inline" inlineCollapsed={open}>
+      {!open ? (
+        <div>
           <Avatar
             size={96}
             src={logo}
             shape="square"
             alt="Thales"
-            style={{ margin: '20px auto' }}           
+            style={{ margin: '20px auto 0' }}
           />
+        </div>
+      ) : (
+        <img
+          height="28"
+          src={minlogo}
+          alt="Thales"
+          style={{ margin: '10px auto 0' }}
+        />
+      )}
+      <Divider />
+      {items.map(item =>
+        !item.hasSubMenu ? (
+          <Menu.Item key={item.path}>
+            <NavLink to={item.path}>
+              <Icon type={item.icon} />
+              <span>{item.caption}</span>
+            </NavLink>
+          </Menu.Item>
         ) : (
-          <img
-            height="28"
-            src={minlogo}
-            alt="Thales"
-            style={{ margin: '10px auto' }}           
-          />
-        )}
-        <Menu selectable={false} mode="vertical">
-          <Menu.Item key="0">
-            {open ? <Icon type="user" /> : null}
-            <span>{user.name}</span>
-          </Menu.Item>
-          {items.map(item => (
-            <Menu.Item key={item.path}>
-              <NavLink to={item.path}>
-                <Icon type={item.icon} />
-                <span>{item.caption}</span>
-              </NavLink>
-            </Menu.Item>
-          ))}
-        </Menu>
-        <div style={{ flexGrow: '1' }} />
-        <Menu selectable={false} mode="vertical">
-          <Menu.Item
-            key="/logout"
-            onClick={auth.signOut}
-            style={{ justifySelf: 'flex-end' }}>
-            <span>
-              <Icon type="logout" />
-              <span>Αποσύνδεση</span>
-            </span>
-          </Menu.Item>
-        </Menu>
-      </div>
-    </Layout.Sider>
+          <Menu.SubMenu
+            key={item.path}
+            title={
+              <span>
+                <Icon type="mail" />
+                <span> {item.caption}</span>
+              </span>
+            }>
+            {item.submenu.map(subItem => (
+              <Menu.Item key={subItem.path}>
+                <NavLink to={subItem.path}>
+                  <Icon type={subItem.icon} />
+                  <span>{subItem.caption}</span>
+                </NavLink>
+              </Menu.Item>
+            ))}
+          </Menu.SubMenu>
+        )
+      )}
+    </Menu>
   )
 }
 

@@ -1,6 +1,6 @@
 {
   "logout": "logout",
-  "language":"English",
+  "language": "English",
   "app": "Thales",
   "en": "English",
   "gr": "Ελληνικά",
@@ -25,6 +25,14 @@
     "jrfltypes": "JRFL Types",
     "jrflfreq": "JRFL Frequencies",
     "close": "Close",
-    "thales": " Thales"
+    "managment": "Managment",
+    "users": "Users",
+    "logout": " Logout"
+  },
+  "buttons": {},
+  "navbar": {
+    "versions": "Versions",
+    "changepassword": "Change Password",
+    "about": "About Thales"
   }
 }
