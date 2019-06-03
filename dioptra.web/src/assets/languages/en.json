@@ -1,0 +1,38 @@
+{
+  "logout": "logout",
+  "language": "English",
+  "app": "Thales",
+  "en": "English",
+  "gr": "Ελληνικά",
+  "login": {
+    "loginSubtitle": "MISSING ENGLISH TRANSLATION",
+    "warning": "Warning",
+    "username": "Username",
+    "password": "Password",
+    "login": "login",
+    "version": "Version",
+    "classafied": "CLASSFIED",
+    "warningmessage1": "The current system and all the subsystems are related or designed by the national and NATO standards for documents graded as ",
+    "warningmessage2": "The use of this system and its resources are only for operational reasons and only by authorized personal. By login into the system your verify the below",
+    "warningmessage3": "You are active personal of Hellinic Forces",
+    "warningmessage4": "Your current graded us equal or grater than the systems",
+    "warningmessage5": "The use of the system is part of your duties"
+  },
+  "sidebar": {
+    "home": "Home",
+    "eob": "EOB",
+    "jrfl": "JRFL",
+    "jrfltypes": "JRFL Types",
+    "jrflfreq": "JRFL Frequencies",
+    "close": "Close",
+    "managment": "Managment",
+    "users": "Users",
+    "logout": " Logout"
+  },
+  "buttons": {},
+  "navbar": {
+    "versions": "Versions",
+    "changepassword": "Change Password",
+    "about": "About Thales"
+  }
+}
