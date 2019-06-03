@@ -14,8 +14,8 @@ const StatusInfo = () => {
                 { status: 'error', description: 'Unreachable Network' }
             ]
         }, {
-            name: 'Server', icon: 'hdd', cases: [
-                { status: 'success', description: 'Https request reaches API (server)' },
+            name: 'Application', icon: 'hdd', cases: [
+                { status: 'success', description: 'Https request reaches Application (server)' },
                 { status: 'error', description: 'Unreachable Network or Https Failure (if nginx is green)' }
             ]
         }];
