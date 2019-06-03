@@ -1,8 +1,8 @@
-﻿using Domain.Models.Entities;
+﻿using Dioptra.Models.Entities;
 using MongoDB.Driver;
 using System;
 
-namespace MongoContext
+namespace Dioptra.Mongo
 {
     public class DataContext
     {

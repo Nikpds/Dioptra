@@ -1,11 +1,11 @@
-﻿using Domain.Models.Entities;
+﻿using Dioptra.Models.Entities;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace MongoContext
+namespace Dioptra.Mongo
 {
     public interface IMongoDbRepository<T> where T : Entity
     {

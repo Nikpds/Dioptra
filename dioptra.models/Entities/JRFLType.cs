@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain.Models.Entities
+namespace Dioptra.Models.Entities
 {
     public class JRFLType : NameEntity
     {

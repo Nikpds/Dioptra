@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Models.Views
+namespace Dioptra.Models.Views
 {
     public class LoginView
     {

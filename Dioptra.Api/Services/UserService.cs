@@ -1,6 +1,6 @@
 ﻿using Dioptra.Api.Services.Interfaces;
-using Domain.Models.Entities;
-using MongoContext;
+using Dioptra.Models.Entities;
+using Dioptra.Mongo;
 using System;
 using System.Collections.Generic;
 using System.Linq;

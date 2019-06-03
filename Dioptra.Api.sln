@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dioptra.Api", "Dioptra.Api\Dioptra.Api.csproj", "{D7AD69AB-E8CF-4201-917A-29EAFC211441}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoContext", "MongoContext\MongoContext.csproj", "{4B2F76C5-D28B-4C44-B61C-DBC199E85BE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dioptra.Models", "dioptra.models\Dioptra.Models.csproj", "{5AABAC46-47B6-4183-87BB-89257AD7864B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Models", "Domain.Models\Domain.Models.csproj", "{5FD2E677-480F-4CE4-90D0-17B3D6999CA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dioptra.Mongo", "Dioptra.Mongo\Dioptra.Mongo.csproj", "{4D38D1AA-8549-45AB-97DF-EEB2B28AE5D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{D7AD69AB-E8CF-4201-917A-29EAFC211441}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7AD69AB-E8CF-4201-917A-29EAFC211441}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7AD69AB-E8CF-4201-917A-29EAFC211441}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B2F76C5-D28B-4C44-B61C-DBC199E85BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B2F76C5-D28B-4C44-B61C-DBC199E85BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B2F76C5-D28B-4C44-B61C-DBC199E85BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B2F76C5-D28B-4C44-B61C-DBC199E85BE3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FD2E677-480F-4CE4-90D0-17B3D6999CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FD2E677-480F-4CE4-90D0-17B3D6999CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FD2E677-480F-4CE4-90D0-17B3D6999CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FD2E677-480F-4CE4-90D0-17B3D6999CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AABAC46-47B6-4183-87BB-89257AD7864B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AABAC46-47B6-4183-87BB-89257AD7864B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AABAC46-47B6-4183-87BB-89257AD7864B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AABAC46-47B6-4183-87BB-89257AD7864B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D38D1AA-8549-45AB-97DF-EEB2B28AE5D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D38D1AA-8549-45AB-97DF-EEB2B28AE5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D38D1AA-8549-45AB-97DF-EEB2B28AE5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D38D1AA-8549-45AB-97DF-EEB2B28AE5D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Models.Entities
+namespace Dioptra.Models.Entities
 {
     public class NameEntity : Entity
     {

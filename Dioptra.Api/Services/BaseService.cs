@@ -1,8 +1,7 @@
 ﻿using Dioptra.Api.Services.Interfaces;
-using MongoContext;
+using Dioptra.Mongo;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Dioptra.Api.Services

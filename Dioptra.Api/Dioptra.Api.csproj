@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Models\Domain.Models.csproj" />
-    <ProjectReference Include="..\MongoContext\MongoContext.csproj" />
+    <ProjectReference Include="..\dioptra.models\Dioptra.Models.csproj" />
+    <ProjectReference Include="..\Dioptra.Mongo\Dioptra.Mongo.csproj" />
   </ItemGroup>
 
 </Project>

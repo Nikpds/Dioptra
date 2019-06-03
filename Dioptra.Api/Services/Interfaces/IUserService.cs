@@ -1,4 +1,4 @@
-﻿using Domain.Models.Entities;
+﻿using Dioptra.Models.Entities;
 using System.Threading.Tasks;
 
 namespace Dioptra.Api.Services.Interfaces

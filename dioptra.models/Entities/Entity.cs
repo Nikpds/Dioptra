@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.IdGenerators;
 using System;
 
-namespace Domain.Models.Entities
+namespace Dioptra.Models.Entities
 {
     public abstract class Entity
     {

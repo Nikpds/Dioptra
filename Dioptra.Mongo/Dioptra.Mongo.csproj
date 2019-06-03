@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Models\Domain.Models.csproj" />
+    <ProjectReference Include="..\dioptra.models\Dioptra.Models.csproj" />
   </ItemGroup>
 
 </Project>

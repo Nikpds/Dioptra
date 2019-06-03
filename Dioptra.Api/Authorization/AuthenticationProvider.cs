@@ -1,4 +1,4 @@
-﻿using Domain.Models.Entities;
+﻿using Dioptra.Models.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
