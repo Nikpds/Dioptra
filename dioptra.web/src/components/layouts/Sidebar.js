@@ -37,9 +37,12 @@ const Sidebar = ({ open }) => {
   ]
 
   return (
-    <Menu selectable={false} mode="inline" inlineCollapsed={open}>
+    <Menu
+      mode="inline"
+      inlineCollapsed={open}
+    >
       {!open ? (
-        <div>
+        <Menu.Item>
           <Avatar
             size={96}
             src={logo}
@@ -47,16 +50,18 @@ const Sidebar = ({ open }) => {
             alt="Thales"
             style={{ margin: '20px auto 0' }}
           />
-        </div>
+        </Menu.Item>
       ) : (
-        <img
-          height="28"
-          src={minlogo}
-          alt="Thales"
-          style={{ margin: '10px auto 0' }}
-        />
-      )}
-      <Divider />
+          <Menu.Item>
+            <img
+              height="28"
+              src={minlogo}
+              alt="Thales"
+              style={{ margin: '10px auto 0' }}
+            />
+
+          </Menu.Item>)}
+
       {items.map(item =>
         !item.hasSubMenu ? (
           <Menu.Item key={item.path}>
@@ -66,24 +71,24 @@ const Sidebar = ({ open }) => {
             </NavLink>
           </Menu.Item>
         ) : (
-          <Menu.SubMenu
-            key={item.path}
-            title={
-              <span>
-                <Icon type="mail" />
-                <span> {item.caption}</span>
-              </span>
-            }>
-            {item.submenu.map(subItem => (
-              <Menu.Item key={subItem.path}>
-                <NavLink to={subItem.path}>
-                  <Icon type={subItem.icon} />
-                  <span>{subItem.caption}</span>
-                </NavLink>
-              </Menu.Item>
-            ))}
-          </Menu.SubMenu>
-        )
+            <Menu.SubMenu
+              key={item.path}
+              title={
+                <span>
+                  <Icon type="mail" />
+                  <span> {item.caption}</span>
+                </span>
+              }>
+              {item.submenu.map(subItem => (
+                <Menu.Item key={subItem.path}>
+                  <NavLink to={subItem.path}>
+                    <Icon type={subItem.icon} />
+                    <span>{subItem.caption}</span>
+                  </NavLink>
+                </Menu.Item>
+              ))}
+            </Menu.SubMenu>
+          )
       )}
     </Menu>
   )

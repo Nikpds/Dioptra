@@ -3,6 +3,8 @@ import { Layout as AntdLayout } from 'antd'
 import Sidebar from './Sidebar'
 import { useAuth } from '../../contexts/AuthProvider'
 import Navbar from './Navbar'
+
+
 const Layout = props => {
   const [open, setOpen] = useState(false)
   const auth = useAuth()
@@ -14,6 +16,7 @@ const Layout = props => {
       <Sidebar open={open} />
     </AntdLayout.Sider>
   ) : null
+  
   return (
     <div style={{ height: '100vh', overflow: 'hidden' }}>
       <AntdLayout>

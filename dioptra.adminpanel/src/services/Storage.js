@@ -5,7 +5,7 @@ const storage = {
       return JSON.parse(value)
     },
     set: (key, value) => {
-      return localStorage.setItem(storage.prefix + key, JSON.stringify(value))
+      return localStorage.setItem(storage.prefix, JSON.stringify(value))
     },
     remove: key => {
       localStorage.removeItem(storage.prefix + key)

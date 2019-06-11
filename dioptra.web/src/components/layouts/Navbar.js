@@ -7,9 +7,9 @@ import {
 } from '../../contexts/LocalizationProvider'
 import { useAuth } from '../../contexts/AuthProvider'
 import storage from '../../services/storage'
-const user = storage.get('auth')
 
 const Navbar = ({ open, setOpen }) => {
+  const user = storage.get('auth')
   const auth = useAuth()
   const local = useContext(LocalizationContext)
   const langMenu = (
