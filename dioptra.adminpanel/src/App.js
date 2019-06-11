@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Layout from './components/layout/Layout'
 import { fullAccess, unAuthorized } from './services/Routes'
 import { useAuth } from './contexts/AuthProvider'

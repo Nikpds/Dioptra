@@ -27,7 +27,7 @@ const AuthProvider = props => {
     const initAuthentication = () => {
         session = getSession()
         const check = session && session.username && !isExpired()
-        return check
+        return !check
     }
     const signIn = token => {
         const session = jwt.decode(token)
