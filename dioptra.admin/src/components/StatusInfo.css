@@ -1,0 +1,15 @@
+.ant-badge-status-dot {
+    width: 10px;
+    height: 10px;
+}
+
+.ant-list-bordered {
+    border-radius: unset;
+}
+.ant-list-bordered:not(:last-child) {
+   border-bottom: none;
+}
+.ant-list-sm .ant-list-item{
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
