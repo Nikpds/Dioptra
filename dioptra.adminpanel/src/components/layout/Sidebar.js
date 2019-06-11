@@ -9,14 +9,27 @@ const Sidebar = ({ open }) => {
             icon: 'home',
             caption: 'home'
         },
+        {
+            path: '/dashboard',
+            icon: 'home',
+            caption: 'Dashboard'
+        },
+        {
+            path: '/server',
+            icon: 'home',
+            caption: 'Server'
+        },
+        {
+            path: '/servers',
+            icon: 'home',
+            caption: 'Servers'
+        }
 
     ]
 
     return (
         <Menu
-            mode="inline"
-            inlineCollapsed={open}
-        >
+            mode="inline"          >
             {items.map(item =>
                 <Menu.Item key={item.path}>
                     <NavLink to={item.path}>
