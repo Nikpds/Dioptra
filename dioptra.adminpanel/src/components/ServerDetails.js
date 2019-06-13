@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import style from '../styles/button.less'
 import {
   Form,
   Icon,
@@ -294,7 +295,7 @@ const ServerDetails = props => {
           </Radio.Group>
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit" onClick={props.cancel}>
+          <Button htmlType="submit" style={style.Button} onClick={props.cancel}>
             Άκυρο
           </Button>
           <Button type="danger" htmlType="submit" onClick={props.delete}>
@@ -304,6 +305,7 @@ const ServerDetails = props => {
             {newserver ? 'Αποθήκευση Νέου' : 'Αποθήκευση Αλλαγών'}
           </Button>
         </Form.Item>
+        
         <Button type="primary" htmlType="reset" onClick={() => handleReset()}>
           {newserver ? 'Καθάρισμα Φόρμας' : 'Αρχικές Τιμές'}
         </Button>
