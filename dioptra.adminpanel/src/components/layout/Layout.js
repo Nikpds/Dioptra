@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react'
 import { Layout as AntdLayout } from 'antd'
 import Sidebar from './Sidebar'
-import { useAuth } from '../../contexts/AuthProvider'
+import { useAuth } from 'mis-react'
 import Navbar from './Navbar'
 
 

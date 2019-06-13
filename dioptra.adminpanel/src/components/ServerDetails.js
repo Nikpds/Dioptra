@@ -1,37 +1,21 @@
 import React, { useState } from 'react'
-import style from '../styles/button.less'
-import {
-  Form,
-  Icon,
-  Input,
-  Button,
-  Switch,
-  Radio,
-  Mentions,
-  Col,
-  Row
-} from 'antd'
-const InputGroup = Input.Group
-const { Option, getMentions } = Mentions
-const { TextArea } = Input
+import { Form, Icon, Input, Button, Switch, Select, Col, Row } from 'antd'
+import { klados } from '../services/Enums'
+import ServerContainer from './containers/ServerContainer'
+const section = klados
 
-const ServerDetails = props => {
-  const newserver = false
-  const [server, setServer] = useState(props.server)
-
-  let title = server.id ? server.serverName : 'Νέος Server'
+const ServerForm = ({ cancel, deleteHandler, insert, update, server }) => {
+  const [_server, setServer] = useState(server)
 
   const inputChangeHandler = (name, value) => {
-    console.log(name, value)
     setServer({
-      ...server,
+      ..._server,
       [name]: value
     })
   }
 
-  const handleReset = e => {
-    e.preventDefault()
-    props.form.resetFields()
+  const saveServer = () => {
+    _server.id ? update(_server) : insert(_server)
   }
 
   const style = {
@@ -54,8 +38,7 @@ const ServerDetails = props => {
   }
   return (
     <div>
-      <Form style={style.form}>
-        <h1> {title} </h1>
+      <Form style={style.form}>     
         <Form.Item style={style.formitem}>
           <Row gutter={10}>
             <Col span={5}>Όνομα:</Col>
@@ -67,7 +50,7 @@ const ServerDetails = props => {
                 size="large"
                 placeholder="Username"
                 name="serverName"
-                value={server.serverName}
+                value={_server.serverName}
                 onChange={e =>
                   inputChangeHandler(e.target.name, e.target.value)
                 }
@@ -76,7 +59,7 @@ const ServerDetails = props => {
           </Row>
         </Form.Item>
         <Form.Item style={style.formitem}>
-          <InputGroup size="large" style={style.formitem}>
+          <Input.Group size="large" style={style.formitem}>
             <Row gutter={8}>
               <Col span={5}>IP:</Col>
               <Col span={8}>
@@ -86,7 +69,7 @@ const ServerDetails = props => {
                   }
                   placeholder="IP Api"
                   name="serverIp"
-                  value={server.serverIp}
+                  value={_server.serverIp}
                   onChange={e =>
                     inputChangeHandler(e.target.name, e.target.value)
                   }
@@ -98,7 +81,7 @@ const ServerDetails = props => {
                     <Icon type="desktop" style={{ color: 'rgba(0,0,0,.25)' }} />
                   }
                   placeholder="Port API"
-                  value={server.serverPort}
+                  value={_server.serverPort}
                   name="serverPort"
                   onChange={e =>
                     inputChangeHandler(e.target.name, e.target.value)
@@ -106,10 +89,10 @@ const ServerDetails = props => {
                 />
               </Col>
             </Row>
-          </InputGroup>
+          </Input.Group>
         </Form.Item>
         <Form.Item style={style.formitem}>
-          <InputGroup size="large" style={style.formitem}>
+          <Input.Group size="large" style={style.formitem}>
             <Row gutter={8}>
               <Col span={5}>IP Χάρτη:</Col>
               <Col span={8}>
@@ -118,7 +101,7 @@ const ServerDetails = props => {
                     <Icon type="global" style={{ color: 'rgba(0,0,0,.25)' }} />
                   }
                   placeholder="Ip Χάρτη"
-                  value={server.mapIP}
+                  value={_server.mapIP}
                   name="mapIP"
                   onChange={e =>
                     inputChangeHandler(e.target.name, e.target.value)
@@ -131,7 +114,7 @@ const ServerDetails = props => {
                     <Icon type="global" style={{ color: 'rgba(0,0,0,.25)' }} />
                   }
                   placeholder="Map Port"
-                  value={server.mapPort}
+                  value={_server.mapPort}
                   name="mapPort"
                   onChange={e =>
                     inputChangeHandler(e.target.name, e.target.value)
@@ -139,11 +122,11 @@ const ServerDetails = props => {
                 />
               </Col>
             </Row>
-          </InputGroup>
+          </Input.Group>
         </Form.Item>
 
         <Form.Item>
-          <InputGroup size="large" style={style.formitem}>
+          <Input.Group size="large" style={style.formitem}>
             <Row gutter={8}>
               <Col span={5}> Θύρα Βάσης:</Col>
               <Col span={16}>
@@ -155,7 +138,7 @@ const ServerDetails = props => {
                     />
                   }
                   placeholder="Port DB"
-                  value={server.portDB}
+                  value={_server.portDB}
                   name="portDB"
                   onChange={e =>
                     inputChangeHandler(e.target.name, e.target.value)
@@ -163,10 +146,10 @@ const ServerDetails = props => {
                 />
               </Col>
             </Row>
-          </InputGroup>
+          </Input.Group>
         </Form.Item>
         <Form.Item>
-          <InputGroup size="large" style={style.formitem}>
+          <Input.Group size="large" style={style.formitem}>
             <Row gutter={8}>
               <Col span={5}> Username DB:</Col>
               <Col span={16}>
@@ -179,18 +162,18 @@ const ServerDetails = props => {
                   }
                   placeholder="Username DB"
                   name="usernameDB"
-                  value={server.usernameDB}
+                  value={_server.usernameDB}
                   onChange={e =>
                     inputChangeHandler(e.target.name, e.target.value)
                   }
                 />
               </Col>
             </Row>
-          </InputGroup>
+          </Input.Group>
         </Form.Item>
 
         <Form.Item>
-          <InputGroup size="large" style={style.formitem}>
+          <Input.Group size="large" style={style.formitem}>
             <Row gutter={8}>
               <Col span={5}>Password DB:</Col>
               <Col span={16}>
@@ -203,17 +186,17 @@ const ServerDetails = props => {
                   }
                   placeholder="Password DB"
                   name="passwordDB"
-                  value={server.passwordDB}
+                  value={_server.passwordDB}
                   onChange={e =>
                     inputChangeHandler(e.target.name, e.target.value)
                   }
                 />
               </Col>
             </Row>
-          </InputGroup>
+          </Input.Group>
         </Form.Item>
         <Form.Item style={style.formitem}>
-          <InputGroup size="large" style={style.formitem}>
+          <Input.Group size="large" style={style.formitem}>
             <Row gutter={8}>
               <Col span={5}>Linux Κωδικός:</Col>
               <Col span={16}>
@@ -223,17 +206,17 @@ const ServerDetails = props => {
                   }
                   placeholder="Linux Code"
                   name="linuxCode"
-                  value={server.linuxCode}
+                  value={_server.linuxCode}
                   onChange={e =>
                     inputChangeHandler(e.target.name, e.target.value)
                   }
                 />
               </Col>
             </Row>
-          </InputGroup>
+          </Input.Group>
         </Form.Item>
 
-        <InputGroup size="large" style={style.formitem}>
+        <Input.Group size="large" style={style.formitem}>
           <Row gutter={8}>
             <Col span={5}>Επικοινωνία:</Col>
             <Col span={8}>
@@ -243,7 +226,7 @@ const ServerDetails = props => {
                 }
                 placeholder="Όνομα Επικοινωνίας"
                 name="contactname"
-                value={server.contactname}
+                value={_server.contactname}
                 onChange={e =>
                   inputChangeHandler(e.target.name, e.target.value)
                 }
@@ -256,62 +239,63 @@ const ServerDetails = props => {
                 }
                 placeholder="Τηλέφωνο"
                 name="contactphone"
-                value={server.contactphone}
+                value={_server.contactphone}
                 onChange={e =>
                   inputChangeHandler(e.target.name, e.target.value)
                 }
               />
             </Col>
           </Row>
-        </InputGroup>
+        </Input.Group>
         <Form.Item style={style.formitem}>
           Σημειώσεις:
-          <TextArea
+          <Input.TextArea
             rows={4}
             name="notes"
-            value={server.notes}
+            value={_server.notes}
             onChange={e => inputChangeHandler(e.target.name, e.target.value)}
           />
         </Form.Item>
         <Form.Item style={style.formitem}>
           Κατάσταση:
           <Switch
-            checked={server.status}
+            checked={_server.status}
             onChange={value => inputChangeHandler('status', value)}
-            checkedChildren="Server ON"
-            unCheckedChildren="Server OFF"
+            checkedChildren="_server ON"
+            unCheckedChildren="_server OFF"
           />
         </Form.Item>
-        <Form.Item style={style.formitem}>
-          Κλάδος:
-          <Radio.Group
-            name="klados"
-            value={server.klados}
-            onChange={e => inputChangeHandler(e.target.name, e.target.value)}>
-            <Radio.Button value="ΓΕΕΘΑ" style={{color:'black', backgroundColor:'#990000'}}>ΓΕΕΘΑ</Radio.Button>
-            <Radio.Button value="ΣΤΡΑΤΟΣ" style={{color:'black', backgroundColor:'#666633'}}>ΣΤΡΑΤΟΣ</Radio.Button>
-            <Radio.Button value="ΠΝ" style={{color:'black', backgroundColor:'#0033cc'}}>ΠΝ</Radio.Button>
-            <Radio.Button value="ΓΕΑ" style={{color:'black', backgroundColor:'#0099ff'}}>ΓΕΑ</Radio.Button>
-          </Radio.Group>
+        <Form.Item style={style.formitem} label="Κλάδος">
+          <Select
+            style={{ width: 120 }}
+            onChange={value => inputChangeHandler('section', value)}>
+            {section.map(k => (
+              <Select.Option key={k.id} value={k.id}>
+                {k.name}
+              </Select.Option>
+            ))}
+          </Select>
         </Form.Item>
         <Form.Item>
-          <Button htmlType="submit" style={style.Button} onClick={props.cancel}>
+          <Button type="primary" onClick={cancel}>
             Άκυρο
           </Button>
-          <Button type="danger" htmlType="submit" onClick={props.delete}>
+          <Button type="danger" onClick={deleteHandler}>
             Διαγραφή
           </Button>
-          <Button type="primary" htmlType="submit" onClick={props.save}>
-            {newserver ? 'Αποθήκευση Νέου' : 'Αποθήκευση Αλλαγών'}
+          <Button type="primary" onClick={saveServer}>
+            Αποθήκευση
           </Button>
         </Form.Item>
-        
-        <Button type="primary" htmlType="reset" onClick={() => handleReset()}>
-          {newserver ? 'Καθάρισμα Φόρμας' : 'Αρχικές Τιμές'}
-        </Button>
       </Form>
     </div>
   )
 }
+
+const ServerDetails = () => (
+  <ServerContainer>
+    <ServerForm />
+  </ServerContainer>
+)
 
 export default ServerDetails
