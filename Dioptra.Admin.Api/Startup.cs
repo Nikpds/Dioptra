@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Dioptra.Admin.Api
 {
@@ -20,7 +21,7 @@ namespace Dioptra.Admin.Api
 
         public IConfiguration Configuration { get; }
 
-      
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IAuthenticationProvider, AuthenticationProvider>();
@@ -34,17 +35,18 @@ namespace Dioptra.Admin.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
-    
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            //EnsureAdmin();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-           
+
                 app.UseHsts();
             }
 
@@ -68,6 +70,7 @@ namespace Dioptra.Admin.Api
                     await ctx.Users.Insert(admin);
                 }
             }
+
             catch (Exception ex)
             {
                 var temp = ex;

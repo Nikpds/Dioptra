@@ -32,7 +32,7 @@ namespace Dioptra.Admin.Api.Controllers
             }
             catch (Exception exc)
             {
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -47,7 +47,7 @@ namespace Dioptra.Admin.Api.Controllers
             }
             catch (Exception exc)
             {
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -61,7 +61,7 @@ namespace Dioptra.Admin.Api.Controllers
             }
             catch (Exception exc)
             {
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -80,7 +80,7 @@ namespace Dioptra.Admin.Api.Controllers
             catch (Exception exc)
             {
 
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -98,7 +98,7 @@ namespace Dioptra.Admin.Api.Controllers
             }
             catch (Exception exc)
             {
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
     }

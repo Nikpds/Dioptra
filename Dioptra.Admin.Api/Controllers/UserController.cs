@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using Dioptra.Admin.Api.Authorization;
 using Dioptra.Admin.Api.Models;
-using Dioptra.Admin.Api.Models.Views;
 using Dioptra.Admin.Api.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dioptra.Admin.Api.Controllers
@@ -19,51 +15,10 @@ namespace Dioptra.Admin.Api.Controllers
     public class UserController : ControllerBase
     {
         private DataContext _ctx;
-        private readonly IAuthenticationProvider _auth;
-        public UserController(DataContext ctx, IAuthenticationProvider auth)
+        public UserController(DataContext ctx)
         {
             _ctx = ctx;
-            _auth = auth;
-        }
-
-        [AllowAnonymous]
-        [HttpPost("token")]
-        public async Task<IActionResult> Token([FromBody] LoginView model)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    var user = (await _ctx.Users.Get(x => x.UserName == model.Username)).SingleOrDefault();
-                    if (user != null)
-                    {
-                        if (AuthManager.VerifyHashedPassword(user.PasswordHash, model.Password))
-                        {
-                            var userToken = _auth.CreateToken(user);
-                            return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(userToken) });
-                        }
-                        else
-                        {
-                            return BadRequest(new { error = "Λάθος όνομα χρήστη ή κωδικός" });
-                        }
-                    }
-                    else
-                    {
-                        return BadRequest("Λάθος όνομα χρήστη ή κωδικός");
-                    }
-                }
-                else
-                {
-                    return BadRequest("Λάθος όνομα χρήστη ή κωδικός");
-                }
-
-            }
-            catch (Exception exc)
-            {
-                //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
-            }
-        }
+        }      
 
         [HttpPost("")]
         public async Task<IActionResult> Insert([FromBody] User user)
@@ -78,7 +33,7 @@ namespace Dioptra.Admin.Api.Controllers
             catch (Exception exc)
             {
                 //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -99,7 +54,7 @@ namespace Dioptra.Admin.Api.Controllers
             catch (Exception exc)
             {
                 //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -118,7 +73,7 @@ namespace Dioptra.Admin.Api.Controllers
             catch (Exception exc)
             {
                 //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -137,7 +92,7 @@ namespace Dioptra.Admin.Api.Controllers
             catch (Exception exc)
             {
                 //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -157,7 +112,7 @@ namespace Dioptra.Admin.Api.Controllers
             catch (Exception exc)
             {
                 //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -173,7 +128,7 @@ namespace Dioptra.Admin.Api.Controllers
             catch (Exception exc)
             {
                 //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 
@@ -189,7 +144,7 @@ namespace Dioptra.Admin.Api.Controllers
             catch (Exception exc)
             {
                 //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα");
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
             }
         }
 

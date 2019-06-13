@@ -2,13 +2,13 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Login from '../components/containers/LoginContainer'
 import Home from '../components/Home'
-import ServerContainer from '../components/containers/ServerContainer'
+import ServerDetails from '../components/ServerDetails'
 import ServersContainer from '../components/containers/ServersContainer'
 import DashboardContainer from '../components/containers/DashboardContainer'
 export const fullAccess = (
   <Switch>
     <Route path="/" exact component={Home} />
-    <Route path="/server" exact component={ServerContainer} />
+    <Route path="/server/:id" exact component={ServerDetails} />
     <Route path="/servers" exact component={ServersContainer} />
     <Route path="/dashboard" exact component={DashboardContainer} />
     <Redirect to="/" />

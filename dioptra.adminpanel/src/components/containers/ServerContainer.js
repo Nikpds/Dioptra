@@ -1,53 +1,63 @@
-import React from 'react'
-import ServerDetails from '../ServerDetails'
-import serverInfo from '../../serverInfo'
+import React, { useState, useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
+import { api } from 'mis-react'
 
 const ServerContainer = props => {
-  const serverApi = 'https://jsonplaceholder.typicode.com/posts'
-  const server = {
-    serverId: 1,
-    serverName: 'server name 1',
-    serverIp: '192.168.1.1',
-    serverPort: '9000',
-    mapIP: '192.168.1.2',
-    mapPort: '8443',
-    portDB: '27017',
-    usernameDB: 'namebd1',
-    passwordDB: '123',
-    linuxCode: '456',
-    contactname: 'markantasis',
-    contactphone: '2101234567',
-    notes: 'bla bla',
-    klados: 'ΓΕΑ',
-    status: true
-  }
+  const { children, history } = props
+  const { id } = props.match.params
+  const [server, setServer] = useState({})
+
   const cancel = () => {
-    console.log('cancel server')
-  }
-  const deleteHandler = () => {
-    serverInfo.delete(serverApi, 1).then()
-    console.log('delete server')
-  }
-  const save = (props) => {
-      console.log('is saving...');
-      console.log(props);
-    serverInfo.post('/servers', server)
-    console.log('server saved')
+    history.back()
   }
 
-  const clear = () => {
-    console.log('clear server')
+  async function deleteHandler() {
+    console.log('Delete: ' + server)
+    const response = await api.delete(`/api/server/${server.id}`)
+    if (response) {
+      console.log(response)
+    }
   }
 
-  return (
-    <ServerDetails
-      cancel={cancel}
-      delete={deleteHandler}
-      save={props =>save(props)}
-      clear={clear}
-      server={server}
-    />
+  async function insert(server) {
+    console.log('Insert: ' + server)
+    const response = await api.post('/api/server', server)
+    if (response) {
+      history.push(`/server/${response.id}`)
+    }
+  }
+
+  async function update(server) {
+    console.log('Update: ' + server)
+    const response = await api.put('/api/server', server)
+    if (response) {
+      console.log(response)
+    }
+  }
+
+  useEffect(() => {
+    async function fetchServer() {
+      if (id === 'new') {
+        return
+      }
+      const response = await api.get('/api/server')
+      if (response) {
+        console.log(response)
+        setServer(response)
+      }
+    }
+    fetchServer()
+  }, [id])
+
+  return React.Children.map(children, child =>
+    React.cloneElement(child, {
+      cancel,
+      deleteHandler,
+      insert,
+      update,
+      server
+    })
   )
 }
 
-export default ServerContainer
+export default withRouter(ServerContainer)

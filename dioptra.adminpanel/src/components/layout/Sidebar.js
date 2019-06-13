@@ -15,7 +15,7 @@ const Sidebar = ({ open }) => {
       caption: 'Dashboard'
     },
     {
-      path: '/server',
+      path: '/server/new',
       icon: 'home',
       caption: 'Server'
     },
