@@ -22,7 +22,7 @@ namespace Dioptra.Admin.Api.Models
         public virtual string Id
         {
             get { return _Id; }
-            protected set
+            set
             {
                 _Id = value;
             }

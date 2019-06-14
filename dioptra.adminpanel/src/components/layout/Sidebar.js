@@ -15,7 +15,7 @@ const Sidebar = ({ open }) => {
       caption: 'Dashboard'
     },
     {
-      path: '/server',
+      path: '/server/new',
       icon: 'database',
       caption: 'Server'
     },
@@ -25,7 +25,7 @@ const Sidebar = ({ open }) => {
       caption: 'Servers'
     },
     {
-      path: '/user',
+      path: '/user/new',
       icon: 'user',
       caption: 'User'
     },

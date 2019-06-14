@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import { Form, Icon, Input, Button, Switch, Select, Col, Row } from 'antd'
+import React, { useState, useEffect } from 'react'
+import { Form, Icon, Input, Switch, Select, Col, Row } from 'antd'
 import { klados } from '../../services/Enums'
 import ServerContainer from '../containers/ServerContainer'
+import PageHeader from '../shared/PageHeader'
+import { StatusTag } from '../../services/Utilities'
 const section = klados
 
 const ServerForm = ({ cancel, deleteHandler, insert, update, server }) => {
   const [_server, setServer] = useState(server)
-
   const inputChangeHandler = (name, value) => {
     setServer({
       ..._server,
@@ -14,12 +15,35 @@ const ServerForm = ({ cancel, deleteHandler, insert, update, server }) => {
     })
   }
 
-  const saveServer = () => {
-    _server.id ? update(_server) : insert(_server)
-  }
+  useEffect(() => {
+    console.log('Its on')
+    if (server.id) {
+      setServer(server)
+    }
+  }, [server])
+
+  const title = _server.id ? _server.title : 'New Server'
+  const subtitle = _server.id ? (
+    <StatusTag status={_server.status} hasLabel />
+  ) : (
+    'Please fill up all fields to add new server'
+  )
+  const headerActions = server.id
+    ? [
+        { onClick: () => update(_server), caption: 'Update' },
+        { onClick: () => deleteHandler(), caption: 'Delete' }
+      ]
+    : [{ onClick: () => insert(_server), caption: 'Insert' }]
 
   return (
     <div>
+      <PageHeader
+        title={title}
+        subtitle={subtitle}
+        onBack={cancel}
+        actions={[...headerActions, { onClick: cancel, caption: 'Cancel' }]}
+      />
+      <br />
       <Form labelCol={{ span: 6 }} wrapperCol={{ span: 10 }}>
         <Form.Item label="Όνομα">
           <Input
@@ -38,20 +62,20 @@ const ServerForm = ({ cancel, deleteHandler, insert, update, server }) => {
             value={_server.ip}
             onChange={e => inputChangeHandler(e.target.name, e.target.value)}
           />
-          <Input
+          {/* <Input
             prefix={
               <Icon type="desktop" style={{ color: 'rgba(0,0,0,.25)' }} />
             }
             value={_server.apiPort}
             name="apiPort"
             onChange={e => inputChangeHandler(e.target.name, e.target.value)}
-          />
+          /> */}
         </Form.Item>
         <Form.Item label="Map Ip ">
           <Input
             prefix={<Icon type="global" style={{ color: 'rgba(0,0,0,.25)' }} />}
-            value={_server.mapIP}
-            name="mapIP"
+            value={_server.mapIp}
+            name="mapIp"
             onChange={e => inputChangeHandler(e.target.name, e.target.value)}
           />
         </Form.Item>
@@ -60,8 +84,8 @@ const ServerForm = ({ cancel, deleteHandler, insert, update, server }) => {
             prefix={
               <Icon type="database" style={{ color: 'rgba(0,0,0,.25)' }} />
             }
-            name="usernameDB"
-            value={_server.usernameDB}
+            name="username"
+            value={_server.username}
             onChange={e => inputChangeHandler(e.target.name, e.target.value)}
           />
         </Form.Item>
@@ -70,22 +94,30 @@ const ServerForm = ({ cancel, deleteHandler, insert, update, server }) => {
             prefix={
               <Icon type="database" style={{ color: 'rgba(0,0,0,.25)' }} />
             }
-            name="dbPassword"
-            value={_server.dbPassword}
-            onChange={e => inputChangeHandler(e.target.name, e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item label="Server Password">
-          <Input
-            prefix={<Icon type="qq" style={{ color: 'rgba(0,0,0,.25)' }} />}
             name="password"
             value={_server.password}
             onChange={e => inputChangeHandler(e.target.name, e.target.value)}
           />
         </Form.Item>
+        <Form.Item label="Db Username">
+          <Input
+            prefix={<Icon type="qq" style={{ color: 'rgba(0,0,0,.25)' }} />}
+            name="dbUsername"
+            value={_server.dbUsername}
+            onChange={e => inputChangeHandler(e.target.name, e.target.value)}
+          />
+        </Form.Item>
+        <Form.Item label="DB Password">
+          <Input
+            prefix={<Icon type="qq" style={{ color: 'rgba(0,0,0,.25)' }} />}
+            name="dbPassword"
+            value={_server.dbPassword}
+            onChange={e => inputChangeHandler(e.target.name, e.target.value)}
+          />
+        </Form.Item>
         <Form.Item label="Επικοινωνία">
-          <Row>
-            <Col span={12} >
+          <Row gutter={4}>
+            <Col span={12}>
               <Input
                 prefix={
                   <Icon type="contacts" style={{ color: 'rgba(0,0,0,.25)' }} />
@@ -138,17 +170,6 @@ const ServerForm = ({ cancel, deleteHandler, insert, update, server }) => {
               </Select.Option>
             ))}
           </Select>
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" onClick={cancel}>
-            Άκυρο
-          </Button>
-          <Button type="danger" onClick={deleteHandler}>
-            Διαγραφή
-          </Button>
-          <Button type="primary" onClick={saveServer}>
-            Αποθήκευση
-          </Button>
         </Form.Item>
       </Form>
     </div>

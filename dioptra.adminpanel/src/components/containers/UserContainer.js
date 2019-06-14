@@ -1,25 +1,16 @@
-import React, { useState } from 'react'
-import UserDetails from '../userDetails/UserDetails'
-
+import React, { useState, useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
+import { api } from 'mis-react'
 const UserContainer = props => {
-  /*const user1 = {
-    userId: 1,
-    userName: 'Chris',
-    userSName: 'Dimpoulos',
-    userStatus: true
-  }*/
-  /********************* */
-
   const { children, history } = props
   const { id } = props.match.params
   const [user, setUser] = useState({})
 
   const cancel = () => {
-    history.back()
+    history.goBack()
   }
 
   async function deleteHandler() {
-    console.log('Delete: ' + user)
     const response = await api.delete(`/api/user/${user.id}`)
     if (response) {
       console.log(response)
@@ -27,7 +18,6 @@ const UserContainer = props => {
   }
 
   async function insert(user) {
-    console.log('Insert: ' + user)
     const response = await api.post('/api/user', user)
     if (response) {
       history.push(`/user/${response.id}`)

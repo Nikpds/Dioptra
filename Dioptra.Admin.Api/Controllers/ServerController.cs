@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Dioptra.Admin.Api.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    
     [ApiController]
     public class ServerController : ControllerBase
     {
@@ -89,9 +89,7 @@ namespace Dioptra.Admin.Api.Controllers
         {
             try
             {
-                var original = await _ctx.Servers.GetById(id);
-
-                var result = await _ctx.Servers.Delete(original);
+                var result = await _ctx.Servers.Delete(id);
 
                 return Ok(result);
 
