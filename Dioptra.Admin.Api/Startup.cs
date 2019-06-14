@@ -39,7 +39,7 @@ namespace Dioptra.Admin.Api
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-            //EnsureAdmin();
+            EnsureAdmin();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

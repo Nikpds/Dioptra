@@ -11,18 +11,28 @@ const Sidebar = ({ open }) => {
     },
     {
       path: '/dashboard',
-      icon: 'home',
+      icon: 'dashboard',
       caption: 'Dashboard'
     },
     {
-      path: '/server/new',
-      icon: 'home',
+      path: '/server',
+      icon: 'database',
       caption: 'Server'
     },
     {
       path: '/servers',
-      icon: 'home',
+      icon: 'database',
       caption: 'Servers'
+    },
+    {
+      path: '/user',
+      icon: 'user',
+      caption: 'User'
+    },
+    {
+      path: '/users',
+      icon: 'team',
+      caption: 'Users'
     }
   ]
 
