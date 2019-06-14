@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Login from '../components/containers/LoginContainer'
 import Home from '../components/Home'
-import ServerDetails from '../components/ServerDetails'
+import ServerDetails from '../components/ServerDetails/ServerDetails'
 import ServersContainer from '../components/containers/ServersContainer'
 import DashboardContainer from '../components/containers/DashboardContainer'
 export const fullAccess = (

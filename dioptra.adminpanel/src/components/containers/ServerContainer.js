@@ -5,7 +5,7 @@ import { api } from 'mis-react'
 const ServerContainer = props => {
   const { children, history } = props
   const { id } = props.match.params
-  const [server, setServer] = useState({})
+  const [server, setServer] = useState({ isActive: false, section: 0 })
 
   const cancel = () => {
     history.back()
@@ -20,15 +20,15 @@ const ServerContainer = props => {
   }
 
   async function insert(server) {
-    console.log('Insert: ' + server)
-    const response = await api.post('/api/server', server)
-    if (response) {
-      history.push(`/server/${response.id}`)
-    }
+    console.log(server)
+    // const response = await api.post('/api/server', server)
+    // if (response) {
+    //   history.push(`/server/${response.id}`)
+    // }
   }
 
   async function update(server) {
-    console.log('Update: ' + server)
+    console.log(server)
     const response = await api.put('/api/server', server)
     if (response) {
       console.log(response)
