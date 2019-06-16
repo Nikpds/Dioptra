@@ -1,18 +1,13 @@
-import React, { Suspense, useContext } from 'react';
-import { withRouter } from 'react-router-dom';
-import LayoutContainer from './layout/Layout';
-import { AuthContext } from './auth/AuthProvider';
-import { fullAccess, unAuthorized } from './services/Routes';
+import React from 'react';
+import Layout from './components/layout/Layout'
+import { fullAccess, unAuthorized } from './services/Routes'
+import { useAuth } from 'mis-react'
+const App = () => {
 
-const app = props => {
-  const authContext = useContext(AuthContext);
-  const routes = authContext.isAuthenticated ? fullAccess : unAuthorized;
-  const cssClass = ['isfullheight'];
-  return (
-    <LayoutContainer className={cssClass.join(' ')}>
-      <Suspense fallback={<p>Loading...</p>}>{routes}</Suspense>
-    </LayoutContainer>
-  )
-};
+  const auth = useAuth()
+  const routes = auth.isAuthenticated ? fullAccess : unAuthorized
 
-export default withRouter(app);
+  return <Layout>{routes}</Layout>
+}
+
+export default App;
