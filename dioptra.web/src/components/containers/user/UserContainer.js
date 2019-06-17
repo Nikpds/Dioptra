@@ -7,11 +7,18 @@ const UserContainer = props => {
   const { children, history } = props
   const [user, setUser] = useState({})
 
-  async function onSave() {
-    if (user.id) {
-      await api.put(`/api/admin/users/${id}`, user)
+  async function onSave(value) {
+    if (value.id) {
+      const response = await api.put(`/api/user/${id}`, value)
+      if (response) {
+        setUser(response)
+      }
     } else {
-      await api.post(`/api/admin/users`, user)
+      const response = await api.post(`/api/user`, value)
+      if (response) {
+        setUser(response)
+        history.push('/user/' + response.id)
+      }
     }
   }
 
@@ -24,8 +31,8 @@ const UserContainer = props => {
   }
 
   async function onDelete() {
-    await api.delete(`/api/admin/users/${id}`)
-    history.push('/admin/users')
+    await api.delete(`/api/user/${id}`)
+    history.push('/users')
   }
 
   useEffect(() => {
@@ -33,7 +40,7 @@ const UserContainer = props => {
       if (id === 'new') {
         return
       }
-      const response = await api.get(`/api/admin/users/${id}`)
+      const response = await api.get(`/api/user/${id}`)
       setUser(response)
     }
 
