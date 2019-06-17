@@ -1,10 +1,8 @@
 import React from 'react'
 import {
   Map as LeafletMap,
-  TileLayer as LeafletTileLayer,
-  Marker as LeafletMarker
+  TileLayer as LeafletTileLayer
 } from 'react-leaflet'
-import leaflet from 'leaflet'
 import './map.css'
 import { MAP_CENTER, TILE_LAYERS } from './mapUtilities'
 

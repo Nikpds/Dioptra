@@ -1,14 +1,12 @@
 import React, { useContext } from 'react'
-import { PageHeader, Icon, Dropdown, Menu, Divider } from 'antd'
+import { PageHeader, Icon, Dropdown, Menu } from 'antd'
 import { NavLink } from 'react-router-dom'
-import {
-  strings,
-  LocalizationContext
-} from '../../contexts/LocalizationProvider'
+import { strings, LocalizationContext } from '../../contexts/LocalizationProvider'
+import minlogo from '../../assets/logo.png'
 import { useAuth } from '../../contexts/AuthProvider'
 import storage from '../../services/storage'
 
-const Navbar = ({ open, setOpen }) => {
+const Navbar = () => {
   const user = storage.get('auth')
   const auth = useAuth()
   const local = useContext(LocalizationContext)
@@ -47,17 +45,14 @@ const Navbar = ({ open, setOpen }) => {
     </Menu>
   )
   return (
-    <PageHeader
-      onBack={() => setOpen(!open)}
-      title={strings.app}
-      backIcon={
-        open ? (
-          <Icon type="arrow-right" style={{ fontSize: 17 }} />
-        ) : (
-          <Icon style={{ fontSize: 17 }} type="arrow-left" />
-        )
-      }
-      subTitle={user.name}
+    <PageHeader className="navbar-bottom-border"
+      title={
+        <div>
+          <img height="28" src={minlogo} alt="Thales" />
+          {strings.app}         
+        </div>
+      }     
+      subTitle={user.fullname}
       extra={[
         <Dropdown overlay={langMenu} key="0">
           <Icon type="global" style={{ fontSize: 20, marginRight: 20 }} />

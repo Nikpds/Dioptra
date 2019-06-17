@@ -68,8 +68,9 @@ namespace Dioptra.Api
                     var admin = new User();
                     admin.UserName = "admin";
                     admin.PasswordHash = AuthManager.HashPassword("1234");
-                    admin.Name = "geakmh";
-                    admin.LastName = "geakmh";
+                    admin.FullName = "Σγος (ΕΠ) Περπερίδης Νικόλαος";
+                    admin.Email = "perpegr@hotmail.com";
+                    admin.Phone = "6001128";
                     await ctx.Users.Insert(admin);
                 }
             }

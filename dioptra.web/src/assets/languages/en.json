@@ -27,12 +27,24 @@
     "close": "Close",
     "managment": "Managment",
     "users": "Users",
-    "logout": " Logout"
+    "user": "New User",
+    "logout": " Logout",
+    "minimize": "Minimze"
   },
   "buttons": {},
   "navbar": {
     "versions": "Versions",
     "changepassword": "Change Password",
     "about": "About Thales"
+  },
+  "user": {
+    "name": "Users fullname",
+    "username": "Users login name",
+    "email": "Email",
+    "phone": "Contact phone",
+    "password": "Users password",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete"
   }
 }

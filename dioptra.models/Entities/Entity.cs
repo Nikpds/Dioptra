@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Dioptra.Models.Views;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.IdGenerators;
 using System;
@@ -11,6 +12,7 @@ namespace Dioptra.Models.Entities
         private string _Id;
         private DateTime _Created;
 
+     
         protected Entity()
         {
             _Created = DateTime.UtcNow;
@@ -33,7 +35,7 @@ namespace Dioptra.Models.Entities
                 _Created = value;
             }
         }
-
+        UpdateInformation UpdateInfo { get; set; }
 
         public bool IsTransient()
         {

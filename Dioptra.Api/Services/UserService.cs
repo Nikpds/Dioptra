@@ -91,8 +91,7 @@ namespace Dioptra.Api.Services
         public async Task<User> Update(string id, User entity)
         {
             var original = await _ctx.Users.GetById(id);
-            original.Name = entity.Name;
-            original.LastName = entity.Name;
+            original.FullName = entity.FullName;
             original.UserName = entity.UserName;
             var user = await _ctx.Users.Update(entity);
             return user;
