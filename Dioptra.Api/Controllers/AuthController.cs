@@ -17,7 +17,7 @@ namespace Dioptra.Api.Controllers {
             _auth = auth;
         }
 
-        [HttpPost ("token")]
+        [HttpPost("token")]
         public async Task<IActionResult> Token ([FromBody] LoginView model) {
             try {
                 if (ModelState.IsValid) {
