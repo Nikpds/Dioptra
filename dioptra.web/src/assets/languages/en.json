@@ -29,7 +29,8 @@
     "users": "Users",
     "user": "New User",
     "logout": " Logout",
-    "minimize": "Minimze"
+    "minimize": "Minimze",
+    "unitMission": "Unt Mission"
   },
   "buttons": {},
   "navbar": {
@@ -43,6 +44,11 @@
     "email": "Email",
     "phone": "Contact phone",
     "password": "Users password",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete"
+  },
+  "mission":{
     "cancel": "Cancel",
     "save": "Save",
     "delete": "Delete"

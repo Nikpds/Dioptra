@@ -5,12 +5,14 @@ import Home from '../components/layouts/Home'
 import Eob from '../components/eob/eob'
 import UserDetails from '../components/user/UserDetails'
 import UsersContainer from '../components/containers/user/UsersContainer'
+import UnitMissionDetails from '../components/unitMission/UnitMissionDetails'
 export const fullAccess = (
   <Switch>
     <Route path="/" exact component={Home} />
     <Route path="/eob" exact component={Eob} />
     <Route path="/user/:id" exact component={UserDetails} />
     <Route path="/users" exact component={UsersContainer} />
+    <Route path="/UnitMissionDetails" exact component={UnitMissionDetails} />
     <Redirect to="/" />
   </Switch>
 )

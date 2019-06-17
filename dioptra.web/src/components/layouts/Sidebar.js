@@ -30,6 +30,12 @@ const Sidebar = ({ open, setOpen }) => {
       icon: 'global',
       hasSubMenu: false,
       caption: strings.sidebar.eob
+    },
+    {
+      path: '/UnitMissionDetails',
+      icon: 'thunderbolt',
+      hasSubMenu: false,
+      caption: strings.sidebar.unitMission
     }
   ]
 
