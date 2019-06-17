@@ -1,4 +1,5 @@
-﻿using Dioptra.Api.Services.Interfaces;
+﻿using Dioptra.Api.Authorization;
+using Dioptra.Api.Services.Interfaces;
 using Dioptra.Models.Entities;
 using Dioptra.Mongo;
 using System;
@@ -49,6 +50,7 @@ namespace Dioptra.Api.Services
         public async Task<User> GetById(string id)
         {
             var user = await _ctx.Users.GetById(id);
+            user.PasswordHash = null;
             return user;
         }
 
@@ -60,6 +62,7 @@ namespace Dioptra.Api.Services
 
         public async Task<User> Insert(User entity)
         {
+            entity.PasswordHash = AuthManager.HashPassword(entity.PasswordHash);
             var user = await _ctx.Users.Insert(entity);
 
             return user;
@@ -93,7 +96,16 @@ namespace Dioptra.Api.Services
             var original = await _ctx.Users.GetById(id);
             original.FullName = entity.FullName;
             original.UserName = entity.UserName;
-            var user = await _ctx.Users.Update(entity);
+            original.Phone = entity.Phone;
+            original.Email = entity.Email;
+
+            if (!string.IsNullOrEmpty(entity.PasswordHash))
+            {
+                original.PasswordHash = AuthManager.HashPassword(entity.PasswordHash);
+            }
+           
+            var user = await _ctx.Users.Update(original);
+            user.PasswordHash = null;
             return user;
         }
     }

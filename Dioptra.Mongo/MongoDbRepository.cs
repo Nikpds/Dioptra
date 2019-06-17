@@ -39,7 +39,7 @@ namespace Dioptra.Mongo
 
         public virtual async Task<T> GetById(string id)
         {
-            var filter = Builders<T>.Filter.Eq("Id", id);
+            var filter = Builders<T>.Filter.Eq("_id", id);
             var result = await collection.Find(filter).SingleOrDefaultAsync();
 
             return result;
@@ -100,7 +100,7 @@ namespace Dioptra.Mongo
 
         public virtual async Task<T> Update(T entity)
         {
-            var filter = Builders<T>.Filter.Eq("Id", entity.Id);
+            var filter = Builders<T>.Filter.Eq("_id", entity.Id);
             var current = await collection.Find(filter).SingleAsync();
 
             var result = await collection.ReplaceOneAsync(filter, entity);
@@ -111,7 +111,7 @@ namespace Dioptra.Mongo
 
         public virtual async Task<bool> Delete(string id)
         {
-            var filter = Builders<T>.Filter.Eq("Id", id);
+            var filter = Builders<T>.Filter.Eq("_id", id);
             var result = await collection.DeleteOneAsync(filter);
 
             return result.IsAcknowledged && result.DeletedCount == 1;
