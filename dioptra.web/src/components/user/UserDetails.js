@@ -3,6 +3,7 @@ import { strings } from '../../contexts/LocalizationProvider'
 import { Form, Input, Card } from 'antd'
 import ActionHeader from '../shared/ActionHeader'
 import UserContainer from '../containers/user/UserContainer'
+
 const UserDetails = ({ onBack, onSave, onDelete, user, onCancel }) => {
   const [userDetails, setUserDetails] = useState(user)
 

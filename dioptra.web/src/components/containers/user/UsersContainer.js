@@ -22,12 +22,12 @@ const UsersContainer = props => {
   }
 
   useEffect(() => {
-    async function fetchUsers() {
+    async function fetchJrflType() {
       const _users = await api.get('/api/admin/users')     
       setUsers(_users)
     }
 
-    fetchUsers()
+    fetchJrflType()
   }, [])
 
   return React.Children.map(children, child =>

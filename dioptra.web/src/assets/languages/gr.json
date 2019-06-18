@@ -30,7 +30,8 @@
     "user": "Νέος Χρήστης",
     "logout": " Αποσύνδεση",
     "minimize": "Απόκρυψη",
-    "unitMission": "Αποστολή Μονάδας"
+    "unitMission": "Αποστολή Μονάδας",
+    "jrfl": "JRFL"
   },
   "buttons": {},
   "navbar": {
@@ -48,7 +49,16 @@
     "save": "Αποθήκευση",
     "delete": "Διαγραφή"
   },
-  "mission":{
+  "unitMission":{
+    "name":"Όνομα Αποστολής μονάδας",
+    "cancel": "Ακυρο",
+    "save": "Αποθήκευση",
+    "delete": "Διαγραφή"
+  },
+  "jrfltype":{
+    "name": "Ονομασία Τύπου",
+    "titlenew":"Νέα JRFL",
+    "titleid":"JRFL",
     "cancel": "Ακυρο",
     "save": "Αποθήκευση",
     "delete": "Διαγραφή"
