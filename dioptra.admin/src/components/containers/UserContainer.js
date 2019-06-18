@@ -1,34 +1,38 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import { api } from 'mis-react'
+
 const UserContainer = props => {
   const { children, history } = props
   const { id } = props.match.params
   const [user, setUser] = useState({})
 
-  const cancel = () => {
-    history.goBack()
+  const onBack = () => {
+    history.push('/users')
+  }
+  const onCancel = () => {
+    onBack()
   }
 
-  async function deleteHandler() {
+  async function onDelete() {
     const response = await api.delete(`/api/user/${user.id}`)
     if (response) {
       console.log(response)
+      history.push('/users')
     }
   }
 
-  async function insert(user) {
-    const response = await api.post('/api/user', user)
-    if (response) {
-      history.push(`/user/${response.id}`)
-    }
-  }
-
-  async function update(user) {
-    console.log('Update: ' + user)
-    const response = await api.put('/api/user', user)
-    if (response) {
-      console.log(response)
+  async function onSave(value) {
+    if(value.id){
+      const response = await api.put('/api/user',value);
+      if(response){
+        setUser(response)
+      }
+    } else {
+      const response = await api.post('/api/user',value)
+      if(response){
+        history.push(`/user/${response.id}`)
+      }
     }
   }
 
@@ -37,21 +41,21 @@ const UserContainer = props => {
       if (id === 'new') {
         return
       }
-      const response = await api.get('/api/user')
+      const response = await api.get(`/api/user/${id}`)
       if (response) {
-        console.log(response)
-        setUser(response)
+        setUser({ ...response })
       }
     }
     fetchUser()
   }, [id])
 
+
   return React.Children.map(children, child =>
     React.cloneElement(child, {
-      cancel,
-      deleteHandler,
-      insert,
-      update,
+      onBack,
+      onDelete,
+      onCancel,
+      onSave,
       user
     })
   )
