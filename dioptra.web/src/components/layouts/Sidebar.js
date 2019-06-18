@@ -20,8 +20,13 @@ const Sidebar = ({ open, setOpen }) => {
       submenu: [
         {
           path: '/user/new',
-          icon: 'user',
+          icon: 'user-add',
           caption: strings.sidebar.user
+        },
+        {
+          path: '/users',
+          icon: 'usergroup-add',
+          caption: strings.sidebar.users
         }
       ]
     },
@@ -75,24 +80,24 @@ const Sidebar = ({ open, setOpen }) => {
             </NavLink>
           </Menu.Item>
         ) : (
-          <Menu.SubMenu
-            key={item.path}
-            title={
-              <span>
-                <Icon type={item.icon} />
-                <span> {item.caption}</span>
-              </span>
-            }>
-            {item.submenu.map(subItem => (
-              <Menu.Item key={subItem.path}>
-                <NavLink to={subItem.path}>
-                  <Icon type={subItem.icon} />
-                  <span>{subItem.caption}</span>
-                </NavLink>
-              </Menu.Item>
-            ))}
-          </Menu.SubMenu>
-        )
+            <Menu.SubMenu
+              key={item.path}
+              title={
+                <span>
+                  <Icon type={item.icon} />
+                  <span> {item.caption}</span>
+                </span>
+              }>
+              {item.submenu.map(subItem => (
+                <Menu.Item key={subItem.path}>
+                  <NavLink to={subItem.path}>
+                    <Icon type={subItem.icon} />
+                    <span>{subItem.caption}</span>
+                  </NavLink>
+                </Menu.Item>
+              ))}
+            </Menu.SubMenu>
+          )
       )}
       <Menu.Item
         key="bottom"
