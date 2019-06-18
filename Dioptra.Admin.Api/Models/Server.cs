@@ -20,6 +20,9 @@ namespace Dioptra.Admin.Api.Models
         public string Phone { get; set; }
         public string Title { get; set; }
 
+        // Extra Properties
+        public string Protocol { get; set; }
+        public bool PingTestActive { get; set; }
         public Section Section { get; set; }
 
         public Server()

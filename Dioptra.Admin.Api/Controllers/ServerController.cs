@@ -36,7 +36,7 @@ namespace Dioptra.Admin.Api.Controllers
             }
         }
 
-        [HttpGet("all")]
+        [HttpGet("")]
         public async Task<IActionResult> GetAll()
         {
             try

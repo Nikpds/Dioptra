@@ -4,7 +4,6 @@ import Sidebar from './Sidebar'
 import { useAuth } from 'mis-react'
 import Navbar from './Navbar'
 
-
 const Layout = props => {
   const [open, setOpen] = useState(false)
   const auth = useAuth()
@@ -12,11 +11,11 @@ const Layout = props => {
     <Navbar setOpen={setOpen} open={open} />
   ) : null
   const sidebar = auth.isAuthenticated ? (
-    <AntdLayout.Sider>
+    <AntdLayout.Sider style={{ boxShadow: '8px 0px 11px #00000091' }}>
       <Sidebar open={open} />
     </AntdLayout.Sider>
   ) : null
-  
+
   return (
     <div style={{ height: '100vh', overflow: 'hidden' }}>
       <AntdLayout>

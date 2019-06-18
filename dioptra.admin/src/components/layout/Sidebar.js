@@ -37,7 +37,7 @@ const Sidebar = ({ open }) => {
   ]
 
   return (
-    <Menu mode="inline">
+    <Menu mode="inline" selectable={false}>
       {items.map(item => (
         <Menu.Item key={item.path}>
           <NavLink to={item.path}>

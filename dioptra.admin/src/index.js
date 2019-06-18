@@ -4,6 +4,7 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from 'mis-react'
+import './styles/index.less'
 
 const Root = (
   <BrowserRouter>

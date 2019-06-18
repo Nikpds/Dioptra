@@ -1,25 +1,27 @@
 import React from 'react'
-import { PageHeader as AntdPageHeader, Button as AntdButton } from 'antd'
+import { PageHeader, Button } from 'antd'
 import './shared.less'
 
-const PageHeader = ({ title, subtitle, onBack, actions }) => {
+const ActionHeader = props => {
   return (
-    <AntdPageHeader
-      title={title}
-      subTitle={subtitle}
-      onBack={onBack}
-      extra={actions.map((action, idx) => (
-        <AntdButton
-          key={idx}
-          type="ghost"
-          size="small"
-          onClick={action.onClick}>
-          {action.caption}
-        </AntdButton>
-      ))}
-      className="metis-page-header"
+    <PageHeader
+      className="actionheader"
+      onBack={props.onBack}
+      title={props.title}
+      subTitle={props.subtitle ? props.subtitle : null}
+      extra={props.actions.map((btn, index) =>
+        !btn.show ? (
+          <Button
+            key={index}
+            type={btn.type ? btn.type : 'primary'}
+            size="small"
+            onClick={btn.onClick}>
+            {btn.name}
+          </Button>
+        ) : null
+      )}
+      footer={props.footer ? props.footer : null}
     />
   )
 }
-
-export default PageHeader
+export default ActionHeader
