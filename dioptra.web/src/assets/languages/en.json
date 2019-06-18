@@ -30,7 +30,8 @@
     "user": "New User",
     "logout": " Logout",
     "minimize": "Minimze",
-    "unitMission": "Unt Mission"
+    "unitMission": "Unit Mission",
+    "jrfl": "JRFL"
   },
   "buttons": {},
   "navbar": {
@@ -48,7 +49,16 @@
     "save": "Save",
     "delete": "Delete"
   },
-  "mission":{
+  "unitMission":{
+    "name":"Name Unit Mission",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete"
+  },
+  "jrfltype":{
+    "name": "Type name",
+    "titlenew":"New JRFL",
+    "titleid":"JRFL",
     "cancel": "Cancel",
     "save": "Save",
     "delete": "Delete"

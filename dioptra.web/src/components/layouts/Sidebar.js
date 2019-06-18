@@ -32,11 +32,36 @@ const Sidebar = ({ open, setOpen }) => {
       caption: strings.sidebar.eob
     },
     {
-      path: '/UnitMissionDetails',
+      path: '/unitmission/new',
       icon: 'thunderbolt',
       hasSubMenu: false,
       caption: strings.sidebar.unitMission
-    }
+    },
+    {
+      path: '/jrfltype/new',
+      icon: 'dot-chart',
+      hasSubMenu: false,
+      caption: strings.sidebar.jrfl
+    },
+    /*
+    {
+      path: '/jrfl',
+      icon: 'dot-chart',
+      hasSubMenu: true,
+      caption: strings.sidebar.jrfl,
+      submenu: [
+        {
+          path: '/jrfltype/new',
+          icon: 'dot-chart',
+          caption: strings.sidebar.jrfl
+        },
+        {
+          path: '/jrfltype/as',
+          icon: 'dot-chart',
+          caption: strings.sidebar.jrfl
+        }
+      ]
+    }*/
   ]
 
   return (

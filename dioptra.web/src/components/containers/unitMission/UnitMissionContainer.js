@@ -3,41 +3,59 @@ import { withRouter } from 'react-router-dom'
 import api from '../../../services/api'
 
 const UnitMissionContainer = props => {
+  const { id } = props.match.params
+  const { children, history } = props
+  const [unitMission, setUnitMission] = useState({})
 
-    const { id } = props.match.params
-    const { children, history } = props
-    const [mission, setMission] = useState({})
+  async function onSave(value) {
+    if (value.id) {
+      const response = await api.put(`/api/unitMission/${id}`, value)
+      if (response) {
+        setUnitMission(response)
+      }
+    } else {
+      const response = await api.post(`/api/unitMission`, value)
+      if (response) {
+        setUnitMission(response)
+        history.push('/unitMission/' + response.id)
+      }
+    }
+  }
 
+  function onBack() {
+    history.push('/UnitMissions')
+  }
 
-    async function onSave() {
-        if (mission.id) {
-            await api.put(`/api/admin/users/${id}`, mission)
-        } else {
-            await api.post(`/api/admin/users`, mission)
-        }
+  function onCancel() {
+    onBack()
+  }
+
+  async function onDelete() {
+    await api.delete(`/api/unitMission/${id}`)
+    history.push('/UnitMissions')
+  }
+
+  useEffect(() => {
+    async function fetchMission() {
+      if (id === 'new') {
+        return
+      }
+      const response = await api.get(`/api/unitMission/${id}`)
+      setUnitMission(response)
     }
 
-    function onBack() {
-        history.push('/home')
-    }
+    fetchMission()
+  }, [id])
 
-    function onCancel() {
-        onBack()
-    }
+  return React.Children.map(children, child =>
+    React.cloneElement(child, {
+      unitMission,
+      onBack,
+      onCancel,
+      onSave,
+      onDelete
+    })
+  )
+}
 
-    async function onDelete() {
-        await api.delete(`/api/admin/users/${id}`)
-        history.push('/admin/users')
-    }
-    return React.Children.map(children, child =>
-        React.cloneElement(child, {
-            mission,
-            onBack,
-            onCancel,
-            onSave,
-            onDelete
-        })
-    )
-};
-
-export default withRouter(UnitMissionContainer);
+export default withRouter(UnitMissionContainer)
