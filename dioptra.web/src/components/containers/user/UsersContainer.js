@@ -16,18 +16,18 @@ const UsersContainer = props => {
 
   async function onDelete(user) {
     await api.delete(`/api/user/${user.id}`)
-    const index = users.findIndex(x => (x.id = user.id))
+    const index = users.findIndex(x => x.id = user.id)
     users.splice(index, 1)
     setUsers([...users])
   }
 
   useEffect(() => {
-    async function fetchJrflType() {
-      const _users = await api.get('/api/admin/users')     
+    async function fetchUers() {
+      const _users = await api.get('/api/user')
       setUsers(_users)
     }
 
-    fetchJrflType()
+    fetchUers()
   }, [])
 
   return React.Children.map(children, child =>

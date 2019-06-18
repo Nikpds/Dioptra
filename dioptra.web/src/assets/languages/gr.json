@@ -21,7 +21,6 @@
   "sidebar": {
     "home": "Αρχική",
     "eob": "ΗΔΜ",
-    "jrfl": "JRFL",
     "jrfltypes": "Τύποι JRFL",
     "jrflfreq": "Συχνότητες JRFL",
     "close": "Κλείσιμο",
@@ -48,6 +47,15 @@
     "cancel": "Ακυρο",
     "save": "Αποθήκευση",
     "delete": "Διαγραφή"
+  },
+  "users": {
+    "headerTitle":"Χρήστες Εφαρμογής Θαλή",
+    "fullname": "Πλήρες Όνομα",
+    "unit": "Μονάδα",
+    "username": "Όνομα Σύνδεσης",
+    "email": "Email",
+    "phone": "Τηλέφωνο",
+    "create": "Προσθήκη Νέου"
   },
   "unitMission":{
     "name":"Όνομα Αποστολής μονάδας",
