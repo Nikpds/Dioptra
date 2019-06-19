@@ -1,6 +1,7 @@
 ﻿using Dioptra.Api.Authorization;
 using Dioptra.Api.Services.Interfaces;
 using Dioptra.Models.Entities;
+using Dioptra.Models.Views;
 using Dioptra.Mongo;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,22 @@ namespace Dioptra.Api.Services
             return false;
         }
 
+        public PagedData<User> PagedUsers(int page, int pageSize)
+        {
+            PagedData<User> result = new PagedData<User>();
+            var query = _ctx.Users.GetQueryForAll();
+
+            result.TotalRows = query.Count();
+            result.Rows = query
+               .Skip((page - 1) * pageSize)
+               .Take(pageSize)
+               .ToList();
+            result.Page = page;
+            result.PageSize = pageSize;
+
+            return result;
+        }
+
         public async void ResetFailAttempts(User user)
         {
             user.AccessFailedCount = 0;
@@ -103,7 +120,7 @@ namespace Dioptra.Api.Services
             {
                 original.PasswordHash = AuthManager.HashPassword(entity.PasswordHash);
             }
-           
+
             var user = await _ctx.Users.Update(original);
             user.PasswordHash = null;
             return user;

@@ -24,7 +24,7 @@ const Sidebar = ({ open, setOpen }) => {
           caption: strings.sidebar.user
         },
         {
-          path: '/users',
+          path: '/users/1/10',
           icon: 'usergroup-add',
           caption: strings.sidebar.users
         }

@@ -16,7 +16,7 @@ export const fullAccess = (
     <Route path="/" exact component={Home} />
     <Route path="/eob" exact component={Eob} />
     <Route path="/user/:id" exact component={UserDetails} />
-    <Route path="/users" exact component={Users} />
+    <Route path="/users/:page/:pageSize" exact component={Users} />
     <Route path="/unitmission/:id" exact component={UnitMissionDetails} />
     <Route path="/unitmissions" exact component={UnitMissions} />
     <Route path="/JrflType/:id" exact component={JrflTypeDetails} />

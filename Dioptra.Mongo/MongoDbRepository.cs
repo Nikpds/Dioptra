@@ -53,6 +53,14 @@ namespace Dioptra.Mongo
             return result;
         }
 
+        public virtual IQueryable<T> GetQueryForAll()
+        {
+            var documents = collection.AsQueryable().Where(x => true);
+            var result = documents;
+
+            return result;
+        }
+
         public virtual async Task<IEnumerable<T>> GetPage(Expression<Func<T, bool>> predicate, int page, int pageSize, ProjectionDefinition<T> projection = null)
         {
             var documents = collection.Find(predicate)

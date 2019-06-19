@@ -32,7 +32,12 @@
     "unitMission": "Unit Mission",
     "jrfl": "JRFL"
   },
-  "buttons": {},
+  "pagination": {
+    "totalItems": "Total Items"
+  },
+  "buttons": {
+    "tableActions": "Actions"
+  },
   "navbar": {
     "versions": "Versions",
     "changepassword": "Change Password",
@@ -49,7 +54,7 @@
     "delete": "Delete"
   },
   "users": {
-    "headerTitle":"Χρήστες Εφαρμογής Θαλή",
+    "headerTitle": "Χρήστες Εφαρμογής Θαλή",
     "fullname": "Fullname",
     "unit": "Unit",
     "username": "Username",

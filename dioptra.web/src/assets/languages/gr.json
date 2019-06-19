@@ -32,7 +32,12 @@
     "unitMission": "Αποστολή Μονάδας",
     "jrfl": "JRFL"
   },
-  "buttons": {},
+  "pagination": {
+    "totalItems": "Σύνολο"
+  },
+  "buttons": {
+    "tableActions": "Ενέργειες"
+  },
   "navbar": {
     "versions": "Εκδόσεις",
     "changepassword": "Αλλαγή Κωδικού",
@@ -49,7 +54,7 @@
     "delete": "Διαγραφή"
   },
   "users": {
-    "headerTitle":"Χρήστες Εφαρμογής Θαλή",
+    "headerTitle": "Χρήστες Εφαρμογής Θαλή",
     "fullname": "Πλήρες Όνομα",
     "unit": "Μονάδα",
     "username": "Όνομα Σύνδεσης",
@@ -57,16 +62,16 @@
     "phone": "Τηλέφωνο",
     "create": "Προσθήκη Νέου"
   },
-  "unitMission":{
-    "name":"Όνομα Αποστολής μονάδας",
+  "unitMission": {
+    "name": "Όνομα Αποστολής μονάδας",
     "cancel": "Ακυρο",
     "save": "Αποθήκευση",
     "delete": "Διαγραφή"
   },
-  "jrfltype":{
+  "jrfltype": {
     "name": "Ονομασία Τύπου",
-    "titlenew":"Νέα JRFL",
-    "titleid":"JRFL",
+    "titlenew": "Νέα JRFL",
+    "titleid": "JRFL",
     "cancel": "Ακυρο",
     "save": "Αποθήκευση",
     "delete": "Διαγραφή"

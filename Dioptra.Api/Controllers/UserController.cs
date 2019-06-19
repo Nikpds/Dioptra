@@ -27,6 +27,21 @@ namespace Dioptra.Api.Controllers
             return Ok(users);
         }
 
+        [HttpGet("{page}/{pageSize}")]
+        public IActionResult GetPagedAll(int page, int pageSize)
+        {
+            try
+            {
+                var result = _srv.PagedUsers(page, pageSize);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {

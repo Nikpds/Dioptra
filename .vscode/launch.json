@@ -12,7 +12,7 @@
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/Dioptra.Api/bin/Debug/netcoreapp2.2/Dioptra.Api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Dioptra.Admin.Api",
+            "cwd": "${workspaceFolder}/Dioptra.Api",
             "stopAtEntry": false,
             "launchBrowser": {
                 "enabled": false

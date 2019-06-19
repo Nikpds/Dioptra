@@ -23,7 +23,7 @@ const UserContainer = props => {
   }
 
   function onBack() {
-    history.push('/users')
+    history.push('/users/1/10')
   }
 
   function onCancel() {

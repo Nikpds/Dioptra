@@ -23,9 +23,9 @@ const JrflTypeContainer = props => {
   }
 
   function onBack() {
-      {console.log("eimai edw")}
     history.push('/jrflTypes')
   }
+
   function onCancel() {
     onBack()
   }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHeader, Tabs, Button } from 'antd'
+import { PageHeader, Button } from 'antd'
 import './shared.less'
 
 const ActionHeader = props => {
