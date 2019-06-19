@@ -24,8 +24,8 @@ const UsersContainer = props => {
   }
   useEffect(() => {
     async function fetchUsers() {
-      const response = await api.get('/api/user')
-      setUsers(response)
+      const response = await api.get('/api/user/all')
+      if (response) setUsers(response)
     }
     fetchUsers()
   }, [])

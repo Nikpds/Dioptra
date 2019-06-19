@@ -1,13 +1,13 @@
 import React from 'react'
 import PageHeader from '../shared/PageHeader'
 import UsersContainer from '../containers/UsersContainer'
-import { Button, Tooltip, Popconfirm, Card } from 'antd'
+import { Button, Tooltip, Popconfirm, Tag } from 'antd'
 import Table from '../shared/Table'
 import { StatusTag } from '../../services/Utilities'
 
 const columns = [
   {
-    title: 'Full Name',
+    title: 'Fullname',
     dataIndex: 'fullname',
     key: 'fullname'
   },
@@ -15,11 +15,6 @@ const columns = [
     title: 'User Name',
     dataIndex: 'username',
     key: 'username'
-  },
-  {
-    title: 'Password',
-    dataIndex: 'password',
-    key: 'password'
   },
   {
     title: 'Status',
@@ -30,71 +25,71 @@ const columns = [
   {
     title: 'Role',
     dataIndex: 'role',
-    key: 'role'
+    key: 'role',
+    render: e => (
+      <Tag color={e === 0 ? 'red' : 'blue'}>
+        {' '}
+        {e === 0 ? 'Admin' : 'Helpdesk'}
+      </Tag>
+    )
   }
 ]
 
 const Users = ({ users, onCreate, onDelete, onEdit }) => {
+  const headers = [
+    ...columns,
+    {
+      title: 'Actions',
+      key: 'action',
+      render: (e, row) => (
+        <div>
+          <Tooltip title="Edit">
+            <Button
+              size="small"
+              type="ghost"
+              shape="circle"
+              icon="form"
+              onClick={() => onEdit(row.id)}
+            />
+          </Tooltip>
+          &nbsp;
+          <Popconfirm
+            title="Are you sure ?"
+            onConfirm={() => onDelete(row.id)}
+            onCancel={null}
+            okText="Yes"
+            cancelText="No">
+            <Tooltip title="Delete">
+              <Button size="small" type="danger" shape="circle" icon="delete" />
+            </Tooltip>
+          </Popconfirm>
+        </div>
+      )
+    }
+  ]
 
-    const headers = [
-        ...columns,
-        {
-          title: 'Actions',
-          key: 'action',
-          render: (e, row) => (
-            <div>
-              <Tooltip title="Edit">
-                <Button
-                  size="small"
-                  type="ghost"
-                  shape="circle"
-                  icon="form"
-                  onClick={() => onEdit(row.id)}
-                />
-              </Tooltip>
-              &nbsp;
-              <Popconfirm
-                title="Are you sure ?"
-                onConfirm={() => onDelete(row.id)}
-                onCancel={null}
-                okText="Yes"
-                cancelText="No">
-                <Tooltip title="Delete">
-                  <Button size="small" type="danger" shape="circle" icon="delete" />
-                </Tooltip>
-              </Popconfirm>
-            </div>
-          )
-        }
-      ]
-
-  return (     
-  <div>
+  return (
+    <div>
       <PageHeader
         title="Users"
         subtitle="users..."
         actions={[
-            {
-                onClick: onCreate,
-                name: 'Create',
-                type: 'primary'
-        }
+          {
+            onClick: onCreate,
+            name: 'Create',
+            type: 'primary'
+          }
         ]}
       />
-      <Card style={{margin:20}} className="has-shadow">
-        
-      </Card>
-  </div>
+      <Table columns={headers} data={users} />
+    </div>
   )
 }
 
 const UserList = () => (
-    <UsersContainer>
-        <Users/>
-    </UsersContainer>
+  <UsersContainer>
+    <Users />
+  </UsersContainer>
 )
 
 export default UserList
-
-
-      

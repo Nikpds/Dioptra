@@ -59,14 +59,14 @@ namespace Dioptra.Admin.Api
             try
             {
                 var ctx = new DataContext(Configuration.GetConnectionString("DefaultConnection"));
-                var adminExists = (await ctx.Users.Get(x => x.UserName == "admin")).SingleOrDefault();
+                var adminExists = (await ctx.Users.Get(x => x.Username == "admin")).SingleOrDefault();
                 if (adminExists == null)
                 {
                     var admin = new User();
-                    admin.UserName = "admin";
+                    admin.Username = "admin";
                     admin.PasswordHash = AuthManager.HashPassword("1234");
-                    admin.Name = "geakmh";
-                    admin.LastName = "geakmh";
+                    admin.Fullname = "Administrator";
+                    admin.IsActive = true;
                     await ctx.Users.Insert(admin);
                 }
             }

@@ -11,7 +11,7 @@ const Layout = props => {
     <Navbar setOpen={setOpen} open={open} />
   ) : null
   const sidebar = auth.isAuthenticated ? (
-    <AntdLayout.Sider style={{ boxShadow: '8px 0px 11px #00000091' }}>
+    <AntdLayout.Sider>
       <Sidebar open={open} />
     </AntdLayout.Sider>
   ) : null

@@ -28,9 +28,9 @@ const UserForm = ({ onCancel, onDelete, onSave, onBack, user }) => {
     setUser(user)
   }, [user])
 
-  const title = _user.id ? _user.title : 'New UIser'
+  const title = _user.id ? _user.fullname : 'New UIser'
   const subtitle = _user.id ? (
-    <StatusTag status={_user.status} hasLabel />
+    <StatusTag status={_user.isActive} hasLabel />
   ) : (
     'Please fill up all fields to add new user'
   )
@@ -73,9 +73,9 @@ const UserForm = ({ onCancel, onDelete, onSave, onBack, user }) => {
           <Form.Item label="Password">
             <Input
               prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              name="password"
+              name="passwordHash"
               type="password"
-              value={_user.password}
+              value={_user.passwordHash}
               onChange={e => inputChangeHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
@@ -92,8 +92,8 @@ const UserForm = ({ onCancel, onDelete, onSave, onBack, user }) => {
               <span>User Role : </span>
               <Select
                 style={{ width: 120 }}
-                value={_user.section}
-                onChange={value => inputChangeHandler('section', value)}>
+                value={_user.role}
+                onChange={value => inputChangeHandler('role', value)}>
                 {section.map(k => (
                   <Select.Option key={k.id} value={k.id}>
                     {k.name}

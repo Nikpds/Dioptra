@@ -30,7 +30,7 @@ namespace Dioptra.Admin.Api.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = (await _ctx.Users.Get(x => x.UserName == model.Username)).SingleOrDefault();
+                    var user = (await _ctx.Users.Get(x => x.Username == model.Username)).SingleOrDefault();
                     if (user != null)
                     {
                         if (AuthManager.VerifyHashedPassword(user.PasswordHash, model.Password))

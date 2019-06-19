@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Dioptra.Admin.Api.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -18,8 +17,22 @@ namespace Dioptra.Admin.Api.Controllers
         public UserController(DataContext ctx)
         {
             _ctx = ctx;
-        }      
+        }
 
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var result = await _ctx.Users.GetAll();
+                return Ok(result);
+
+            }
+            catch (Exception exc)
+            {
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
+            }
+        }
         [HttpPost("")]
         public async Task<IActionResult> Insert([FromBody] User user)
         {
@@ -27,6 +40,7 @@ namespace Dioptra.Admin.Api.Controllers
             {
                 user.PasswordHash = AuthManager.HashPassword(user.PasswordHash);
                 var result = await _ctx.Users.Insert(user);
+                result.PasswordHash = null;
                 return Ok(result);
 
             }
@@ -43,11 +57,12 @@ namespace Dioptra.Admin.Api.Controllers
             try
             {
                 var original = await _ctx.Users.GetById(user.Id);
-                original.Name = user.Name;
-                original.LastName = user.LastName;
-                original.UserName = user.UserName;
+                original.Role = user.Role;
+                original.IsActive = user.IsActive;
+                original.Fullname = user.Fullname;
+                original.Username = user.Username;
                 var result = await _ctx.Users.Update(original);
-
+                result.PasswordHash = null;
                 return Ok(result);
 
             }
@@ -122,6 +137,7 @@ namespace Dioptra.Admin.Api.Controllers
             try
             {
                 var result = await _ctx.Users.GetById(id);
+                result.PasswordHash = null;
                 return Ok(result);
 
             }
@@ -132,21 +148,7 @@ namespace Dioptra.Admin.Api.Controllers
             }
         }
 
-        [HttpGet("all")]
-        public async Task<IActionResult> GetAll()
-        {
-            try
-            {
-                var result = await _ctx.Users.GetAll();
-                return Ok(result);
-
-            }
-            catch (Exception exc)
-            {
-                //_log.Error(exc, "Exception creating token for user {@user}", model.Username);
-                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
-            }
-        }
+       
 
 
     }

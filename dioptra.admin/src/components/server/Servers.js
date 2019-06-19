@@ -1,7 +1,7 @@
 import React from 'react'
 import PageHeader from '../shared/PageHeader'
 import ServersContainer from '../containers/ServersContainer'
-import { Button, Tooltip, Popconfirm, Card } from 'antd'
+import { Button, Tooltip, Popconfirm } from 'antd'
 import Table from '../shared/Table'
 import { StatusTag } from '../../services/Utilities'
 const columns = [
@@ -82,10 +82,8 @@ const Servers = ({ servers, onCreate, onDelete, onEdit }) => {
             type: 'primary'
           }
         ]}
-      />
-      <Card style={{ margin: 20 }} className="has-shadow">
-        <Table columns={headers} data={servers} />
-      </Card>
+      />    
+        <Table columns={headers} data={servers} />    
     </div>
   )
 }

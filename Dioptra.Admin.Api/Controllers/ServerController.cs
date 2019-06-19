@@ -7,6 +7,7 @@ using Dioptra.Admin.Api.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 
 namespace Dioptra.Admin.Api.Controllers
 {
@@ -91,6 +92,38 @@ namespace Dioptra.Admin.Api.Controllers
             {
                 var result = await _ctx.Servers.Delete(id);
 
+                return Ok(result);
+
+            }
+            catch (Exception exc)
+            {
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
+            }
+        }
+
+        [HttpGet("logs/{id}")]
+        public async Task<IActionResult> GetLogs(string id)
+        {
+            try
+            {
+                var server = await _ctx.Servers.GetById(id);
+
+                if(server == null)
+                {
+                    //TODO RETURN
+                    return BadRequest();
+                }
+                List<LogEntry> result = new List<LogEntry>();
+                string auth = "";
+                if (!string.IsNullOrEmpty(server.DbUsername))
+                {
+                    auth = string.Join("", server.DbUsername, ":", server.DbPassword, "@");
+                }
+                var db = new MongoClient("mongodb://" + auth + server.Ip + ":27017");
+                var data = db.GetDatabase("ThalesDb");
+                var collection = data.GetCollection<LogEntry>("LogEntry");
+                var r = collection.Find(x => true).SortByDescending(x => x.EntryTime).Limit(50);
+                result = r.ToListAsync().Result;
                 return Ok(result);
 
             }
