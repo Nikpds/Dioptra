@@ -34,10 +34,8 @@ const UsersContainer = props => {
   useEffect(() => {
     async function fetchUers() {
       const response = await api.get(`/api/user/${page}/${pageSize}`)
-      if (response) setUsers(response)
-      
+      if (response) setUsers(response)      
     }
-
     fetchUers()
   }, [page, pageSize])
 

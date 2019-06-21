@@ -3,7 +3,7 @@ import UsersContainer from '../containers/user/UsersContainer'
 import { Button, Divider } from 'antd'
 import { strings } from '../../contexts/LocalizationProvider'
 import ActionHeader from '../shared/ActionHeader'
-import Table from '../shared/Table'
+import SSPTable from '../shared/SSPTable'
 
 const UserList = ({
   users,
@@ -77,7 +77,7 @@ const UserList = ({
           }
         ]}
       />
-      <Table data={users} columns={headers} onPaginationChange={onPaginationChange} />
+      <SSPTable data={users} columns={headers} onPaginationChange={onPaginationChange} />
     </div>
   )
 }
