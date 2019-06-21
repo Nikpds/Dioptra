@@ -42,14 +42,14 @@ const UserList = ({
       title: strings.buttons.tableActions,
       dataIndex: 'actions',
       key: 'actions',
-      render: () => [
+      render: (e, row) => [
         <Button
           key={1}
           type="danger"
           shape="circle"
           icon="delete"
           size="small"
-          onClick={onDelete}
+          onClick={() => onDelete(row.id)}
         />,
         <Divider key={2} type="vertical" />,
         <Button
@@ -58,12 +58,12 @@ const UserList = ({
           shape="circle"
           icon="form"
           size="small"
-          onClick={onEdit}
+          onClick={() => onEdit(row.id)}
         />
       ]
     }
   ]
-  
+
   return (
     <div>
       <ActionHeader
@@ -77,7 +77,11 @@ const UserList = ({
           }
         ]}
       />
-      <SSPTable data={users} columns={headers} onPaginationChange={onPaginationChange} />
+      <SSPTable
+        data={users}
+        columns={headers}
+        onPaginationChange={onPaginationChange}
+      />
     </div>
   )
 }
