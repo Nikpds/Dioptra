@@ -1,43 +1,56 @@
 ﻿using Dioptra.Api.Services.Interfaces;
+using Dioptra.Models.Entities;
 using Dioptra.Mongo;
+using Dioptra.Mongo.Interfaces;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Dioptra.Api.Services
 {
-    public class BaseService<T> : IBaseService<T>
+    public class BaseService<T> : IBaseService<T> where T : Entity
     {
-        private DataContext _ctx;
-        public BaseService(DataContext ctx)
+        private MongoDbRepository<T> _ctx;
+
+        public BaseService(IDbCollection<T> ctx)
         {
-            _ctx = ctx;
+            _ctx = ctx.Collection;
         }
 
-        public Task<bool> Delete(T entity)
+        public async Task<bool> Delete(T entity)
         {
-            throw new NotImplementedException();
+            var result = await _ctx.Delete(entity);
+
+            return result;
         }
 
-        public Task<IEnumerable<T>> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            throw new NotImplementedException();
+            var result = await _ctx.GetAll();
+
+            return result;
         }
 
-        public Task<T> GetById(string id)
+        public async Task<T> GetById(string id)
         {
-            throw new NotImplementedException();
+            var result = await _ctx.GetById(id);
+
+            return result;
         }
 
-        public Task<T> Insert(T entity)
+        public async Task<T> Insert(T entity)
         {
+            var result = await _ctx.Insert(entity);
 
-            throw new NotImplementedException();
+            return result;
         }
 
-        public Task<T> Update(string id, T entity)
+        public async Task<T> Update(string id, T entity)
         {
-            throw new NotImplementedException();
+            var result = await _ctx.Update(entity);
+
+            return result;
         }
     }
 }

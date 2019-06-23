@@ -7,95 +7,71 @@
 .bottom-arrow {
   position: absolute !important;
   bottom: 0px;
+  width: 100%;
   right: 0px;
   z-index: 1;
 }
-.ant-menu-inline {
+.ant-menu-vertical {
   border-right: unset;
 }
-.ant-layout-sider{
-  box-shadow: @right-shadow
+.ant-layout-sider {
+  box-shadow: @right-shadow;
 }
 .navbar-bottom-border {
   border-bottom: 1px solid #2b31372b;
 }
+//LOGIN
 
-.login-header-background {
-  background: @dark-primary;
+.login-container {
+  height: 100vh;
+  //background: @dark-primary;
 }
-.login-content-background {
-  background: @dark-secondary;
+
+.login-details {
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  background-image: url('../../assets//login.jpg');
+  background-repeat: no-repeat;
+  padding: 30px 20px !important;
+  background-size: cover;
+  height: 450px;
+  display: flex!important;
+  box-shadow: 0px 0px 14px 3px #00000099;
 }
-.loginCard {
-  width: 323px;
-  border: none !important;
-}
-.loginCard .b1,
-.loginCard .b2,
-.loginCard .b3,
-.loginCard .b4 {
+.login-details-overlay {
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
   position: absolute;
-  width: 100%;
-  height: 447px;
   top: 0;
   left: 0;
-  display: block;
-  box-sizing: border-box;
-}
-.loginCard .b4 {
-  width: 447px;
-}
-
-.loginCard .b2 {
-  width: 447px;
-  right: 0;
-  left: unset;
-}
-
-.loginCard .b1 {
-  transform: rotate(0deg);
-}
-
-.loginCard .b2 {
-  transform: rotate(90deg);
-}
-
-.loginCard .b3 {
-  transform: rotate(180deg);
-}
-
-.loginCard .b4 {
-  transform: rotate(270deg);
-}
-
-.loginCard .b1:before,
-.loginCard .b2:before,
-.loginCard .b3:before,
-.loginCard .b4:before {
-  content: '';
-  position: absolute;
   width: 100%;
-  height: 3px;
-  background: @primary-color;
-  animation: animate 7s linear infinite;
+  height: 100%;
+  background-color: #004665e8;
+  z-index: 2;
 }
 
-@keyframes animate {
-  0% {
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  50% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  50.1% {
-    transform: scaleX(1);
-    transform-origin: right;
-  }
+.login-details-text {
+  position: relative;
+  z-index: 3;
+}
 
-  100% {
-    transform: scaleX(0);
-    transform-origin: right;
-  }
+.login-form {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 20px !important;
+  background: white;
+  height: 450px;
+  display: flex!important;
+  box-shadow: 0px 0px 14px 3px #00000099
+}
+
+.login-title {
+  font-size: 32px;
+  color: @primary-color;
+  margin-bottom: 20px;
+}
+
+.login-flex-item {
+  flex: 1;
+  align-self: center;
 }

@@ -14,10 +14,5 @@ namespace Dioptra.Models.Entities
         public bool IsOnReset { get; set; }
         public DateTime? LockoutEndDateUtc { get; set; }
 
-
-        public override Reference AsReference()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -15,6 +16,7 @@ namespace Dioptra.Mongo
         Task<IEnumerable<T>> GetAll();
         Task<IEnumerable<T>> GetPage(Expression<Func<T, bool>> predicate, int page, int pageSize, ProjectionDefinition<T> projection = null);
         Task<IEnumerable<T>> GetPage(FilterDefinition<T> filter, int page, int pageSize, ProjectionDefinition<T> projection = null);
+        IQueryable<T> GetQueryForAll();
         Task<T> Insert(T entity);
         Task<IEnumerable<T>> InsertMany(IEnumerable<T> entities);
         Task<T> Update(T entity);

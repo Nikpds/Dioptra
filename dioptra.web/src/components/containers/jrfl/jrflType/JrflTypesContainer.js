@@ -7,21 +7,22 @@ const JrflTypesContainer = props => {
   const [jrflTypes, setJrflTypes] = useState([])
 
   function onCreate() {
-    history.push('/JrflType/new')
+    history.push('/jrfltype/new')
   }
-  function onEdit(JrflType) {
-    history.push(`/unitMision/${JrflType.id}`)
+  function onEdit(id) {
+    history.push(`/jrfltype/${id}`)
   }
-  async function onDelete(JrflType) {
-    await api.delete(`/api/unitMision/${JrflType.id}`)
-    const index = jrflTypes.findIndex(x => (x.id = JrflType.id))
+  async function onDelete(id) {
+    await api.delete(`/api/jrfl/type/${id}`)
+    const index = jrflTypes.findIndex(x => (x.id = id))
     jrflTypes.splice(index, 1)
-    setUnitmissions([...jrflTypes])
+    setJrflTypes([...jrflTypes])
   }
   useEffect(() => {
     async function fetchJrflTypes() {
-      const _jrflTypes = await api.get('/api/admin/jrfltypes')
-      setJrflTypes(_jrflTypes)
+      const response = await api.get('/api/jrfl/type')
+      console.log(response)
+      if (response) setJrflTypes(response)
     }
 
     fetchJrflTypes()
@@ -35,7 +36,6 @@ const JrflTypesContainer = props => {
       onDelete
     })
   )
-  
 }
 
 export default withRouter(JrflTypesContainer)

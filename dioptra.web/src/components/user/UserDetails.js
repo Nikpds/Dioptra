@@ -22,14 +22,14 @@ const UserDetails = ({ onBack, onSave, onDelete, user, onCancel }) => {
         onBack={onBack}
         title="Νεος Χρήστης"
         actions={[
-          { onClick: onCancel, name: strings.user.cancel, type: 'default' },
+          { onClick: onCancel, name: strings.buttons.cancel, type: 'default' },
           {
             onClick: onDelete,
-            name: strings.user.delete,
+            name: strings.buttons.delete,
             type: 'danger',
             show: !user.id
           },
-          { onClick:()=> onSave(userDetails), name: strings.user.save }
+          { onClick:()=> onSave(userDetails), name: strings.buttons.save }
         ]}
       />
       <Card style={{ margin: 20 }} className="has-shadow">

@@ -5,11 +5,11 @@ import Home from '../components/layouts/Home'
 import Eob from '../components/eob/eob'
 import UserDetails from '../components/user/UserDetails'
 import Users from '../components/user/Users'
-import UnitMissionDetails from '../components/unitMission/UnitMissionDetails'
-import UnitMissions from '../components/unitMission/UnitMissions'
+import UnitMissionForm from '../components/units/unitMission/UnitMissionDetails'
+import UnitMissiontTable from '../components/units/unitMission/UnitMissions'
 
 import JrflTypeDetails from '../components/jrfl/jrflType/JrflTypeDetails'
-import JrflTypeList from '../components/jrfl/jrflType/JrflTypeList'
+import JfrlTypeTable from '../components/jrfl/jrflType/JrflTypes'
 
 export const fullAccess = (
   <Switch>
@@ -17,10 +17,10 @@ export const fullAccess = (
     <Route path="/eob" exact component={Eob} />
     <Route path="/user/:id" exact component={UserDetails} />
     <Route path="/users/:page/:pageSize" exact component={Users} />
-    <Route path="/unitmission/:id" exact component={UnitMissionDetails} />
-    <Route path="/unitmissions" exact component={UnitMissions} />
+    <Route path="/unitmission/:id" exact component={UnitMissionForm} />
+    <Route path="/unitmissions" exact component={UnitMissiontTable} />
     <Route path="/JrflType/:id" exact component={JrflTypeDetails} />
-    <Route path="/JrflTypes" exact component={JrflTypeList} />
+    <Route path="/JrflTypes" exact component={JfrlTypeTable} />
     <Redirect to="/" />
   </Switch>
 )

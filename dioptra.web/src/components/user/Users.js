@@ -72,7 +72,7 @@ const UserList = ({
         actions={[
           {
             onClick: onCreate,
-            name: strings.users.create,
+            name: strings.buttons.create,
             type: 'primary'
           }
         ]}

@@ -1,5 +1,5 @@
 const storage = {
-    prefix: 'http://localhost:5000/',
+    prefix: 'http://localhost:3000/',
     get: key => {
       const value = localStorage.getItem(storage.prefix + key)
       return JSON.parse(value)

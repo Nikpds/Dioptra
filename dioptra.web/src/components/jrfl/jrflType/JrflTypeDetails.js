@@ -24,17 +24,17 @@ const JrflTypeDetails = ({ onBack, onSave, onDelete, jrflType, onCancel }) => {
         onBack={onBack}
         title="JRFL Type"
         actions={[
-          { onClick: onCancel, name: strings.jrfltype.cancel, type: 'default' },
+          { onClick: onCancel, name: strings.buttons.cancel, type: 'default' },
           {
             onClick: onDelete,
-            name: strings.jrfltype.delete,
+            name: strings.buttons.delete,
             type: 'danger',
-            // show: !jrflType.id
-            show: !'new'
+            show: !jrflType.id
+            
           },
           {
-            onClick: () => onSave(JrflTypeDetails),
-            name: strings.jrfltype.save
+            onClick: () => onSave(jrflTypeDetails),
+            name: strings.buttons.save
           }
         ]}
       />
@@ -42,8 +42,8 @@ const JrflTypeDetails = ({ onBack, onSave, onDelete, jrflType, onCancel }) => {
         <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
           <Form.Item label={strings.jrfltype.name}>
             <Input
-              name="jrflTypeName"
-              value={jrflTypeDetails.jrflTypeName}
+              name="name"
+              value={jrflTypeDetails.name}
               onChange={e => jrflTypeHandler(e.target.name, e.target.value)}
             />
           </Form.Item>

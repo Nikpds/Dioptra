@@ -9,7 +9,7 @@
     "warning": "Warning",
     "username": "Username",
     "password": "Password",
-    "login": "login",
+    "login": "Login",
     "version": "Version",
     "classafied": "CLASSFIED",
     "warningmessage1": "The current system and all the subsystems are related or designed by the national and NATO standards for documents graded as ",
@@ -30,13 +30,19 @@
     "logout": " Logout",
     "minimize": "Minimze",
     "unitMission": "Unit Mission",
-    "jrfl": "JRFL"
+    "jrfl": "JRFL",
+    "tables": "Lookup Tables",
+    "Units": "Units"
   },
   "pagination": {
     "totalItems": "Total Items"
   },
   "buttons": {
-    "tableActions": "Actions"
+    "tableActions": "Actions",
+    "create": "Create",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete"
   },
   "navbar": {
     "versions": "Versions",
@@ -48,10 +54,7 @@
     "username": "Users login name",
     "email": "Email",
     "phone": "Contact phone",
-    "password": "Users password",
-    "cancel": "Cancel",
-    "save": "Save",
-    "delete": "Delete"
+    "password": "Users password"
   },
   "users": {
     "headerTitle": "Χρήστες Εφαρμογής Θαλή",
@@ -59,21 +62,20 @@
     "unit": "Unit",
     "username": "Username",
     "email": "Email",
-    "phone": "Telephone",
-    "create": "Create"
+    "phone": "Telephone"
   },
   "unitMission": {
-    "name": "Name Unit Mission",
-    "cancel": "Cancel",
-    "save": "Save",
-    "delete": "Delete"
+    "name": "Name Unit Mission"
+  },
+  "unitMissions": {
+    "headerTitle": "Αποστολές Μονάδων"
   },
   "jrfltype": {
-    "name": "Type name",
-    "titlenew": "New JRFL",
-    "titleid": "JRFL",
-    "cancel": "Cancel",
-    "save": "Save",
-    "delete": "Delete"
+    "headerTitle": "JRFL Type",
+    "name": "Name"
+  },
+  "jrfltypes": {
+    "headerTitle": "JRFL Types",
+    "name":"Τype name"
   }
 }

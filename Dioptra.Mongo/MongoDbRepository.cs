@@ -22,6 +22,9 @@ namespace Dioptra.Mongo
             this.collection = database.GetCollection<T>(collectionName);
         }
 
+        public MongoDbRepository(IMongoDatabase database) : this(database, typeof(T).Name) { }
+
+
         public virtual async Task<IEnumerable<T>> Get(Expression<Func<T, bool>> predicate)
         {
             var documents = await this.collection.FindAsync(predicate);

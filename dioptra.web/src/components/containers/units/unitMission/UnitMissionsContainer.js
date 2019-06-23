@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import api from '../../../services/api'
+import api from '../../../../services/api'
 
 const UnitMissionsContainer = props => {
   const { children, history } = props
   const [unitmissions, setUnitmissions] = useState([])
 
   function onCreate() {
-    history.push('/UnitMissionDetails/new')
+    history.push('/unitmisson/new')
   }
-
+  console.log(unitmissions)
+  
   function onEdit(unitMision) {
     history.push(`/unitMision/${unitMision.id}`)
   }
 
   async function onDelete(unitMision) {
     await api.delete(`/api/unitMision/${unitMision.id}`)
-    const index = unitMision.findIndex(x => (x.id = unitMision.id))
-    unitMision.splice(index, 1)
-    setUnitmissions([...Unitmissions])
+    const index = unitmissions.findIndex(x => (x.id = unitMision.id))
+    unitmissions.splice(index, 1)
+    setUnitmissions([...unitmissions])
   }
 
   useEffect(() => {
     async function fetchUnitMissions() {
-      const _unitMissions = await api.get('/api/admin/unirmisssions')
-      setUnitmissions(_unitMissions)
+      const response = await api.get('/api/admin/unirmisssions')
+      if (response && response.lenght > 0) {
+        setUnitmissions(response)
+      }
     }
     fetchUnitMissions()
   }, [])

@@ -1,11 +1,12 @@
 import React, { Suspense, useState } from 'react'
 import { Layout as AntdLayout } from 'antd'
-import Sidebar from './Sidebar'
+import Sidebar from './sidebar/Sidebar'
 import { useAuth } from '../../contexts/AuthProvider'
 import Navbar from './Navbar'
 const Layout = props => {
   const [open, setOpen] = useState(false)
   const auth = useAuth()
+  const height = auth.isAuthenticated ? 'calc(100vh - 60px)' : 'calc(100vh)'
   const navbar = auth.isAuthenticated ? <Navbar /> : null
   const sidebar = auth.isAuthenticated ? (
     <AntdLayout.Sider collapsed={open}>
@@ -19,7 +20,7 @@ const Layout = props => {
         <AntdLayout>
           {sidebar}
           <AntdLayout>
-            <AntdLayout.Content style={{ height: 'calc(100vh - 60px)' }}>
+            <AntdLayout.Content style={{ height: height }}>
               <Suspense fallback={<div>Loading...</div>}>
                 {props.children}
               </Suspense>
