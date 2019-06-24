@@ -102,6 +102,6 @@
     "headerTitle": "Nationalities List",
     "shortname":"Code Name",
     "name":"Name",
-    "status":"Friend or Foe"
+    "fof":"Friend or Foe"
   }
 }

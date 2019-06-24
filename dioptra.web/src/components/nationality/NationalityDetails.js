@@ -45,26 +45,25 @@ const NationalityDetails = ({
         <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
           <Form.Item label={strings.Nationality.shortname}>
             <Input
-              name="codeName"
-              value={nationalityDetails.codeName}
+              name="shortname"
+              value={nationalityDetails.shortname}
               onChange={e => nationalityHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
           <Form.Item label={strings.Nationality.name}>
             <Input
               name="name"
-              value={nationalityDetails.codeName}
+              value={nationalityDetails.name}
               onChange={e => nationalityHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
-          <Form.Item label={strings.Nationality.name}>
+          <Form.Item label={strings.Nationalities.fof}>
             <Col span={12}>
-              <span>{strings.Nationalities.status}</span>
               <Select
                 style={{ width: 120 }}
-                value={nationalityDetails.status}
-                onChange={value => nationalityHandler('status',value)}>
-                  <Select.Option key='1'>Test1</Select.Option>
+                value={nationalityDetails.foF}
+                onChange={value => nationalityHandler('foF', value)}>
+                <Select.Option key="1">Test1</Select.Option>
               </Select>
             </Col>
           </Form.Item>
@@ -75,8 +74,8 @@ const NationalityDetails = ({
 }
 
 const NationalityForm = () => (
-    <NationalityContainer>
-        <NationalityDetails/>
-    </NationalityContainer>
+  <NationalityContainer>
+    <NationalityDetails />
+  </NationalityContainer>
 )
 export default NationalityForm
