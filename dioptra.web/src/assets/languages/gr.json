@@ -30,6 +30,7 @@
     "logout": " Αποσύνδεση",
     "minimize": "Απόκρυψη",
     "unitMission": "Αποστολή Μονάδας",
+    "unitType": "Τύποι Μονάδων",
     "jrfl": "JRFL",
     "tables": "Πάγια Στοιχεία",
     "Units": "Μονάδες"
@@ -69,6 +70,15 @@
   },
   "unitMissions": {
     "headerTitle": "Αποστολές Μονάδων"
+  },
+  "unitType": {
+    "name": "Όνομα Τύπου Μονάδας",
+    "level": "Επίπεδο",
+    "headerTitleNew": "Νέος Τύπος Μονάδων",
+    "headerTitleEdit": "Επεξεργασία Τύπου Μονάδων"
+  },
+  "unitTypes": {
+    "headerTitle": "Τύποι Μονάδων"
   },
   "jrfltype": {
     "headerTitle": "Ονομασία Τύπου",

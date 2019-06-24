@@ -30,6 +30,7 @@
     "logout": " Logout",
     "minimize": "Minimze",
     "unitMission": "Unit Mission",
+    "unitType": "Unit Type",
     "jrfl": "JRFL",
     "tables": "Lookup Tables",
     "Units": "Units"
@@ -69,6 +70,15 @@
   },
   "unitMissions": {
     "headerTitle": "Αποστολές Μονάδων"
+  },
+  "unitType": {
+    "name": "Unit Type Name",
+    "level": "Level",
+    "headerTitleNew": "New Unit Type",
+    "headerTitleEdit": "Edit Unit Type"
+  },
+  "unitTypes": {
+    "headerTitle": "Unit Types"
   },
   "jrfltype": {
     "headerTitle": "JRFL Type",

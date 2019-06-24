@@ -7,6 +7,8 @@ import UserDetails from '../components/user/UserDetails'
 import Users from '../components/user/Users'
 import UnitMissionForm from '../components/units/unitMission/UnitMissionDetails'
 import UnitMissiontTable from '../components/units/unitMission/UnitMissions'
+import UnitTypeForm from '../components/units/unitType/UnitTypeDetails'
+import UnitTypeTable from '../components/units/unitType/UnitTypes'
 
 import JrflTypeDetails from '../components/jrfl/jrflType/JrflTypeDetails'
 import JfrlTypeTable from '../components/jrfl/jrflType/JrflTypes'
@@ -19,6 +21,8 @@ export const fullAccess = (
     <Route path="/users/:page/:pageSize" exact component={Users} />
     <Route path="/unitmission/:id" exact component={UnitMissionForm} />
     <Route path="/unitmissions" exact component={UnitMissiontTable} />
+    <Route path="/unittype/:id" exact component={UnitTypeForm} />
+    <Route path="/unittypes" exact component={UnitTypeTable} />
     <Route path="/JrflType/:id" exact component={JrflTypeDetails} />
     <Route path="/JrflTypes" exact component={JfrlTypeTable} />
     <Redirect to="/" />
