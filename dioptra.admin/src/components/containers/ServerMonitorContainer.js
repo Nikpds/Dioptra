@@ -17,13 +17,18 @@ const ServerMonitorContainer = props => {
 
   async function fetchServer() {
     const response = await api.get(`/api/server/${id}`)
-    if (response) {
-      setServer({ ...response })
-    }
+    if (response) setServer({ ...response })
+  }
+
+  async function serverHealth() {
+    const response = await api.get(`/api/server/health/${id}`)
+    console.log(response)
+    // if (response) setServer({ ...response })
   }
 
   useEffect(() => {
     fetchServer()
+    serverHealth()
   }, [id])
 
   return React.Children.map(children, child =>

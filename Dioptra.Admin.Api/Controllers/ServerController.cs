@@ -12,7 +12,7 @@ using MongoDB.Driver;
 namespace Dioptra.Admin.Api.Controllers
 {
     [Route("api/[controller]")]
-    
+
     [ApiController]
     public class ServerController : ControllerBase
     {
@@ -108,7 +108,7 @@ namespace Dioptra.Admin.Api.Controllers
             {
                 var server = await _ctx.Servers.GetById(id);
 
-                if(server == null)
+                if (server == null)
                 {
                     //TODO RETURN
                     return BadRequest();
@@ -125,6 +125,48 @@ namespace Dioptra.Admin.Api.Controllers
                 var r = collection.Find(x => true).SortByDescending(x => x.EntryTime).Limit(50);
                 result = r.ToListAsync().Result;
                 return Ok(result);
+
+            }
+            catch (Exception exc)
+            {
+                return BadRequest("Παρουσιάστηκε κάποιο σφάλμα. " + exc.Message);
+            }
+        }
+
+        [HttpGet("health/{id}")]
+        public async Task<IActionResult> GetServerHealth(string id)
+        {
+            try
+            {
+                var server = await _ctx.Servers.GetById(id);
+                Chilkat.Ssh ssh = new Chilkat.Ssh();
+                bool success = ssh.Connect(server.Ip, 22);
+                if (success != true)
+                {
+                    return BadRequest();
+                }
+                ssh.IdleTimeoutMs = 5000;
+                success = ssh.AuthenticatePw(server.Username, server.Password);
+                if (success != true)
+                {
+                    return BadRequest();
+                }
+                int channelNum;
+                channelNum = ssh.OpenSessionChannel();
+
+                success = ssh.SendReqExec(channelNum, "cat /proc/meminfo");
+                if (success != true)
+                {
+                    return BadRequest();
+                }
+                success = ssh.ChannelReceiveToClose(channelNum);
+                if (success != true)
+                {
+                    return BadRequest();
+                }
+                string cmdOutput = ssh.GetReceivedText(channelNum, "ansi");
+
+                return Ok(cmdOutput);
 
             }
             catch (Exception exc)
