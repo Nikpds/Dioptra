@@ -1,4 +1,5 @@
 ﻿using Dioptra.Models.Entities;
+using Dioptra.Models.Entities.Lookups;
 using MongoDB.Driver;
 using System;
 
@@ -9,8 +10,10 @@ namespace Dioptra.Mongo
         public IMongoDatabase Database { get; private set; }
         public IMongoClient MongoClient { get; private set; }
 
-        public MongoDbRepository<User> Users { get; private set; }
-        public MongoDbRepository<JRFLType> JRFLTypes { get; private set; }
+        public IMongoDbRepository<User> Users { get; private set; }
+        public IMongoDbRepository<JRFLType> JRFLTypes { get; private set; }
+        public IMongoDbRepository<Nationality> Nationalities { get; private set; }
+        public IMongoDbRepository<UnitType> UnitTypes { get; private set; }
 
 
         public DataContext(string connectionString)
@@ -27,6 +30,8 @@ namespace Dioptra.Mongo
 
             Users = new MongoDbRepository<User>(Database, "Users");
             JRFLTypes = new MongoDbRepository<JRFLType>(Database, "JRFLType");
+            Nationalities = new MongoDbRepository<Nationality>(Database, "Nationalities");
+            UnitTypes = new MongoDbRepository<UnitType>(Database, "UnitTypes");
         }
     }
 }
