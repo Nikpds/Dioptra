@@ -53,6 +53,12 @@ const Sidebar = ({ open, setOpen }) => {
               icon: 'table',
               caption: strings.sidebar.unitMission,
               hasSubMenu: false
+            },
+            {
+              path: '/unittypes',
+              icon: 'table',
+              caption: strings.sidebar.unitType,
+              hasSubMenu: false
             }
           ]
         }

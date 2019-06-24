@@ -11,6 +11,8 @@ import JrflTypeDetails from '../components/jrfl/jrflType/JrflTypeDetails'
 import JfrlTypeTable from '../components/jrfl/jrflType/JrflTypes'
 import Nationalities from '../components/nationality/Nationalities'
 import NationalityDetails from '../components/nationality/NationalityDetails'
+import UnitTypeForm from '../components/units/unitType/UnitTypeDetails'
+import UnitTypeTable from '../components/units/unitType/UnitTypes'
 
 export const fullAccess = (
   <Switch>
@@ -24,6 +26,8 @@ export const fullAccess = (
     <Route path="/jrflTypes" exact component={JfrlTypeTable} />
     <Route path="/nationalities" exact component={Nationalities} />
     <Route path="/nationality/:id" exact component={NationalityDetails} />
+    <Route path="/unittype/:id" exact component={UnitTypeForm} />
+    <Route path="/unittypes" exact component={UnitTypeTable} />
     <Redirect to="/" />
   </Switch>
 )
