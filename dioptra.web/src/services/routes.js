@@ -7,9 +7,10 @@ import UserDetails from '../components/user/UserDetails'
 import Users from '../components/user/Users'
 import UnitMissionForm from '../components/units/unitMission/UnitMissionDetails'
 import UnitMissiontTable from '../components/units/unitMission/UnitMissions'
-
 import JrflTypeDetails from '../components/jrfl/jrflType/JrflTypeDetails'
 import JfrlTypeTable from '../components/jrfl/jrflType/JrflTypes'
+import Nationalities from '../components/nationality/Nationalities'
+import NationalityDetails from '../components/nationality/NationalityDetails'
 
 export const fullAccess = (
   <Switch>
@@ -19,8 +20,10 @@ export const fullAccess = (
     <Route path="/users/:page/:pageSize" exact component={Users} />
     <Route path="/unitmission/:id" exact component={UnitMissionForm} />
     <Route path="/unitmissions" exact component={UnitMissiontTable} />
-    <Route path="/JrflType/:id" exact component={JrflTypeDetails} />
-    <Route path="/JrflTypes" exact component={JfrlTypeTable} />
+    <Route path="/jrflType/:id" exact component={JrflTypeDetails} />
+    <Route path="/jrflTypes" exact component={JfrlTypeTable} />
+    <Route path="/nationalities" exact component={Nationalities} />
+    <Route path="/nationality/:id" exact component={NationalityDetails} />
     <Redirect to="/" />
   </Switch>
 )

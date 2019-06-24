@@ -32,7 +32,10 @@
     "unitMission": "Αποστολή Μονάδας",
     "jrfl": "JRFL",
     "tables": "Πάγια Στοιχεία",
-    "Units": "Μονάδες"
+    "Units": "Μονάδες",
+    "manageNationality":"Εθνικότητες",
+    "nationality":"Νέα Εθνικότητα",
+    "nationalities":"Λίστα Εθνικοτήτων"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -77,5 +80,17 @@
   "jrfltypes": {
     "headerTitle": "Τύποι JRFL",
     "name":"Ονομασία τύπου"
+  },
+  "Nationality": {
+    "headerTitle": "Εθνικότητα",
+    "shortname":"Κωδική Ονομασία",
+    "name":"Όνομα",
+    "status":"Φίλια ή Εχθρική"
+  },
+  "Nationalities": {
+    "headerTitle": "Λίστα Εθνικοτήτων ",
+    "shortname":"Κωδική Ονομασία",
+    "name":"Όνομα",
+    "status":"Φίλια ή Εχθρική"
   }
 }

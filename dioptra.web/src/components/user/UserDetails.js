@@ -16,6 +16,7 @@ const UserDetails = ({ onBack, onSave, onDelete, user, onCancel }) => {
   useEffect(() => {
     setUserDetails(user)
   },[user])
+  
   return (
     <div>
       <ActionHeader
