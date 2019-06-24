@@ -33,7 +33,11 @@
     "unitType": "Unit Type",
     "jrfl": "JRFL",
     "tables": "Lookup Tables",
-    "Units": "Units"
+    "Units": "Units",
+    "manageNationality":"Nationalities",
+    "nationality":"New Nationality",
+    "nationalities":"List of Nationalities"
+
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -58,7 +62,7 @@
     "password": "Users password"
   },
   "users": {
-    "headerTitle": "Χρήστες Εφαρμογής Θαλή",
+    "headerTitle": "Thales Users",
     "fullname": "Fullname",
     "unit": "Unit",
     "username": "Username",
@@ -87,5 +91,17 @@
   "jrfltypes": {
     "headerTitle": "JRFL Types",
     "name":"Τype name"
+  },
+  "Nationality": {
+    "headerTitle": "Nationality",
+    "shortname":"Code Name",
+    "name":"Name",
+    "status":"Friend or Foe"
+  },
+  "Nationalities": {
+    "headerTitle": "Nationalities List",
+    "shortname":"Code Name",
+    "name":"Name",
+    "status":"Friend or Foe"
   }
 }

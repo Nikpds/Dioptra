@@ -16,6 +16,7 @@ const UserDetails = ({ onBack, onSave, onDelete, user, onCancel }) => {
   useEffect(() => {
     setUserDetails(user)
   },[user])
+  
   return (
     <div>
       <ActionHeader
@@ -74,10 +75,10 @@ const UserDetails = ({ onBack, onSave, onDelete, user, onCancel }) => {
     </div>
   )
 }
-const UserForm = () => (
+const User = () => (
   <UserContainer>
     <UserDetails />
   </UserContainer>
 )
 
-export default UserForm
+export default User

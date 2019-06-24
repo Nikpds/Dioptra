@@ -11,6 +11,7 @@ const Stat = ({ title, value, prefix = null, size = 24 }) => (
   />
 )
 const ServerStats = ({ server }) => {
+
   const data = [
     {
       title: 'Application',
