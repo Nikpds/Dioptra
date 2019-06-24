@@ -26,7 +26,7 @@ const NationalityDetails = ({
     <div>
       <ActionHeader
         onBack={onBack}
-        title={strings.Nationality.headerTitle}
+        title={strings.nationality.headerTitle}
         actions={[
           { onClick: onCancel, name: strings.buttons.cancel, type: 'default' },
           {
@@ -43,21 +43,21 @@ const NationalityDetails = ({
       />
       <Card style={{ margin: 20 }} className="has-shadow">
         <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
-          <Form.Item label={strings.Nationality.shortname}>
+          <Form.Item label={strings.nationality.shortname}>
             <Input
               name="shortname"
               value={nationalityDetails.shortname}
               onChange={e => nationalityHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
-          <Form.Item label={strings.Nationality.name}>
+          <Form.Item label={strings.nationality.name}>
             <Input
               name="name"
               value={nationalityDetails.name}
               onChange={e => nationalityHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
-          <Form.Item label={strings.Nationalities.fof}>
+          <Form.Item label={strings.nationalities.fof}>
             <Col span={12}>
               <Select
                 style={{ width: 120 }}

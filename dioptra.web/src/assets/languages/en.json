@@ -82,13 +82,13 @@
     "headerTitle": "JRFL Types",
     "name":"Τype name"
   },
-  "Nationality": {
+  "nationality": {
     "headerTitle": "Nationality",
     "shortname":"Code Name",
     "name":"Name",
-    "status":"Friend or Foe"
+    "fof":"Friend or Foe"
   },
-  "Nationalities": {
+  "nationalities": {
     "headerTitle": "Nationalities List",
     "shortname":"Code Name",
     "name":"Name",

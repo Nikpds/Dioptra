@@ -73,10 +73,11 @@ const Sidebar = ({ open, setOpen }) => {
       ]
     },
     {
-      path: strings.sidebar.manageNationality,
+      path: '/nationalities',
       icon: 'global',
       caption: strings.sidebar.manageNationality,
-      hasSubMenu: true,
+      hasSubMenu: false
+      /* hasSubMenu: true,
       submenu: [
         {
           path: '/nationality/new',
@@ -90,7 +91,7 @@ const Sidebar = ({ open, setOpen }) => {
           caption: strings.sidebar.nationalities,
           hasSubMenu:false
         }
-      ]
+      ] */
     }
   ]
 

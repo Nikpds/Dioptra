@@ -81,13 +81,13 @@
     "headerTitle": "Τύποι JRFL",
     "name":"Ονομασία τύπου"
   },
-  "Nationality": {
+  "nationality": {
     "headerTitle": "Εθνικότητα",
     "shortname":"Κωδική Ονομασία",
     "name":"Όνομα",
-    "status":"Φίλια ή Εχθρική"
+    "fof":"Φίλια ή Εχθρική"
   },
-  "Nationalities": {
+  "nationalities": {
     "headerTitle": "Λίστα Εθνικοτήτων ",
     "shortname":"Κωδική Ονομασία",
     "name":"Όνομα",
