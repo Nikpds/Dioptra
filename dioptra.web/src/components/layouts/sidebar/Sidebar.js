@@ -83,6 +83,12 @@ const Sidebar = ({ open, setOpen }) => {
           caption: strings.sidebar.jrfltypes
         }
       ]
+    }, 
+    {
+      path: '/waveformtypes',
+      icon: 'line-chart',
+      hasSubMenu: false,
+      caption: strings.sidebar.waveformtypes
     }
   ]
 

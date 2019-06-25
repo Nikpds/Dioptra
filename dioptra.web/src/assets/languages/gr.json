@@ -36,7 +36,9 @@
     "units": "Μονάδες",
     "manageNationality":"Εθνικότητες",
     "nationality":"Νέα Εθνικότητα",
-    "nationalities":"Λίστα Εθνικοτήτων"
+    "nationalities":"Λίστα Εθνικοτήτων",
+    "waveformtypes":"Τύποι Κυματομορφών",
+    "transmeter":"Πομπός"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -102,5 +104,13 @@
     "shortname":"Κωδική Ονομασία",
     "name":"Όνομα",
     "fof":"Φίλια ή Εχθρική"
+  }, 
+  "waveformtypes": {
+    "headerTitle": "Τύποι Κυματομορφών",
+    "typename": "Όνομα Τύπου"
+  }, 
+  "waveformtype": {
+    "headerTitle": "Τύπος Κυματομορφής",
+    "typename": "Όνομα Τύπου"
   }
 }

@@ -13,6 +13,8 @@ import Nationalities from '../components/nationality/Nationalities'
 import NationalityDetails from '../components/nationality/NationalityDetails'
 import UnitTypeForm from '../components/units/unitType/UnitTypeDetails'
 import UnitTypeTable from '../components/units/unitType/UnitTypes'
+import WaveformTypes from '../components/transmeter/waveformtypes/WaveformTypes'
+import WaveformTypeDetails from '../components/transmeter/waveformtypes/WaveformTypeDetails'
 
 export const fullAccess = (
   <Switch>
@@ -28,6 +30,8 @@ export const fullAccess = (
     <Route path="/nationality/:id" exact component={NationalityDetails} />
     <Route path="/unittype/:id" exact component={UnitTypeForm} />
     <Route path="/unittypes" exact component={UnitTypeTable} />
+    <Route path="/waveformtype/:id" exact component={WaveformTypeDetails} />
+    <Route path="/waveformtypes" exact component={WaveformTypes} />
     <Redirect to="/" />
   </Switch>
 )
