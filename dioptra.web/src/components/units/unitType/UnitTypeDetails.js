@@ -63,7 +63,7 @@ const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
             </Select>
           </Form.Item>
         </Form>
-      </Card>
+      </Card> 
     </div>
   )
 }
