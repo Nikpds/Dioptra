@@ -45,7 +45,7 @@ const Sidebar = ({ open, setOpen }) => {
         {
           path: strings.sidebar.Units,
           icon: 'folder',
-          caption: strings.sidebar.Units,
+          caption: strings.sidebar.units,
           hasSubMenu: true,
           submenu: [
             {
@@ -61,11 +61,14 @@ const Sidebar = ({ open, setOpen }) => {
               hasSubMenu: false
             }
           ]
+        },
+        {
+          path: '/nationalities',
+          icon: 'global',
+          caption: strings.sidebar.manageNationality,
+          hasSubMenu: false
         }
       ]
-    },
-    {
-      
     },
     {
       path: strings.sidebar.jrfl,
@@ -80,12 +83,6 @@ const Sidebar = ({ open, setOpen }) => {
           caption: strings.sidebar.jrfltypes
         }
       ]
-    },
-    {
-      path: '/nationalities',
-      icon: 'global',
-      caption: strings.sidebar.manageNationality,
-      hasSubMenu: false
     }
   ]
 
