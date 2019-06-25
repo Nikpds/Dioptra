@@ -12,11 +12,16 @@ const NationalityDetails = ({
   onCancel
 }) => {
   const [nationalityDetails, setNationalityDetails] = useState(nationality)
+
   const nationalityHandler = (name, value) => {
     setNationalityDetails({
       ...nationalityDetails,
       [name]: value
     })
+  }
+
+  const fof = value => {
+    return { id: value, representation: 'TEST' }
   }
   useEffect(() => {
     setNationalityDetails(nationality)
@@ -45,8 +50,8 @@ const NationalityDetails = ({
         <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
           <Form.Item label={strings.nationality.shortname}>
             <Input
-              name="shortname"
-              value={nationalityDetails.shortname}
+              name="shortName"
+              value={nationalityDetails.shortName}
               onChange={e => nationalityHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
@@ -61,9 +66,10 @@ const NationalityDetails = ({
             <Col span={12}>
               <Select
                 style={{ width: 120 }}
-                value={nationalityDetails.foF}
-                onChange={value => nationalityHandler('foF', value)}>
-                <Select.Option key="1">Test1</Select.Option>
+                value={nationalityDetails.foF.id}
+                onChange={value => nationalityHandler('foF', fof(value))}>
+                <Select.Option value={0}>Test1</Select.Option>
+                <Select.Option value={1}>Test213123</Select.Option>
               </Select>
             </Col>
           </Form.Item>

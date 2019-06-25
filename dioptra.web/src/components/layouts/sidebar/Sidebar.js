@@ -43,7 +43,7 @@ const Sidebar = ({ open, setOpen }) => {
       caption: strings.sidebar.tables,
       submenu: [
         {
-          path: strings.sidebar.Units,
+          path: strings.sidebar.units,
           icon: 'folder',
           caption: strings.sidebar.units,
           hasSubMenu: true,
@@ -63,7 +63,7 @@ const Sidebar = ({ open, setOpen }) => {
           ]
         },
         {
-          path: '/nationalities',
+          path: '/nationalities/1/10',
           icon: 'global',
           caption: strings.sidebar.manageNationality,
           hasSubMenu: false

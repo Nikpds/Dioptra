@@ -9,15 +9,14 @@ const UnitMissionsContainer = props => {
   function onCreate() {
     history.push('/unitmisson/new')
   }
-  console.log(unitmissions)
   
-  function onEdit(unitMision) {
-    history.push(`/unitMision/${unitMision.id}`)
+  function onEdit(id) {
+    history.push(`/unitMision/${id}`)
   }
 
-  async function onDelete(unitMision) {
-    await api.delete(`/api/unitMision/${unitMision.id}`)
-    const index = unitmissions.findIndex(x => (x.id = unitMision.id))
+  async function onDelete(id) {
+    await api.delete(`/api/unitMision/${id}`)
+    const index = unitmissions.findIndex(x => (x.id = id))
     unitmissions.splice(index, 1)
     setUnitmissions([...unitmissions])
   }

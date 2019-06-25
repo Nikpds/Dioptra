@@ -1,22 +1,22 @@
 import React from 'react'
 import NationalitiesContainer from '../containers/nationality/NationalitiesContainer'
-import { Button, Divider } from 'antd'
+import { Button, Divider,Popconfirm } from 'antd'
 import { strings } from '../../contexts/LocalizationProvider'
 import ActionHeader from '../shared/ActionHeader'
 import SSPTable from '../shared/SSPTable'
 
 const NationalitiesList = ({
-    nationalities,
-    onCreate,
-    onEdit,
-    onDelete,
-    onPaginationChange
+  nationalities,
+  onCreate,
+  onEdit,
+  onDelete,
+  onPaginationChange
 }) => {
   const headers = [
     {
       title: strings.nationality.shortname,
-      dataIndex: 'shortname',
-      key: 'shortname'
+      dataIndex: 'shortName',
+      key: 'shortName'
     },
     {
       title: strings.nationality.name,
@@ -25,22 +25,30 @@ const NationalitiesList = ({
     },
     {
       title: strings.nationality.fof,
-      dataIndex: 'fof',
+      dataIndex: 'foF.representation',
       key: 'fof'
     },
     {
       title: strings.buttons.tableActions,
+      width: 110,
       dataIndex: 'actions',
       key: 'actions',
       render: (e, row) => [
-        <Button
+        <Popconfirm
           key={1}
-          type="danger"
-          shape="circle"
-          icon="delete"
-          size="small"
-          onClick={() => onDelete(row.id)}
-        />,
+          title="Are you sure ?"
+          onConfirm={() => onDelete(row.id)}
+          onCancel={null}
+          okText="Yes"
+          cancelText="No">
+          <Button
+            key={1}
+            type="danger"
+            shape="circle"
+            icon="delete"
+            size="small"
+          />
+        </Popconfirm>,
         <Divider key={2} type="vertical" />,
         <Button
           key={3}
@@ -58,7 +66,7 @@ const NationalitiesList = ({
     <div>
       <ActionHeader
         title={strings.nationalities.headerTitle}
-        // subtitle= {nationalities.rows.length} 
+        // subtitle= {nationalities.rows.length}
         actions={[
           {
             onClick: onCreate,

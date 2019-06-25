@@ -18,19 +18,17 @@ const JrflTypes = ({ jrflTypes, onCreate, onEdit, onDelete }) => {
       key: 'actions',
       width: 110,
       render: (e, row) => [
-        <Popconfirm
+        <Popconfirm key={1}
           title="Are you sure ?"
           onConfirm={() => onDelete(row.id)}
           onCancel={null}
           okText="Yes"
           cancelText="No">
-          <Button
-            key={1}
+          <Button           
             type="danger"
             shape="circle"
             icon="delete"
-            size="small"
-            onClick={() => onDelete(row.id)}
+            size="small"            
           />
         </Popconfirm>,
         <Divider key={2} type="vertical" />,

@@ -14,6 +14,8 @@ namespace Dioptra.Mongo
         public IMongoDbRepository<JRFLType> JRFLTypes { get; private set; }
         public IMongoDbRepository<Nationality> Nationalities { get; private set; }
         public IMongoDbRepository<UnitType> UnitTypes { get; private set; }
+        public IMongoDbRepository<WaveformType> WaveformTypes { get; private set; }
+        public IMongoDbRepository<UnitMission> UnitMissions { get; private set; }
 
 
         public DataContext(string connectionString)
@@ -32,6 +34,8 @@ namespace Dioptra.Mongo
             JRFLTypes = new MongoDbRepository<JRFLType>(Database, "JRFLType");
             Nationalities = new MongoDbRepository<Nationality>(Database, "Nationalities");
             UnitTypes = new MongoDbRepository<UnitType>(Database, "UnitTypes");
+            WaveformTypes = new MongoDbRepository<WaveformType>(Database, "WaveformTypes");
+            UnitMissions = new MongoDbRepository<UnitMission>(Database, "UnitMissions");
         }
     }
 }

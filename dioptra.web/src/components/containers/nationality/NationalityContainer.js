@@ -5,7 +5,7 @@ import api from '../../../services/api'
 const NationalityContainer = props => {
   const { id } = props.match.params
   const { children, history } = props
-  const [nationality, setNationality] = useState({})
+  const [nationality, setNationality] = useState({ foF: {} })
 
   async function onSave(value) {
     if (value.id) {

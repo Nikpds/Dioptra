@@ -7,25 +7,24 @@ const UnitTypesContainer = props => {
   const [unitTypes, setUnitTypes] = useState([])
 
   function onCreate() {
-    history.push('/unitType/new')
-  }
-  console.log(unitTypes)
-  
-  function onEdit(unitType) {
-    history.push(`/unitType/${unitType.id}`)
+    history.push('/unittype/new')
   }
 
-  async function onDelete(unitType) {
-    await api.delete(`/api/unitType/${unitType.id}`)
-    const index = unitTypes.findIndex(x => (x.id = unitType.id))
+  function onEdit(id) {
+    history.push(`/unittype/${id}`)
+  }
+
+  async function onDelete(id) {
+    await api.delete(`/api/lookup/unittype/${id}`)
+    const index = unitTypes.findIndex(x => (x.id = id))
     unitTypes.splice(index, 1)
     setUnitTypes([...unitTypes])
   }
 
   useEffect(() => {
     async function fetchUnitTypes() {
-      const response = await api.get('/api/admin/unittypes')
-      if (response && response.lenght > 0) {
+      const response = await api.get('/api/lookup/unittype')
+      if (response && response.length > 0) {
         setUnitTypes(response)
       }
     }

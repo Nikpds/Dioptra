@@ -4,25 +4,20 @@ import { Form, Input, Card, Select } from 'antd'
 import ActionHeader from '../../shared/ActionHeader'
 import UnitTypeContainer from '../../containers/units/unitType/UnitTypeContainer'
 
-const { Option } = Select;
+const { Option } = Select
 
-const UnitTypeDetails = ({
-  onBack,
-  onSave,
-  onDelete,
-  onCancel,
-  unitType
-}) => {
+const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
   const [unitTypeDetails, setunitTypeDetails] = useState(unitType)
 
   const unitTypeHandler = (name, value) => {
-    console.log(name,value);
     setunitTypeDetails({
       ...unitTypeDetails,
       [name]: value
     })
   }
-
+  const createLevel = value => {
+    return { id: value, representation: 'asdas' }
+  }
   useEffect(() => {
     setunitTypeDetails(unitType)
   }, [unitType])
@@ -31,7 +26,11 @@ const UnitTypeDetails = ({
     <div>
       <ActionHeader
         onBack={onBack}
-        title={unitTypeDetails.id === undefined ? strings.unitType.headerTitleNew : strings.unitType.headerTitleEdit }
+        title={
+          unitTypeDetails.id
+            ? strings.unitType.headerTitleNew
+            : strings.unitType.headerTitleEdit
+        }
         actions={[
           { onClick: onCancel, name: strings.buttons.cancel, type: 'default' },
           {
@@ -51,19 +50,16 @@ const UnitTypeDetails = ({
           <Form.Item label={strings.unitType.name}>
             <Input
               name="name"
-              value={unitTypeDetails.unitTypeName}
+              value={unitTypeDetails.name}
               onChange={e => unitTypeHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
           <Form.Item label={strings.unitType.level}>
-            <Select 
+            <Select
               name="level"
-              value={unitTypeDetails.level}
-              onChange={value => unitTypeHandler("level", value)}
-            >
-              <Option value="jack">Jack</Option>
-              <Option value="lucy">Lucy</Option>
-              <Option value="Yiminghe">yiminghe</Option>
+              value={unitTypeDetails.level.id}
+              onChange={value => unitTypeHandler('level', createLevel(value))}>
+              <Option value="0">Jack</Option>
             </Select>
           </Form.Item>
         </Form>

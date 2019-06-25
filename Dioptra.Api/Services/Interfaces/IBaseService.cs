@@ -8,10 +8,10 @@ namespace Dioptra.Api.Services.Interfaces
 {
     public interface IBaseService<T> where T : Entity
     {
-        Task<IEnumerable<T>> GetAll(IMongoDbRepository<T> repository);
-        Task<T> GetById(string id, IMongoDbRepository<T> repository);
-        Task<T> Insert(T entity, IMongoDbRepository<T> repository);
-        Task<T> Update(string id, T entity, IMongoDbRepository<T> repository);
-        Task<Boolean> Delete(T entity, IMongoDbRepository<T> repository);
+        Task<IEnumerable<T>> GetAll();
+        Task<T> GetById(string id);
+        Task<T> Insert(T entity);
+        Task<T> Update(string id, T entity);
+        Task<Boolean> Delete(T entity);
     }
 }

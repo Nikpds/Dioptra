@@ -13,14 +13,14 @@ const JrflTypesContainer = props => {
     history.push(`/jrfltype/${id}`)
   }
   async function onDelete(id) {
-    await api.delete(`/api/jrfl/type/${id}`)
+    await api.delete(`/api/lookup/jrfltype/${id}`)
     const index = jrflTypes.findIndex(x => (x.id = id))
     jrflTypes.splice(index, 1)
     setJrflTypes([...jrflTypes])
   }
   useEffect(() => {
     async function fetchJrflTypes() {
-      const response = await api.get('/api/jrfl/type')
+      const response = await api.get('/api/lookup/jrfltype')
       console.log(response)
       if (response) setJrflTypes(response)
     }

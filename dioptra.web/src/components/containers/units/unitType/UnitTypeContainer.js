@@ -5,25 +5,25 @@ import api from '../../../../services/api'
 const UnitTypeContainer = props => {
   const { id } = props.match.params
   const { children, history } = props
-  const [unitType, setUnitType] = useState({})
+  const [unitType, setUnitType] = useState({ level: {} })
 
   async function onSave(value) {
     if (value.id) {
-      const response = await api.put(`/api/unitType/${id}`, value)
+      const response = await api.put(`/api/lookup/unittype/${id}`, value)
       if (response) {
         setUnitType(response)
       }
     } else {
-      const response = await api.post(`/api/unitType`, value)
+      const response = await api.post(`/api/lookup/unittype`, value)
       if (response) {
         setUnitType(response)
-        history.push('/unitType/' + response.id)
+        history.push('/unittype/' + response.id)
       }
     }
   }
 
   function onBack() {
-    history.push('/UnitTypes')
+    history.push('/unittypes')
   }
 
   function onCancel() {
@@ -31,8 +31,8 @@ const UnitTypeContainer = props => {
   }
 
   async function onDelete() {
-    await api.delete(`/api/unitType/${id}`)
-    history.push('/UnitTypes')
+    await api.delete(`/api/lookup/unittype/${id}`)
+    onBack()
   }
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const UnitTypeContainer = props => {
       if (id === 'new') {
         return
       }
-      const response = await api.get(`/api/unitType/${id}`)
+      const response = await api.get(`/api/lookup/unittype/${id}`)
       setUnitType(response)
     }
 

@@ -24,7 +24,7 @@ export const fullAccess = (
     <Route path="/unitmissions" exact component={UnitMissiontTable} />
     <Route path="/jrflType/:id" exact component={JrflTypeDetails} />
     <Route path="/jrflTypes" exact component={JfrlTypeTable} />
-    <Route path="/nationalities" exact component={Nationalities} />
+    <Route path="/nationalities/:page/:pageSize" exact component={Nationalities} />
     <Route path="/nationality/:id" exact component={NationalityDetails} />
     <Route path="/unittype/:id" exact component={UnitTypeForm} />
     <Route path="/unittypes" exact component={UnitTypeTable} />

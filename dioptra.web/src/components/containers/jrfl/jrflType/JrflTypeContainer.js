@@ -9,12 +9,12 @@ const JrflTypeContainer = props => {
 
   async function onSave(value) {
     if (value.id) {
-      const response = await api.put(`/api/jrfl/type/${id}`, value)
+      const response = await api.put(`/api/lookup/jrfltype/${id}`, value)
       if (response) {
         setJrflType(response)
       }
     } else {
-      const response = await api.post(`/api/jrfl/type`, value)
+      const response = await api.post(`/api/lookup/jrfltype`, value)
       if (response) {
         setJrflType(response)
         history.push('/jrflType/' + response.id)
@@ -31,7 +31,7 @@ const JrflTypeContainer = props => {
   }
 
   async function onDelete() {
-    await api.delete(`/api/jrfl/type/${id}`)
+    await api.delete(`/api/lookup/jrfltype/${id}`)
     history.push('/jrflTypes')
   }
 
@@ -40,7 +40,7 @@ const JrflTypeContainer = props => {
       if (id === 'new') {
         return
       }
-      const response = await api.get(`/api/jrfl/type/${id}`)
+      const response = await api.get(`/api/lookup/jrfltype/${id}`)
       if (response) setJrflType(response)
     }
     fetchJrflType()

@@ -16,8 +16,7 @@ const NationalitiesContainer = props => {
   }
 
   const onPaginationChange = (page, pageSize) => {
-    console.log(page, pageSize)
-    // history.push(`/nationalities/${page}/${pageSize}`)
+    history.push(`/nationalities/${page}/${pageSize}`)
   }
 
   function onEdit(id) {
@@ -33,9 +32,9 @@ const NationalitiesContainer = props => {
 
   useEffect(() => {
     async function fetchNationalities() {
-      // const response = await api.get(`/api/lookup/nationality/${page}/${pageSize}`)
-      const response = {}
-      console.log("eimai sto useEffect")
+      const response = await api.get(
+        `/api/lookup/nationality/${page}/${pageSize}`
+      )
       if (response) setNationalities(response)
     }
     fetchNationalities()
