@@ -16,7 +16,7 @@ const UsersContainer = props => {
   }
 
   const onPaginationChange = (page, pageSize) => {
-    console.log(page, pageSize)
+    // console.log(page, pageSize)
     history.push(`/users/${page}/${pageSize}`)
   }
 

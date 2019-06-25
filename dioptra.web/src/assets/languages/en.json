@@ -30,9 +30,13 @@
     "logout": " Logout",
     "minimize": "Minimze",
     "unitMission": "Unit Mission",
+    "unitType": "Unit Type",
     "jrfl": "JRFL",
     "tables": "Lookup Tables",
-    "Units": "Units"
+    "units": "Units",
+    "manageNationality":"Nationalities",
+    "nationality":"New Nationality",
+    "nationalities":"List of Nationalities"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -57,7 +61,7 @@
     "password": "Users password"
   },
   "users": {
-    "headerTitle": "Χρήστες Εφαρμογής Θαλή",
+    "headerTitle": "Thales Users",
     "fullname": "Fullname",
     "unit": "Unit",
     "username": "Username",
@@ -70,6 +74,15 @@
   "unitMissions": {
     "headerTitle": "Αποστολές Μονάδων"
   },
+  "unitType": {
+    "name": "Unit Type Name",
+    "level": "Level",
+    "headerTitleNew": "New Unit Type",
+    "headerTitleEdit": "Edit Unit Type"
+  },
+  "unitTypes": {
+    "headerTitle": "Unit Types"
+  },
   "jrfltype": {
     "headerTitle": "JRFL Type",
     "name": "Name"
@@ -77,5 +90,17 @@
   "jrfltypes": {
     "headerTitle": "JRFL Types",
     "name":"Τype name"
+  },
+  "nationality": {
+    "headerTitle": "Nationality",
+    "shortname":"Code Name",
+    "name":"Name",
+    "fof":"Friend or Foe"
+  },
+  "nationalities": {
+    "headerTitle": "Nationalities List",
+    "shortname":"Code Name",
+    "name":"Name",
+    "fof":"Friend or Foe"
   }
 }

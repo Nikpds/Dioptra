@@ -53,10 +53,19 @@ const Sidebar = ({ open, setOpen }) => {
               icon: 'table',
               caption: strings.sidebar.unitMission,
               hasSubMenu: false
+            },
+            {
+              path: '/unittypes',
+              icon: 'table',
+              caption: strings.sidebar.unitType,
+              hasSubMenu: false
             }
           ]
         }
       ]
+    },
+    {
+      
     },
     {
       path: strings.sidebar.jrfl,
@@ -71,6 +80,12 @@ const Sidebar = ({ open, setOpen }) => {
           caption: strings.sidebar.jrfltypes
         }
       ]
+    },
+    {
+      path: '/nationalities',
+      icon: 'global',
+      caption: strings.sidebar.manageNationality,
+      hasSubMenu: false
     }
   ]
 

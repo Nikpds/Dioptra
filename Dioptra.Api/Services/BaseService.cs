@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace Dioptra.Api.Services
 {
-    public class BaseService<T> : IBaseService<T> where T : Entity
+    public class BaseService 
     {
-        private MongoDbRepository<T> _ctx;
 
-        public BaseService(IDbCollection<T> ctx)
+        public BaseService()
         {
-            _ctx = ctx.Collection;
+
         }
 
         public async Task<bool> Delete(T entity)

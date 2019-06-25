@@ -30,9 +30,13 @@
     "logout": " Αποσύνδεση",
     "minimize": "Απόκρυψη",
     "unitMission": "Αποστολή Μονάδας",
+    "unitType": "Τύποι Μονάδων",
     "jrfl": "JRFL",
     "tables": "Πάγια Στοιχεία",
-    "Units": "Μονάδες"
+    "units": "Μονάδες",
+    "manageNationality":"Εθνικότητες",
+    "nationality":"Νέα Εθνικότητα",
+    "nationalities":"Λίστα Εθνικοτήτων"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -70,6 +74,15 @@
   "unitMissions": {
     "headerTitle": "Αποστολές Μονάδων"
   },
+  "unitType": {
+    "name": "Όνομα Τύπου Μονάδας",
+    "level": "Επίπεδο",
+    "headerTitleNew": "Νέος Τύπος Μονάδων",
+    "headerTitleEdit": "Επεξεργασία Τύπου Μονάδων"
+  },
+  "unitTypes": {
+    "headerTitle": "Τύποι Μονάδων"
+  },
   "jrfltype": {
     "headerTitle": "Ονομασία Τύπου",
     "name": "'Ονομα"
@@ -77,5 +90,17 @@
   "jrfltypes": {
     "headerTitle": "Τύποι JRFL",
     "name":"Ονομασία τύπου"
+  },
+  "nationality": {
+    "headerTitle": "Εθνικότητα",
+    "shortname":"Κωδική Ονομασία",
+    "name":"Όνομα",
+    "fof":"Φίλια ή Εχθρική"
+  },
+  "nationalities": {
+    "headerTitle": "Λίστα Εθνικοτήτων ",
+    "shortname":"Κωδική Ονομασία",
+    "name":"Όνομα",
+    "fof":"Φίλια ή Εχθρική"
   }
 }
