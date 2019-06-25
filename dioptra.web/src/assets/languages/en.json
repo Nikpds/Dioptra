@@ -33,11 +33,10 @@
     "unitType": "Unit Type",
     "jrfl": "JRFL",
     "tables": "Lookup Tables",
-    "Units": "Units",
+    "units": "Units",
     "manageNationality":"Nationalities",
     "nationality":"New Nationality",
     "nationalities":"List of Nationalities"
-
   },
   "pagination": {
     "totalItems": "Total Items"

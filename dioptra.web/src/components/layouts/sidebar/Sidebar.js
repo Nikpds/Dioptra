@@ -65,6 +65,9 @@ const Sidebar = ({ open, setOpen }) => {
       ]
     },
     {
+      
+    },
+    {
       path: strings.sidebar.jrfl,
       icon: 'folder',
       hasSubMenu: true,
@@ -83,21 +86,6 @@ const Sidebar = ({ open, setOpen }) => {
       icon: 'global',
       caption: strings.sidebar.manageNationality,
       hasSubMenu: false
-      /* hasSubMenu: true,
-      submenu: [
-        {
-          path: '/nationality/new',
-          icon: 'plus',
-          caption: strings.sidebar.nationality,
-          hasSubMenu:false
-        },
-        {
-          path: '/nationalities',
-          icon: 'unordered-list',
-          caption: strings.sidebar.nationalities,
-          hasSubMenu:false
-        }
-      ] */
     }
   ]
 
