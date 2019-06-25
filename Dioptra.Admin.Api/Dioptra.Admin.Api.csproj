@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ChilkatDnCore" Version="9.5.0.78" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="MongoDB.Driver" Version="2.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dioptra.Admin.Models\Dioptra.Admin.Models.csproj" />
+    <ProjectReference Include="..\Dioptra.Admin.Services\Dioptra.Admin.Services.csproj" />
   </ItemGroup>
 
 </Project>

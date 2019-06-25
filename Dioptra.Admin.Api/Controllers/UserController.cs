@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Dioptra.Admin.Api.Authorization;
-using Dioptra.Admin.Api.Models;
+using Dioptra.Admin.Models;
 using Dioptra.Admin.Api.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

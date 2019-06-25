@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dioptra.Api", "Dioptra.Api\Dioptra.Api.csproj", "{D7AD69AB-E8CF-4201-917A-29EAFC211441}"
 EndProject
@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dioptra.Models", "dioptra.m
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dioptra.Mongo", "Dioptra.Mongo\Dioptra.Mongo.csproj", "{4D38D1AA-8549-45AB-97DF-EEB2B28AE5D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dioptra.Admin.Api", "Dioptra.Admin.Api\Dioptra.Admin.Api.csproj", "{36C1F4C1-EC59-482C-BA3B-D1B31817CA08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dioptra.Admin.Api", "Dioptra.Admin.Api\Dioptra.Admin.Api.csproj", "{36C1F4C1-EC59-482C-BA3B-D1B31817CA08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dioptra.Admin.Services", "Dioptra.Admin.Services\Dioptra.Admin.Services.csproj", "{985F9F8E-04F5-4B7E-BCD6-2A959B6CD34F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dioptra.Admin.Models", "Dioptra.Admin.Models\Dioptra.Admin.Models.csproj", "{4532FC0E-2DFC-4766-88F8-213701257CB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{36C1F4C1-EC59-482C-BA3B-D1B31817CA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36C1F4C1-EC59-482C-BA3B-D1B31817CA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36C1F4C1-EC59-482C-BA3B-D1B31817CA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985F9F8E-04F5-4B7E-BCD6-2A959B6CD34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985F9F8E-04F5-4B7E-BCD6-2A959B6CD34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985F9F8E-04F5-4B7E-BCD6-2A959B6CD34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985F9F8E-04F5-4B7E-BCD6-2A959B6CD34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4532FC0E-2DFC-4766-88F8-213701257CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4532FC0E-2DFC-4766-88F8-213701257CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4532FC0E-2DFC-4766-88F8-213701257CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4532FC0E-2DFC-4766-88F8-213701257CB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

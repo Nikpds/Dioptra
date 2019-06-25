@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
 
-namespace Dioptra.Admin.Api.Models.Views
+namespace Dioptra.Admin.Models.Views
 {
     public class LoginView
     {

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Dioptra.Admin.Api.Models;
 using Dioptra.Admin.Api.Services;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using Dioptra.Admin.Models;
+using Dioptra.Admin.Models.Views;
+using Dioptra.Admin.Services;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 
@@ -139,34 +138,13 @@ namespace Dioptra.Admin.Api.Controllers
             try
             {
                 var server = await _ctx.Servers.GetById(id);
-                Chilkat.Ssh ssh = new Chilkat.Ssh();
-                bool success = ssh.Connect(server.Ip, 22);
-                if (success != true)
-                {
-                    return BadRequest();
-                }
-                ssh.IdleTimeoutMs = 5000;
-                success = ssh.AuthenticatePw(server.Username, server.Password);
-                if (success != true)
-                {
-                    return BadRequest();
-                }
-                int channelNum;
-                channelNum = ssh.OpenSessionChannel();
+                ServerHealth health = new ServerHealth();
+                string[] commands = new string[2] { "cat /proc/cpuinfo", "cat /proc/meminfo" };
 
-                success = ssh.SendReqExec(channelNum, "cat /proc/meminfo");
-                if (success != true)
-                {
-                    return BadRequest();
-                }
-                success = ssh.ChannelReceiveToClose(channelNum);
-                if (success != true)
-                {
-                    return BadRequest();
-                }
-                string cmdOutput = ssh.GetReceivedText(channelNum, "ansi");
+                var memResult = SShService.RunCommands(server, commands);
 
-                return Ok(cmdOutput);
+
+                return Ok();
 
             }
             catch (Exception exc)

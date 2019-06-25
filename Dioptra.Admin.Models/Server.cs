@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Dioptra.Admin.Api.Models
+﻿namespace Dioptra.Admin.Models
 {
     public class Server : BaseEntity
     {

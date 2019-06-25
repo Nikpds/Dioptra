@@ -1,4 +1,4 @@
-﻿using Dioptra.Admin.Api.Models;
+﻿using Dioptra.Admin.Models;
 using MongoDB.Driver;
 using System;
 

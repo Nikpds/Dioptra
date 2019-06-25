@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using Dioptra.Admin.Api.Authorization;
-using Dioptra.Admin.Api.Models.Views;
+using Dioptra.Admin.Models.Views;
 using Dioptra.Admin.Api.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dioptra.Admin.Api.Controllers
