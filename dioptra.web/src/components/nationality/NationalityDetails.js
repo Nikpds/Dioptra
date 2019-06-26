@@ -12,7 +12,7 @@ const NationalityDetails = ({
   onCancel
 }) => {
   const [nationalityDetails, setNationalityDetails] = useState(nationality)
-
+  let shortnameMaxInput = 2
   const nationalityHandler = (name, value) => {
     setNationalityDetails({
       ...nationalityDetails,
@@ -52,6 +52,7 @@ const NationalityDetails = ({
             <Input
               name="shortName"
               value={nationalityDetails.shortName}
+              maxLength = {shortnameMaxInput}
               onChange={e => nationalityHandler(e.target.name, e.target.value)}
             />
           </Form.Item>

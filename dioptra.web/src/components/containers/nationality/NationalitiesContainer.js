@@ -25,9 +25,9 @@ const NationalitiesContainer = props => {
 
   async function onDelete(id) {
     await api.delete(`/api/lookup/nationality/${id}`)
-    const index = nationalities.findIndex(x => (x.id = id))
-    nationalities.splice(index, 1)
-    setNationalities([...nationalities])
+    const index = nationalities.rows.findIndex(x => (x.id = id))
+    nationalities.rows.splice(index, 1)
+    setNationalities({...nationalities})
   }
 
   useEffect(() => {

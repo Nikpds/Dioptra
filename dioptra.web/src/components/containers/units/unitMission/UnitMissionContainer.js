@@ -9,21 +9,23 @@ const UnitMissionContainer = props => {
 
   async function onSave(value) {
     if (value.id) {
-      const response = await api.put(`/api/unitMission/${id}`, value)
+      console.log("eimai sitn on Save");
+      const response = await api.put(`/api/lookup/unitmission/${id}`, value)
+      console.log(response)
       if (response) {
         setUnitMission(response)
       }
     } else {
-      const response = await api.post(`/api/unitMission`, value)
+      const response = await api.post(`/api/lookup/unitmission`, value)
       if (response) {
         setUnitMission(response)
-        history.push('/unitMission/' + response.id)
+        history.push('/unitmission/' + response.id)
       }
     }
   }
 
   function onBack() {
-    history.push('/UnitMissions')
+    history.push('/unitmissions')
   }
 
   function onCancel() {
@@ -31,8 +33,8 @@ const UnitMissionContainer = props => {
   }
 
   async function onDelete() {
-    await api.delete(`/api/unitMission/${id}`)
-    history.push('/UnitMissions')
+    await api.delete(`/api/lookup/unitmission/${id}`)
+    onBack()
   }
 
   useEffect(() => {
@@ -40,7 +42,7 @@ const UnitMissionContainer = props => {
       if (id === 'new') {
         return
       }
-      const response = await api.get(`/api/unitMission/${id}`)
+      const response = await api.get(`/api/lookup/unitmission/${id}`)
       setUnitMission(response)
     }
 

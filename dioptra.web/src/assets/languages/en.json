@@ -71,7 +71,9 @@
     "phone": "Telephone"
   },
   "unitMission": {
-    "name": "Name Unit Mission"
+    "name": "Name Unit Mission",
+    "headerTitleNew": "New Unit Mission",
+    "headerTitleEdit": "Edit Unit Mission"
   },
   "unitMissions": {
     "headerTitle": "Αποστολές Μονάδων"
