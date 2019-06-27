@@ -4,36 +4,36 @@ import api from '../../../../services/api'
 
 const WaveformTypesContainer = props => {
   const { children, history } = props
-  const [waveformTypes, setWaveformTypes] = useState([])
+  const [emmiterFunctions, setEmmiterFunctions] = useState([])
 
   function onCreate() {
-    history.push('/waveformtype/new')
+    history.push('/emmiterfunction/new')
   }
 
   function onEdit(id) {
-    history.push(`/waveformtype/${id}`)
+    history.push(`/emmiterfunction/${id}`)
   }
 
   async function onDelete(id) {
-    await api.delete(`/api/lookup/waveformtype/${id}`)
-    const index = waveformTypes.findIndex(x => (x.id = id))
-    waveformTypes.splice(index, 1)
-    setWaveformTypes([...waveformTypes])
+    await api.delete(`/api/lookup/emmiterfunction/${id}`)
+    const index = emmiterFunctions.findIndex(x => (x.id = id))
+    emmiterFunctions.splice(index, 1)
+    setEmmiterFunctions([...emmiterFunctions])
   }
 
   useEffect(() => {
-    async function fetchWaveformTypes() {
+    async function fetchEmmiterFunctions() {
       const response = await api.get('/api/lookup/waveformtype')
       if (response && response.length > 0) {
-        setWaveformTypes(response)
+        setEmmiterFunctions(response)
       }
     }
-    fetchWaveformTypes()
+    fetchEmmiterFunctions()
   }, [])
 
   return React.Children.map(children, child =>
     React.cloneElement(child, {
-      waveformTypes,
+      emmiterFunctions,
       onCreate,
       onEdit,
       onDelete

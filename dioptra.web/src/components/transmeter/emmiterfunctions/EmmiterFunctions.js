@@ -1,20 +1,20 @@
 import React from 'react'
-import WaveformTypesContainer from '../../containers/transmeter/waveformtype/WaveformTypesContainer'
+import EmmiterFunctionsContainer from '../../containers/transmeter/emmiterfunction/EmmiterFunctionsContainer'
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
 import SSPTable from '../../shared/SSPTable'
 import Table from '../../shared/Table'
 
-const WaveformTypesList = ({
-  waveformTypes,
+const EmmiterFunctionsList = ({
+  emmiterFunctions,
   onCreate,
   onEdit,
   onDelete,
 }) => {
   const headers = [
     {
-      title: strings.waveformtype.typename,
+      title: strings.emmiterfunction.typename,
       dataIndex: 'name',
       key: 'name'
     },
@@ -53,8 +53,8 @@ const WaveformTypesList = ({
   return (
     <div>
       <ActionHeader
-        title={strings.waveformtypes.headerTitle}
-        subtitle= {waveformTypes.length}
+        title={strings.emmiterfunctions.headerTitle}
+        subtitle= {emmiterFunctions.length}
         actions={[
           {
             onClick: onCreate,
@@ -63,14 +63,14 @@ const WaveformTypesList = ({
           }
         ]}
       />
-      <Table data={waveformTypes} columns={headers} />
+      <Table data={emmiterFunctions} columns={headers} />
     </div>
   )
 }
 
-const WaveformTypeForm = () => (
-  <WaveformTypesContainer>
-    <WaveformTypesList />
-  </WaveformTypesContainer>
+const EmmiterFunctionsForm = () => (
+  <EmmiterFunctionsContainer>
+    <EmmiterFunctionsList />
+  </EmmiterFunctionsContainer>
 )
-export default WaveformTypeForm
+export default EmmiterFunctionsForm
