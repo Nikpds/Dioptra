@@ -43,7 +43,6 @@ const Sidebar = ({ open, setOpen }) => {
           ]
         },
         {
-          /* *** to change **** */
           path: strings.sidebar.transmitter,
           icon: 'wifi',
           caption: strings.sidebar.transmitter,
@@ -66,9 +65,14 @@ const Sidebar = ({ open, setOpen }) => {
               icon: 'wifi',
               hasSubMenu: false,
               caption: strings.sidebar.antenaTransmitterTypes
-            }
+            },
+            {
+              path: '/scanfunctions',
+              icon: 'scan',
+              hasSubMenu: false,
+              caption: strings.sidebar.scanFunctions
+             }
           ]
-          /* *** to change **** */
         },
         {
           path: '/nationalities/1/10',

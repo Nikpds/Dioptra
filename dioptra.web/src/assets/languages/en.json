@@ -40,7 +40,8 @@
     "waveformtypes":"Waveform Types",
     "transmitter":"Transmitters",
     "emmiterFunctions":"Emmiter Functions",
-    "antenaTransmitterTypes" : "Radar Antena Type"
+    "antenaTransmitterTypes" : "Radar Antena Type",
+    "scanFunctions":"Scan Functions"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -130,5 +131,13 @@
     "name":"Radar Antena Type",
     "headerTitleEdit":"Edit Radar Antena Type",
     "headerTitleNew":"New Radar Antena Type"
+  },
+  "scanFunctions": {
+    "headerTitle": "Scan Functions",
+    "name": "Scan Name"
+  },
+  "scanFunction": {
+    "headerTitle": "Scan Function",
+    "name": "Scan Name"
   }
 }

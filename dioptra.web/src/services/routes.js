@@ -19,6 +19,8 @@ import EmmiterFunctions from '../components/transmitter/emmiterfunctions/Emmiter
 import EmmiterFunctionDetails from '../components/transmitter/emmiterfunctions/EmmiterFunctionDetails'
 import AntenaTransmitterTypeDetails from '../components/transmitter/radarAntenaType/RadarAntenaTypeDetails'
 import AntenaTransmitterTypes from '../components/transmitter/radarAntenaType/RadarAntenaTypes'
+import ScanFunctions from '../components/transmitter/scanfunctions/ScanFunctions'
+import ScanFunctionDetails from '../components/transmitter/scanfunctions/ScanFunctionDetails'
 
 export const fullAccess = (
   <Switch>
@@ -40,6 +42,8 @@ export const fullAccess = (
     <Route path="/emmiterfunctions" exact component={EmmiterFunctions} />
     <Route path="/antenatransmittertypedetails/:id" exact component={AntenaTransmitterTypeDetails} />
     <Route path="/antenatransmittertypes" exact component={AntenaTransmitterTypes} />
+    <Route path="/scanfunction/:id" exact component={ScanFunctionDetails} />
+    <Route path="/scanfunctions" exact component={ScanFunctions} />
     <Redirect to="/" />
   </Switch>
 )
