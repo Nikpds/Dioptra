@@ -14,20 +14,20 @@ const EmmiterFunctionDetails = ({
     const [emmiterFunctionDetails, setEmmiterFunctionDetails] = useState(emmiterFunction)
 
     const emmiterFunctionHandler = (name, value) => {
-        setEmmiterFunctionDetails({
-        ...emmiterFunctionDetails,
-        [name]: value
+      setEmmiterFunctionDetails({
+      ...emmiterFunctionDetails,
+      [name]: value
       })
     }
     useEffect(() => {
-        setEmmiterFunctionDetails(emmiterFunction)
+      setEmmiterFunctionDetails(emmiterFunction)
     }, [emmiterFunction])
 
       return (
         <div>
           <ActionHeader
             onBack={onBack}
-            title={strings.emmiterfunction.headerTitle}
+            title={strings.emmiterFunction.headerTitle}
             actions={[
               { onClick: onCancel, name: strings.buttons.cancel, type: 'default' },
               {
@@ -44,7 +44,7 @@ const EmmiterFunctionDetails = ({
           />
           <Card style={{ margin: 20 }} className="has-shadow">
             <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
-              <Form.Item label={strings.waveformtype.typename}>
+              <Form.Item label={strings.emmiterFunction.name}>
                 <Input
                   name="name"
                   value={emmiterFunctionDetails.name}

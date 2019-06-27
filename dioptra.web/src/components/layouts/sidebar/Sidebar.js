@@ -89,7 +89,13 @@ const Sidebar = ({ open, setOpen }) => {
       icon: 'line-chart',
       hasSubMenu: false,
       caption: strings.sidebar.waveformtypes
-    }
+    },
+    {
+    path: '/emmiterfunctions',
+    icon: 'pull-request',
+    hasSubMenu: false,
+    caption: strings.sidebar.emmiterFunctions
+   }
   ]
 
   return <SidebarMenu items={items} open={open} setOpen={setOpen} />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import api from '../../../../services/api'
 
-const WaveformTypesContainer = props => {
+const EmmiterFunctionsContainer = props => {
   const { children, history } = props
   const [emmiterFunctions, setEmmiterFunctions] = useState([])
 
@@ -15,7 +15,7 @@ const WaveformTypesContainer = props => {
   }
 
   async function onDelete(id) {
-    await api.delete(`/api/lookup/emmiterfunction/${id}`)
+    await api.delete(`/api/lookup/transmiter/function/${id}`)
     const index = emmiterFunctions.findIndex(x => (x.id = id))
     emmiterFunctions.splice(index, 1)
     setEmmiterFunctions([...emmiterFunctions])
@@ -23,7 +23,7 @@ const WaveformTypesContainer = props => {
 
   useEffect(() => {
     async function fetchEmmiterFunctions() {
-      const response = await api.get('/api/lookup/waveformtype')
+      const response = await api.get('/api/lookup/transmiter/function')
       if (response && response.length > 0) {
         setEmmiterFunctions(response)
       }
@@ -41,4 +41,4 @@ const WaveformTypesContainer = props => {
   )
 }
 
-export default withRouter(WaveformTypesContainer)
+export default withRouter(EmmiterFunctionsContainer)

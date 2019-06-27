@@ -14,7 +14,7 @@ const EmmiterFunctionsList = ({
 }) => {
   const headers = [
     {
-      title: strings.emmiterfunction.typename,
+      title: strings.emmiterFunction.name,
       dataIndex: 'name',
       key: 'name'
     },
@@ -53,7 +53,7 @@ const EmmiterFunctionsList = ({
   return (
     <div>
       <ActionHeader
-        title={strings.emmiterfunctions.headerTitle}
+        title={strings.emmiterFunctions.headerTitle}
         subtitle= {emmiterFunctions.length}
         actions={[
           {

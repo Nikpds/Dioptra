@@ -9,14 +9,14 @@ const EmmiterFunctionContainer = props => {
   
     async function onSave(value) {
       if (value.id) {
-        const response = await api.put(`/api/lookup/emmiterfunction/${id}`, value)
+        const response = await api.put(`/api/lookup/transmitter/function/${id}`, value)
         if (response) {
-            setEmmiterFunction(response)
+          setEmmiterFunction(response)
         }
       } else {
-        const response = await api.post(`/api/lookup/emmiterfunction`, value)
+        const response = await api.post(`/api/lookup/transmitter/function`, value)
         if (response) {
-            setEmmiterFunction(response)
+          setEmmiterFunction(response)
           history.push('/emmiterfunction/' + response.id)
         }
       }
@@ -29,7 +29,7 @@ const EmmiterFunctionContainer = props => {
       onBack()
     }
     async function onDelete() {
-      await api.delete(`/api/lookup/emmiterfunction/${id}`)
+      await api.delete(`/api/lookup/transmitter/function/${id}`)
       onBack()
     }
   
@@ -38,7 +38,7 @@ const EmmiterFunctionContainer = props => {
         if (id === 'new') {
           return
         }
-        const response = await api.get(`/api/lookup/emmiterfunction/${id}`)
+        const response = await api.get(`/api/lookup/transmitter/function/${id}`)
         setEmmiterFunction(response)
       }
       fetchEmmiterFunction()
