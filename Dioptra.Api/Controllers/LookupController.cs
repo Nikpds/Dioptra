@@ -278,6 +278,107 @@ namespace Dioptra.Api.Controllers
 
         #endregion
 
+        #region TransmitterFn
+        [HttpGet("transmitter/function")]
+        public async Task<IActionResult> GetTransmitterFns()
+        {
+            IEnumerable<TransmitterFn> result = await BaseService.GetAll(_ctx.TransmitterFns);
+
+            return Ok(result);
+        }
+
+        [HttpGet("transmitter/function/{id}")]
+        public async Task<IActionResult> GetTransmitterFn(string id)
+        {
+            TransmitterFn result = await BaseService.GetById(id, _ctx.TransmitterFns);
+
+            return Ok(result);
+        }
+
+        [HttpPost("transmitter/function")]
+        public async Task<IActionResult> CreateTransmitterFns([FromBody] TransmitterFn entity)
+        {
+
+            TransmitterFn result = await BaseService.Insert(entity, _ctx.TransmitterFns);
+
+            return Ok(result);
+        }
+
+        [HttpPut("transmitter/function/{id}")]
+        public async Task<IActionResult> UpdateTransmitterFns([FromBody] TransmitterFn entity, string id)
+        {
+            //TransmitterFn original = await BaseService.GetById(id, _ctx.TransmitterFns);
+           
+            TransmitterFn result = await BaseService.Update(entity, _ctx.TransmitterFns);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("transmitter/function/{id}")]
+        public async Task<IActionResult> DeleteTransmitterFns(string id)
+        {
+            TransmitterFn original = await BaseService.GetById(id, _ctx.TransmitterFns);
+            if (original == null)
+            {
+                return BadRequest();
+            }
+            bool success = await BaseService.Delete(original, _ctx.TransmitterFns);
+
+            return Ok(success);
+        }
+
+        #endregion
+
+        #region ScanFunctions
+        [HttpGet("scan/function")]
+        public async Task<IActionResult> GetScanFns()
+        {
+            IEnumerable<ScanFn> result = await BaseService.GetAll(_ctx.ScanFns);
+
+            return Ok(result);
+        }
+
+        [HttpGet("scan/function/{id}")]
+        public async Task<IActionResult> GetScanFns(string id)
+        {
+            ScanFn result = await BaseService.GetById(id, _ctx.ScanFns);
+
+            return Ok(result);
+        }
+
+        [HttpPost("scan/function")]
+        public async Task<IActionResult> CreateScanFn([FromBody] ScanFn entity)
+        {
+
+            ScanFn result = await BaseService.Insert(entity, _ctx.ScanFns);
+
+            return Ok(result);
+        }
+
+        [HttpPut("scan/function/{id}")]
+        public async Task<IActionResult> UpdateScanFn([FromBody] ScanFn entity, string id)
+        {
+            //ScanFn original = await BaseService.GetById(id, _ctx.TransmitterFns);
+
+            ScanFn result = await BaseService.Update(entity, _ctx.ScanFns);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("scan/function/{id}")]
+        public async Task<IActionResult> DeleteScanFn(string id)
+        {
+            ScanFn original = await BaseService.GetById(id, _ctx.ScanFns);
+            if (original == null)
+            {
+                return BadRequest();
+            }
+            bool success = await BaseService.Delete(original, _ctx.ScanFns);
+
+            return Ok(success);
+        }
+
+        #endregion
 
     }
 }
