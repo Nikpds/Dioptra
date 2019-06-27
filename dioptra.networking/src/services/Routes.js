@@ -4,14 +4,14 @@ import Login from '../components/login/Login';
 import Home from '../layout/Home';
 export const fullAccess = (
     <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/network/" exact component={Home} />
         <Redirect to="/" />
     </Switch>
 );
 
 export const unAuthorized = (
     <Switch>
-        <Route path="/login" exact component={Login} />
-        <Redirect to="/login" />
+        <Route path="/network/login" exact component={Login} />
+        <Redirect to="/network/login" />
     </Switch>
 );

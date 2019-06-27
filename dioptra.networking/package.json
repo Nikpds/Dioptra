@@ -2,9 +2,11 @@
   "name": "iris.web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "",
   "dependencies": {
     "antd": "^3.16.1",
     "babel-plugin-import": "^1.11.0",
+    "cross-env": "^5.2.0",
     "customize-cra": "^0.2.11",
     "jsonwebtoken": "^8.5.1",
     "less": "^3.9.0",
@@ -18,7 +20,7 @@
   },
   "scripts": {
     "start": "set PORT=3010 && react-app-rewired start",
-    "build": "react-app-rewired build",
+    "build": "cross-env NODE_ENV=pro PUBLIC_URL=/network react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },

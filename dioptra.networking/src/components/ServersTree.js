@@ -10,7 +10,7 @@ const ServersTree = () => {
         setReload(previousState => !previousState);
 
     }
-    const currentIp = (window.location.href.substr(7)).split(':')[0];
+    const currentIp = (window.location.href.substr(8)).split(':')[0];
     const mainServer = servers.find(x => x.ip === currentIp);
     useEffect(() => {
         const job = setInterval(() => {

@@ -4,7 +4,7 @@ import '../styles/tree.css';
 import { ErrorContext } from '../layout/Home';
 import { callFetch } from '../services/HttpService';
 const ServerNode = props => {
-    const currentIp = (window.location.href.substr(7)).split(':')[0];
+    const currentIp = (window.location.href.substr(8)).split(':')[0];
     const url = 'https://' + currentIp + ':9000/api';
     const ctx = useContext(ErrorContext);
     const [loading, setLoading] = useState(0);
