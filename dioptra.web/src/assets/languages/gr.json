@@ -72,7 +72,9 @@
     "phone": "Τηλέφωνο"
   },
   "unitMission": {
-    "name": "Όνομα Αποστολής μονάδας"
+    "name": "Όνομα Αποστολής μονάδας",
+    "headerTitleNew": "Νέα Αποστολή Μονάδας",
+    "headerTitleEdit": "Επεξεργασία Αποστολής Μονάδας"
   },
   "unitMissions": {
     "headerTitle": "Αποστολές Μονάδων"

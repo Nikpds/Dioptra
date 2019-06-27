@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Menu, Icon } from 'antd'
 import React from 'react'
 import '../layout.less'
+
 const SidebarMenu = ({ items, open, setOpen }) => (
   <Menu mode="vertical" inlineCollapsed={open} selectable={false}>
     {items.map(item =>

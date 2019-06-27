@@ -7,15 +7,15 @@ const UnitMissionsContainer = props => {
   const [unitmissions, setUnitmissions] = useState([])
 
   function onCreate() {
-    history.push('/unitmisson/new')
+    history.push('/unitmission/new')
   }
   
   function onEdit(id) {
-    history.push(`/unitMision/${id}`)
+    history.push(`/unitmission/${id}`)
   }
 
   async function onDelete(id) {
-    await api.delete(`/api/unitMision/${id}`)
+    await api.delete(`/api/lookup/unitmission/${id}`)
     const index = unitmissions.findIndex(x => (x.id = id))
     unitmissions.splice(index, 1)
     setUnitmissions([...unitmissions])
@@ -23,7 +23,7 @@ const UnitMissionsContainer = props => {
 
   useEffect(() => {
     async function fetchUnitMissions() {
-      const response = await api.get('/api/admin/unirmisssions')
+      const response = await api.get('/api/lookup/unitmission')
       if (response && response.lenght > 0) {
         setUnitmissions(response)
       }

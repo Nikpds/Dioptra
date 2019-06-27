@@ -28,7 +28,11 @@ const UnitMissionDetails = ({
     <div>
       <ActionHeader
         onBack={onBack}
-        title="Νέα Αποστολή Μονάδας"
+        title={
+          unitMissionDetails.id
+            ? strings.unitType.headerTitleEdit
+            : strings.unitType.headerTitleNew
+        }
         actions={[
           { onClick: onCancel, name: strings.buttons.cancel, type: 'default' },
           {
@@ -47,8 +51,8 @@ const UnitMissionDetails = ({
         <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
           <Form.Item label={strings.unitMission.name}>
             <Input
-              name="unitMissionName"
-              value={unitMissionDetails.unitMissionName}
+              name="name"
+              value={unitMissionDetails.name}
               onChange={e => unitMissionHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
