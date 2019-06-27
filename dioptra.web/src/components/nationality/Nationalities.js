@@ -66,7 +66,7 @@ const NationalitiesList = ({
     <div>
       <ActionHeader
         title={strings.nationalities.headerTitle}
-        // subtitle= {nationalities.rows.length}
+        subtitle= {nationalities.rows.length}
         actions={[
           {
             onClick: onCreate,

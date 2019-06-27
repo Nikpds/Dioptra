@@ -13,8 +13,9 @@ import Nationalities from '../components/nationality/Nationalities'
 import NationalityDetails from '../components/nationality/NationalityDetails'
 import UnitTypeForm from '../components/units/unitType/UnitTypeDetails'
 import UnitTypeTable from '../components/units/unitType/UnitTypes'
-import WaveformTypes from '../components/transmeter/waveformtypes/WaveformTypes'
-import WaveformTypeDetails from '../components/transmeter/waveformtypes/WaveformTypeDetails'
+import WaveformTypes from '../components/transmitter/waveformtypes/WaveformTypes'
+// import WaveformTypeDetails from '../components/transmitter/waveformTypes/WaveformTypeDetails'
+import WaveformTypeDetails from '../components/transmitter/waveformtypes/WaveformTypeDetails'
 
 export const fullAccess = (
   <Switch>

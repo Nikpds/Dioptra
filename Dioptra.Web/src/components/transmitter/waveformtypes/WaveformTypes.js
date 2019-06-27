@@ -1,5 +1,5 @@
 import React from 'react'
-import WaveformTypesContainer from '../../containers/transmeter/waveformtype/WaveformTypesContainer'
+import WaveformTypesContainer from '../../containers/transmitter/waveformType/WaveformTypesContainer'
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
