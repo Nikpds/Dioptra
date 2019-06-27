@@ -36,7 +36,9 @@
     "units": "Μονάδες",
     "manageNationality":"Εθνικότητες",
     "nationality":"Νέα Εθνικότητα",
-    "nationalities":"Λίστα Εθνικοτήτων"
+    "nationalities":"Λίστα Εθνικοτήτων",
+    "waveformtypes":"Τύποι Κυματομορφών",
+    "transmeter":"Πομπός"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -69,7 +71,9 @@
     "phone": "Τηλέφωνο"
   },
   "unitMission": {
-    "name": "Όνομα Αποστολής μονάδας"
+    "name": "Όνομα Αποστολής μονάδας",
+    "headerTitleNew": "Νέα Αποστολή Μονάδας",
+    "headerTitleEdit": "Επεξεργασία Αποστολής Μονάδας"
   },
   "unitMissions": {
     "headerTitle": "Αποστολές Μονάδων"
@@ -102,5 +106,13 @@
     "shortname":"Κωδική Ονομασία",
     "name":"Όνομα",
     "fof":"Φίλια ή Εχθρική"
+  }, 
+  "waveformtypes": {
+    "headerTitle": "Τύποι Κυματομορφών",
+    "typename": "Όνομα Τύπου"
+  }, 
+  "waveformtype": {
+    "headerTitle": "Τύπος Κυματομορφής",
+    "typename": "Όνομα Τύπου"
   }
 }

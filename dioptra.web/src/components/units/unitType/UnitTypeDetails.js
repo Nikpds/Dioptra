@@ -28,8 +28,8 @@ const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
         onBack={onBack}
         title={
           unitTypeDetails.id
-            ? strings.unitType.headerTitleNew
-            : strings.unitType.headerTitleEdit
+            ? strings.unitType.headerTitleEdit
+            : strings.unitType.headerTitleNew
         }
         actions={[
           { onClick: onCancel, name: strings.buttons.cancel, type: 'default' },

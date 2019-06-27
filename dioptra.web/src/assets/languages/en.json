@@ -36,7 +36,9 @@
     "units": "Units",
     "manageNationality":"Nationalities",
     "nationality":"New Nationality",
-    "nationalities":"List of Nationalities"
+    "nationalities":"List of Nationalities",
+    "waveformtypes":"Waveform Types",
+    "transmeter":"Transmeter"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -69,7 +71,9 @@
     "phone": "Telephone"
   },
   "unitMission": {
-    "name": "Name Unit Mission"
+    "name": "Name Unit Mission",
+    "headerTitleNew": "New Unit Mission",
+    "headerTitleEdit": "Edit Unit Mission"
   },
   "unitMissions": {
     "headerTitle": "Αποστολές Μονάδων"
@@ -102,5 +106,13 @@
     "shortname":"Code Name",
     "name":"Name",
     "fof":"Friend or Foe"
+  },
+  "waveformtypes": {
+    "headerTitle": "Waveform Types",
+    "typename": "Type Name"
+  }, 
+  "waveformtype": {
+    "headerTitle": "Waveform Type",
+    "typename": "Type Name"
   }
 }
