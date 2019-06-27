@@ -5,7 +5,8 @@ import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
 import Table from '../../shared/Table'
 
-const UnitMissionList = ({ unitmissions, onCreate, onEdit, onDelete }) => {
+const UnitMissionList = ({ unitMissions, onCreate, onEdit, onDelete }) => {
+  console.log(unitMissions)
   const headers = [
     {
       title: strings.unitMission.name,
@@ -47,7 +48,7 @@ const UnitMissionList = ({ unitmissions, onCreate, onEdit, onDelete }) => {
     <div>
       <ActionHeader
         title={strings.unitMissions.headerTitle}
-        subtitle={unitmissions.length}
+        subtitle={unitMissions.length}
         actions={[
           {
             onClick: onCreate,
@@ -56,7 +57,7 @@ const UnitMissionList = ({ unitmissions, onCreate, onEdit, onDelete }) => {
           }
         ]}
       />
-      <Table data={unitmissions} columns={headers} />
+      <Table data={unitMissions} columns={headers} />
     </div>
   )
 }

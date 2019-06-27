@@ -4,7 +4,7 @@ import api from '../../../../services/api'
 
 const UnitMissionsContainer = props => {
   const { children, history } = props
-  const [unitmissions, setUnitmissions] = useState([])
+  const [unitMissions, setUnitMissions] = useState([])
 
   function onCreate() {
     history.push('/unitmission/new')
@@ -16,16 +16,16 @@ const UnitMissionsContainer = props => {
 
   async function onDelete(id) {
     await api.delete(`/api/lookup/unitmission/${id}`)
-    const index = unitmissions.findIndex(x => (x.id = id))
-    unitmissions.splice(index, 1)
-    setUnitmissions([...unitmissions])
+    const index = unitMissions.findIndex(x => (x.id = id))
+    unitMissions.splice(index, 1)
+    setUnitMissions([...unitMissions])
   }
 
   useEffect(() => {
     async function fetchUnitMissions() {
       const response = await api.get('/api/lookup/unitmission')
-      if (response && response.lenght > 0) {
-        setUnitmissions(response)
+      if (response && response.length > 0) {
+        setUnitMissions(response)
       }
     }
     fetchUnitMissions()
@@ -33,7 +33,7 @@ const UnitMissionsContainer = props => {
 
   return React.Children.map(children, child =>
     React.cloneElement(child, {
-      unitmissions,
+      unitMissions,
       onCreate,
       onEdit,
       onDelete

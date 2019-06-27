@@ -6,7 +6,6 @@ import ActionHeader from '../../shared/ActionHeader'
 import Table from '../../shared/Table'
 
 const UnitTypeList = ({ unitTypes, onCreate, onEdit, onDelete }) => {
-  console.log(unitTypes)
   const headers = [
     {
       title: strings.unitType.name,

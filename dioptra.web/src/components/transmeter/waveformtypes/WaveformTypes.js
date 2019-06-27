@@ -3,7 +3,6 @@ import WaveformTypesContainer from '../../containers/transmeter/waveformtype/Wav
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
-import SSPTable from '../../shared/SSPTable'
 import Table from '../../shared/Table'
 
 const WaveformTypesList = ({
