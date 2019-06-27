@@ -16,6 +16,8 @@ namespace Dioptra.Mongo
         public IMongoDbRepository<UnitType> UnitTypes { get; private set; }
         public IMongoDbRepository<WaveformType> WaveformTypes { get; private set; }
         public IMongoDbRepository<UnitMission> UnitMissions { get; private set; }
+        public IMongoDbRepository<TransmitterFn> TransmitterFns { get; private set; }
+        public IMongoDbRepository<ScanFn> ScanFns { get; private set; }
 
 
         public DataContext(string connectionString)
@@ -36,6 +38,8 @@ namespace Dioptra.Mongo
             UnitTypes = new MongoDbRepository<UnitType>(Database, "UnitTypes");
             WaveformTypes = new MongoDbRepository<WaveformType>(Database, "WaveformTypes");
             UnitMissions = new MongoDbRepository<UnitMission>(Database, "UnitMissions");
+            TransmitterFns = new MongoDbRepository<TransmitterFn>(Database, "TransmitterFunctions");
+            ScanFns = new MongoDbRepository<ScanFn>(Database, "ScanFunctions");
         }
     }
 }
