@@ -11,26 +11,6 @@ const Sidebar = ({ open, setOpen }) => {
       caption: strings.sidebar.home
     },
     {
-      path: strings.sidebar.managment,
-      icon: 'folder',
-      hasSubMenu: true,
-      caption: strings.sidebar.managment,
-      submenu: [
-        {
-          path: '/user/new',
-          icon: 'user-add',
-          hasSubMenu: false,
-          caption: strings.sidebar.user
-        },
-        {
-          path: '/users/1/10',
-          icon: 'usergroup-add',
-          hasSubMenu: false,
-          caption: strings.sidebar.users
-        }
-      ]
-    },
-    {
       path: '/eob',
       icon: 'global',
       hasSubMenu: false,
@@ -63,10 +43,58 @@ const Sidebar = ({ open, setOpen }) => {
           ]
         },
         {
+          /* *** to change **** */
+          path: strings.sidebar.transmitter,
+          icon: 'wifi',
+          caption: strings.sidebar.transmitter,
+          hasSubMenu: true,
+          submenu: [
+            {
+              path: '/waveformtypes',
+              icon: 'line-chart',
+              hasSubMenu: false,
+              caption: strings.sidebar.waveformtypes
+            },
+            {
+              path: '/emmiterfunctions',
+              icon: 'pull-request',
+              hasSubMenu: false,
+              caption: strings.sidebar.emmiterFunctions
+            },
+            {
+              path: '/antenatransmittertypes',
+              icon: 'wifi',
+              hasSubMenu: false,
+              caption: strings.sidebar.antenaTransmitterTypes
+            }
+          ]
+          /* *** to change **** */
+        },
+        {
           path: '/nationalities/1/10',
           icon: 'global',
           caption: strings.sidebar.manageNationality,
           hasSubMenu: false
+        }
+      ]
+    },
+    {
+      path: strings.sidebar.managment,
+      icon: 'folder',
+      hasSubMenu: true,
+      caption: strings.sidebar.managment,
+      submenu: [
+        {
+          path: '/user/new',
+          icon: 'user-add',
+          hasSubMenu: false,
+          caption: strings.sidebar.user
+        },
+        {
+          path: '/users/1/10',
+          icon: 'usergroup-add',
+          hasSubMenu: false,
+          caption: strings.sidebar.users
         }
       ]
     },
@@ -83,19 +111,7 @@ const Sidebar = ({ open, setOpen }) => {
           caption: strings.sidebar.jrfltypes
         }
       ]
-    }, 
-    {
-      path: '/waveformtypes',
-      icon: 'line-chart',
-      hasSubMenu: false,
-      caption: strings.sidebar.waveformtypes
-    },
-    {
-    path: '/emmiterfunctions',
-    icon: 'pull-request',
-    hasSubMenu: false,
-    caption: strings.sidebar.emmiterFunctions
-   }
+    }
   ]
 
   return <SidebarMenu items={items} open={open} setOpen={setOpen} />

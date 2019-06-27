@@ -17,6 +17,8 @@ import WaveformTypes from '../components/transmitter/waveformtypes/WaveformTypes
 import WaveformTypeDetails from '../components/transmitter/waveformtypes/WaveformTypeDetails'
 import EmmiterFunctions from '../components/transmitter/emmiterfunctions/EmmiterFunctions'
 import EmmiterFunctionDetails from '../components/transmitter/emmiterfunctions/EmmiterFunctionDetails'
+import AntenaTransmitterTypeDetails from '../components/transmitter/radarAntenaType/RadarAntenaTypeDetails'
+import AntenaTransmitterTypes from '../components/transmitter/radarAntenaType/RadarAntenaTypes'
 
 export const fullAccess = (
   <Switch>
@@ -36,6 +38,8 @@ export const fullAccess = (
     <Route path="/waveformtypes" exact component={WaveformTypes} />
     <Route path="/emmiterfunction/:id" exact component={EmmiterFunctionDetails} />
     <Route path="/emmiterfunctions" exact component={EmmiterFunctions} />
+    <Route path="/antenatransmittertypedetails/:id" exact component={AntenaTransmitterTypeDetails} />
+    <Route path="/antenatransmittertypes" exact component={AntenaTransmitterTypes} />
     <Redirect to="/" />
   </Switch>
 )

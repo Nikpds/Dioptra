@@ -38,8 +38,10 @@
     "nationality":"Νέα Εθνικότητα",
     "nationalities":"Λίστα Εθνικοτήτων",
     "waveformtypes":"Τύποι Κυματομορφών",
-    "transmeter":"Πομπός",
-    "emmiterFunctions":"Λειτουργίες Πομπών"
+    "transmitter":"Πομποί",
+    "emmiterFunctions":"Λειτουργίες Πομπών",
+    "antenaTransmitterTypes" : "Τύποι Κεραιών Πομπών"
+
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -123,5 +125,11 @@
   "emmiterFunction": {
     "headerTitle": "Λειτουργία Πομπών",
     "name": "Όνομα Πομπού"
+  },
+  "radarAntenaType": {
+    "headerTitle": "Τύποι Κεραιών Πομπών",
+    "name":"Τύποι Κεραιών Πομπών",
+    "headerTitleEdit":"Επεξεργασία Τύποι Κεραιών Πομπών",
+    "headerTitleNew":"Νέος Τύπος Κεραιών Πομπών"
   }
 }

@@ -1,19 +1,14 @@
 import React from 'react'
-import EmmiterFunctionsContainer from '../../containers/transmitter/emmiterfunction/EmmiterFunctionsContainer'
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
 import Table from '../../shared/Table'
+import RadarAntenaTypesContainer from '../../containers/transmitter/radarAntennaType/RadarAntennaTypesContainer'
 
-const EmmiterFunctionsList = ({
-  emmiterFunctions,
-  onCreate,
-  onEdit,
-  onDelete,
-}) => {
+const RadarAntenaTypes = ({ radarAntenaTypes, onCreate, onEdit, onDelete }) => {
   const headers = [
     {
-      title: strings.emmiterFunction.name,
+      title: strings.radarAntenaType.name,
       dataIndex: 'name',
       key: 'name'
     },
@@ -30,12 +25,7 @@ const EmmiterFunctionsList = ({
           onCancel={null}
           okText="Yes"
           cancelText="No">
-          <Button
-            type="danger"
-            shape="circle"
-            icon="delete"
-            size="small"
-          />
+          <Button type="danger" shape="circle" icon="delete" size="small" />
         </Popconfirm>,
         <Divider key={2} type="vertical" />,
         <Button
@@ -52,8 +42,8 @@ const EmmiterFunctionsList = ({
   return (
     <div>
       <ActionHeader
-        title={strings.emmiterFunctions.headerTitle}
-        subtitle= {emmiterFunctions.length}
+        title={strings.radarAntenaType.headerTitle}
+        subtitle={radarAntenaTypes.length}
         actions={[
           {
             onClick: onCreate,
@@ -62,14 +52,14 @@ const EmmiterFunctionsList = ({
           }
         ]}
       />
-      <Table data={emmiterFunctions} columns={headers} />
+      <Table data={radarAntenaTypes} columns={headers} />
     </div>
   )
 }
 
-const EmmiterFunctionsForm = () => (
-  <EmmiterFunctionsContainer>
-    <EmmiterFunctionsList />
-  </EmmiterFunctionsContainer>
+const RadarAntenaTypesForm = () => (
+  <RadarAntenaTypesContainer>
+    <RadarAntenaTypes />
+  </RadarAntenaTypesContainer>
 )
-export default EmmiterFunctionsForm
+export default RadarAntenaTypesForm

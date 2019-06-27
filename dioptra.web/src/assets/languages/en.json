@@ -38,8 +38,9 @@
     "nationality":"New Nationality",
     "nationalities":"List of Nationalities",
     "waveformtypes":"Waveform Types",
-    "transmeter":"Transmeter",
-    "emmiterFunctions":"Emmiter Functions"
+    "transmitter":"Transmitters",
+    "emmiterFunctions":"Emmiter Functions",
+    "antenaTransmitterTypes" : "Radar Antena Type"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -123,5 +124,11 @@
   "emmiterFunction": {
     "headerTitle": "Emmiter Function",
     "name": "Emmiter Name"
+  },
+  "radarAntenaType": {
+    "headerTitle": "Radar Antena Type",
+    "name":"Radar Antena Type",
+    "headerTitleEdit":"Edit Radar Antena Type",
+    "headerTitleNew":"New Radar Antena Type"
   }
 }
