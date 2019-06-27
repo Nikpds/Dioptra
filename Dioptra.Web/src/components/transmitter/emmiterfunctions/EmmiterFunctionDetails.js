@@ -2,54 +2,53 @@ import React, { useState, useEffect } from 'react'
 import { strings } from '../../../contexts/LocalizationProvider'
 import { Form, Input, Card } from 'antd'
 import ActionHeader from '../../shared/ActionHeader'
-// import WaveformTypeContainer from '../../containers/transmitter/waveformtype/WaveformTypeContainer'
-import WaveformTypeContainer from '../../containers/transmitter/waveformType/WaveformTypeContainer'
+import EmmiterFunctionContainer from '../../containers/transmitter/emmiterfunction/EmmiterFunctionContainer'
 
-const WaveformTypeDetails = ({
+const EmmiterFunctionDetails = ({
     onBack,
     onSave,
     onDelete,
-    waveformType,
+    emmiterFunction,
     onCancel
   }) => { 
-    const [waveformtypeDetails, setWaveformtypeDetails] = useState(waveformType)
+    const [emmiterFunctionDetails, setEmmiterFunctionDetails] = useState(emmiterFunction)
 
-    const waveformtypeHandler = (name, value) => {
-      setWaveformtypeDetails({
-        ...waveformtypeDetails,
-        [name]: value
+    const emmiterFunctionHandler = (name, value) => {
+      setEmmiterFunctionDetails({
+      ...emmiterFunctionDetails,
+      [name]: value
       })
     }
     useEffect(() => {
-      setWaveformtypeDetails(waveformType)
-    }, [waveformType])
+      setEmmiterFunctionDetails(emmiterFunction)
+    }, [emmiterFunction])
 
       return (
         <div>
           <ActionHeader
             onBack={onBack}
-            title={strings.waveformtype.headerTitle}
+            title={strings.emmiterFunction.headerTitle}
             actions={[
               { onClick: onCancel, name: strings.buttons.cancel, type: 'default' },
               {
                 onClick: onDelete,
                 name: strings.buttons.delete,
                 type: 'danger',
-                show: !waveformType.id
+                show: !emmiterFunction.id
               },
               {
-                onClick: () => onSave(waveformtypeDetails),
+                onClick: () => onSave(emmiterFunctionDetails),
                 name: strings.buttons.save
               }
             ]}
           />
           <Card style={{ margin: 20 }} className="has-shadow">
             <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
-              <Form.Item label={strings.waveformtype.typename}>
+              <Form.Item label={strings.emmiterFunction.name}>
                 <Input
                   name="name"
-                  value={waveformtypeDetails.name}
-                  onChange={e => waveformtypeHandler(e.target.name, e.target.value)}
+                  value={emmiterFunctionDetails.name}
+                  onChange={e => emmiterFunctionHandler(e.target.name, e.target.value)}
                 />
               </Form.Item>
             </Form>
@@ -58,9 +57,9 @@ const WaveformTypeDetails = ({
       )
   }
 
-const WaveformTypeForm = () => (
-    <WaveformTypeContainer>
-      <WaveformTypeDetails />
-    </WaveformTypeContainer>
+const EmmiterFunctionForm = () => (
+    <EmmiterFunctionContainer>
+      <EmmiterFunctionDetails />
+    </EmmiterFunctionContainer>
   )
-  export default WaveformTypeForm
+  export default EmmiterFunctionForm

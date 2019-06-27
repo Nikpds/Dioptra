@@ -38,7 +38,8 @@
     "nationality":"Νέα Εθνικότητα",
     "nationalities":"Λίστα Εθνικοτήτων",
     "waveformtypes":"Τύποι Κυματομορφών",
-    "transmeter":"Πομπός"
+    "transmeter":"Πομπός",
+    "emmiterFunctions":"Λειτουργίες Πομπών"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -114,5 +115,13 @@
   "waveformtype": {
     "headerTitle": "Τύπος Κυματομορφής",
     "typename": "Όνομα Τύπου"
+  },
+  "emmiterFunctions": {
+    "headerTitle": "Λειτουργίες Πομπών",
+    "name": "Όνομα Πομπού"
+  },
+  "emmiterFunction": {
+    "headerTitle": "Λειτουργία Πομπών",
+    "name": "Όνομα Πομπού"
   }
 }

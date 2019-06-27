@@ -14,8 +14,9 @@ import NationalityDetails from '../components/nationality/NationalityDetails'
 import UnitTypeForm from '../components/units/unitType/UnitTypeDetails'
 import UnitTypeTable from '../components/units/unitType/UnitTypes'
 import WaveformTypes from '../components/transmitter/waveformtypes/WaveformTypes'
-// import WaveformTypeDetails from '../components/transmitter/waveformTypes/WaveformTypeDetails'
 import WaveformTypeDetails from '../components/transmitter/waveformtypes/WaveformTypeDetails'
+import EmmiterFunctions from '../components/transmitter/emmiterfunctions/EmmiterFunctions'
+import EmmiterFunctionDetails from '../components/transmitter/emmiterfunctions/EmmiterFunctionDetails'
 
 export const fullAccess = (
   <Switch>
@@ -33,6 +34,8 @@ export const fullAccess = (
     <Route path="/unittypes" exact component={UnitTypeTable} />
     <Route path="/waveformtype/:id" exact component={WaveformTypeDetails} />
     <Route path="/waveformtypes" exact component={WaveformTypes} />
+    <Route path="/emmiterfunction/:id" exact component={EmmiterFunctionDetails} />
+    <Route path="/emmiterfunctions" exact component={EmmiterFunctions} />
     <Redirect to="/" />
   </Switch>
 )

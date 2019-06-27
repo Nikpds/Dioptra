@@ -38,7 +38,8 @@
     "nationality":"New Nationality",
     "nationalities":"List of Nationalities",
     "waveformtypes":"Waveform Types",
-    "transmeter":"Transmeter"
+    "transmeter":"Transmeter",
+    "emmiterFunctions":"Emmiter Functions"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -114,5 +115,13 @@
   "waveformtype": {
     "headerTitle": "Waveform Type",
     "typename": "Type Name"
+  },
+  "emmiterFunctions": {
+    "headerTitle": "Emmiter Functions",
+    "name": "Emmiter Name"
+  },
+  "emmiterFunction": {
+    "headerTitle": "Emmiter Function",
+    "name": "Emmiter Name"
   }
 }
