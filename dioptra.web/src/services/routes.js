@@ -17,6 +17,8 @@ import WaveformTypes from '../components/transmitter/waveformtypes/WaveformTypes
 import WaveformTypeDetails from '../components/transmitter/waveformtypes/WaveformTypeDetails'
 import EmmiterFunctions from '../components/transmitter/emmiterfunctions/EmmiterFunctions'
 import EmmiterFunctionDetails from '../components/transmitter/emmiterfunctions/EmmiterFunctionDetails'
+import ScanFunctions from '../components/transmitter/scanfunctions/ScanFunctions'
+import ScanFunctionDetails from '../components/transmitter/scanfunctions/ScanFunctionDetails'
 
 export const fullAccess = (
   <Switch>
@@ -36,6 +38,8 @@ export const fullAccess = (
     <Route path="/waveformtypes" exact component={WaveformTypes} />
     <Route path="/emmiterfunction/:id" exact component={EmmiterFunctionDetails} />
     <Route path="/emmiterfunctions" exact component={EmmiterFunctions} />
+    <Route path="/scanfunction/:id" exact component={ScanFunctionDetails} />
+    <Route path="/scanfunctions" exact component={ScanFunctions} />
     <Redirect to="/" />
   </Switch>
 )

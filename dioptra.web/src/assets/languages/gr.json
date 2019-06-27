@@ -39,7 +39,8 @@
     "nationalities":"Λίστα Εθνικοτήτων",
     "waveformtypes":"Τύποι Κυματομορφών",
     "transmeter":"Πομπός",
-    "emmiterFunctions":"Λειτουργίες Πομπών"
+    "emmiterFunctions":"Λειτουργίες Πομπών",
+    "scanFunctions":"Λειτουργίες Σάρωσης"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -123,5 +124,13 @@
   "emmiterFunction": {
     "headerTitle": "Λειτουργία Πομπών",
     "name": "Όνομα Πομπού"
+  },
+  "scanFunctions": {
+    "headerTitle": "Λειτουργίες Σάρωσης",
+    "name": "Όνομα Σάρωσης"
+  },
+  "scanFunction": {
+    "headerTitle": "Λειτουργία Σάρωσης",
+    "name": "Όνομα Σάρωσης"
   }
 }

@@ -39,7 +39,8 @@
     "nationalities":"List of Nationalities",
     "waveformtypes":"Waveform Types",
     "transmeter":"Transmeter",
-    "emmiterFunctions":"Emmiter Functions"
+    "emmiterFunctions":"Emmiter Functions",
+    "scanFunctions":"Scan Functions"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -123,5 +124,13 @@
   "emmiterFunction": {
     "headerTitle": "Emmiter Function",
     "name": "Emmiter Name"
+  },
+  "scanFunctions": {
+    "headerTitle": "Scan Functions",
+    "name": "Scan Name"
+  },
+  "scanFunction": {
+    "headerTitle": "Scan Function",
+    "name": "Scan Name"
   }
 }

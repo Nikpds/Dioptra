@@ -1,19 +1,20 @@
 import React from 'react'
-import EmmiterFunctionsContainer from '../../containers/transmitter/emmiterfunction/EmmiterFunctionsContainer'
+import ScanFunctionsContainer from '../../containers/transmitter/scanfunction/ScanFunctionsContainer'
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
+import SSPTable from '../../shared/SSPTable'
 import Table from '../../shared/Table'
 
-const EmmiterFunctionsList = ({
-  emmiterFunctions,
+const ScanFunctionsList = ({
+  scanFunctions,
   onCreate,
   onEdit,
   onDelete,
 }) => {
   const headers = [
     {
-      title: strings.emmiterFunction.name,
+      title: strings.scanFunction.name,
       dataIndex: 'name',
       key: 'name'
     },
@@ -52,8 +53,8 @@ const EmmiterFunctionsList = ({
   return (
     <div>
       <ActionHeader
-        title={strings.emmiterFunctions.headerTitle}
-        subtitle= {emmiterFunctions.length}
+        title={strings.scanFunctions.headerTitle}
+        subtitle= {scanFunctions.length}
         actions={[
           {
             onClick: onCreate,
@@ -62,14 +63,14 @@ const EmmiterFunctionsList = ({
           }
         ]}
       />
-      <Table data={emmiterFunctions} columns={headers} />
+      <Table data={scanFunctions} columns={headers} />
     </div>
   )
 }
 
-const EmmiterFunctionsForm = () => (
-  <EmmiterFunctionsContainer>
-    <EmmiterFunctionsList />
-  </EmmiterFunctionsContainer>
+const ScanFunctionsForm = () => (
+  <ScanFunctionsContainer>
+    <ScanFunctionsList />
+  </ScanFunctionsContainer>
 )
-export default EmmiterFunctionsForm
+export default ScanFunctionsForm

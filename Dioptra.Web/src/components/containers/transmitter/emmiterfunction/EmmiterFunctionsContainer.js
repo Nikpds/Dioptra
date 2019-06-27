@@ -15,7 +15,7 @@ const EmmiterFunctionsContainer = props => {
   }
 
   async function onDelete(id) {
-    await api.delete(`/api/lookup/transmiter/function/${id}`)
+    await api.delete(`/api/lookup/transmitter/function/${id}`)
     const index = emmiterFunctions.findIndex(x => (x.id = id))
     emmiterFunctions.splice(index, 1)
     setEmmiterFunctions([...emmiterFunctions])
@@ -23,7 +23,7 @@ const EmmiterFunctionsContainer = props => {
 
   useEffect(() => {
     async function fetchEmmiterFunctions() {
-      const response = await api.get('/api/lookup/transmiter/function')
+      const response = await api.get('/api/lookup/transmitter/function')
       if (response && response.length > 0) {
         setEmmiterFunctions(response)
       }

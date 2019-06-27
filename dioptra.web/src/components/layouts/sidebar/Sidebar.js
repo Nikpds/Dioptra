@@ -95,6 +95,12 @@ const Sidebar = ({ open, setOpen }) => {
     icon: 'pull-request',
     hasSubMenu: false,
     caption: strings.sidebar.emmiterFunctions
+   },
+   {
+    path: '/scanfunctions',
+    icon: 'scan',
+    hasSubMenu: false,
+    caption: strings.sidebar.scanFunctions
    }
   ]
 
