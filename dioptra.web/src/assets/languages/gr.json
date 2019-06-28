@@ -41,7 +41,8 @@
     "transmitter":"Πομποί",
     "emmiterFunctions":"Λειτουργίες Πομπών",
     "antenaTransmitterTypes" : "Τύποι Κεραιών Πομπών",
-    "scanFunctions":"Λειτουργίες Σάρωσης"
+    "scanFunctions":"Λειτουργίες Σάρωσης",
+    "rfAgility":"Ευελιξία RF"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -139,5 +140,15 @@
   "scanFunction": {
     "headerTitle": "Λειτουργία Σάρωσης",
     "name": "Όνομα Σάρωσης"
+  },
+  "rfAgility": {
+    "headerTitle": "Ευελιξία RF",
+    "name":"Ευελιξία RF",
+    "headerTitleEdit":"Επεξεργασία Ευελιξίας RF",
+    "headerTitleNew":"Νέα Ευελιξία RF"
+  },
+  "rfAgilities": {
+    "headerTitle": "Ευελιξία RF",
+    "name":"Ευελιξία RF"
   }
 }

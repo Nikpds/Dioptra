@@ -21,6 +21,8 @@ import AntenaTransmitterTypeDetails from '../components/transmitter/radarAntenaT
 import AntenaTransmitterTypes from '../components/transmitter/radarAntenaType/RadarAntenaTypes'
 import ScanFunctions from '../components/transmitter/scanfunctions/ScanFunctions'
 import ScanFunctionDetails from '../components/transmitter/scanfunctions/ScanFunctionDetails'
+import RFAgility from '../components/transmitter/rfAgility/RFAgilityDetails'
+import RFAgilities from '../components/transmitter/rfAgility//RFAgilities'
 
 export const fullAccess = (
   <Switch>
@@ -44,6 +46,8 @@ export const fullAccess = (
     <Route path="/antenatransmittertypes" exact component={AntenaTransmitterTypes} />
     <Route path="/scanfunction/:id" exact component={ScanFunctionDetails} />
     <Route path="/scanfunctions" exact component={ScanFunctions} />
+    <Route path="/rfagility/:id" exact component={RFAgility} />
+    <Route path="/rfagilities" exact component={RFAgilities} />
     <Redirect to="/" />
   </Switch>
 )

@@ -41,7 +41,8 @@
     "transmitter":"Transmitters",
     "emmiterFunctions":"Emmiter Functions",
     "antenaTransmitterTypes" : "Radar Antena Type",
-    "scanFunctions":"Scan Functions"
+    "scanFunctions":"Scan Functions",
+    "rfAgility":"RF agility"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -139,5 +140,15 @@
   "scanFunction": {
     "headerTitle": "Scan Function",
     "name": "Scan Name"
+  },
+  "rfAgility": {
+    "headerTitle": "RF agility",
+    "name":"RF agility",
+    "headerTitleEdit":"Edit RF agility",
+    "headerTitleNew":"New RF agility"
+  },
+  "rfAgilities": {
+    "headerTitle": "RF agility",
+    "name":"RF agility"
   }
 }

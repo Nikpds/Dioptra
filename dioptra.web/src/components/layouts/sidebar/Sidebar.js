@@ -71,6 +71,12 @@ const Sidebar = ({ open, setOpen }) => {
               icon: 'scan',
               hasSubMenu: false,
               caption: strings.sidebar.scanFunctions
+             },
+            {
+              path: '/rfagilities',
+              icon: 'scan',
+              hasSubMenu: false,
+              caption: strings.sidebar.rfAgility
              }
           ]
         },
