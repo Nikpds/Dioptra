@@ -121,6 +121,18 @@ const Sidebar = ({ open, setOpen }) => {
           caption: strings.sidebar.jrfltypes
         }
       ]
+    },
+    {
+      path: '/pwagilities',
+      hasSubMenu: false,
+      icon: 'table',
+      caption: strings.sidebar.pwAgilities
+    },
+    {
+      path: '/priagilities',
+      hasSubMenu: false,
+      icon: 'table',
+      caption: strings.sidebar.priAgilities
     }
   ]
 
