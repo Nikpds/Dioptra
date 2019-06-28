@@ -42,12 +42,9 @@
     "emmiterFunctions":"Λειτουργίες Πομπών",
     "antenaTransmitterTypes" : "Τύποι Κεραιών Πομπών",
     "scanFunctions":"Λειτουργίες Σάρωσης",
-<<<<<<< HEAD
-    "rfAgility":"Ευελιξία RF"
-=======
+    "rfAgility":"Ευελιξία RF",
     "pwAgilities":"Ευελιξίες PW",
     "priAgilities":"Ευελιξίες PRI"
->>>>>>> e7eafc7990935414b2e3a9638c935577b1793745
   },
   "pagination": {
     "totalItems": "Σύνολο"

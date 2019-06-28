@@ -42,12 +42,9 @@
     "emmiterFunctions":"Emmiter Functions",
     "antenaTransmitterTypes" : "Radar Antena Type",
     "scanFunctions":"Scan Functions",
-<<<<<<< HEAD
-    "rfAgility":"RF agility"
-=======
+    "rfAgility":"RF agility",
     "pwAgilities":"PW Agilities",
     "priAgilities":"PRI Agilities"
->>>>>>> e7eafc7990935414b2e3a9638c935577b1793745
   },
   "pagination": {
     "totalItems": "Total Items"

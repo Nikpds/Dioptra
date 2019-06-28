@@ -77,6 +77,18 @@ const Sidebar = ({ open, setOpen }) => {
               icon: 'scan',
               hasSubMenu: false,
               caption: strings.sidebar.rfAgility
+             },
+             {
+               path: '/pwagilities',
+               hasSubMenu: false,
+               icon: 'table',
+               caption: strings.sidebar.pwAgilities
+             },
+             {
+               path: '/priagilities',
+               hasSubMenu: false,
+               icon: 'table',
+               caption: strings.sidebar.priAgilities
              }
           ]
         },
@@ -121,18 +133,6 @@ const Sidebar = ({ open, setOpen }) => {
           caption: strings.sidebar.jrfltypes
         }
       ]
-    },
-    {
-      path: '/pwagilities',
-      hasSubMenu: false,
-      icon: 'table',
-      caption: strings.sidebar.pwAgilities
-    },
-    {
-      path: '/priagilities',
-      hasSubMenu: false,
-      icon: 'table',
-      caption: strings.sidebar.priAgilities
     }
   ]
 
