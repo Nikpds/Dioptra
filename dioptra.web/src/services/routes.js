@@ -21,6 +21,12 @@ import AntenaTransmitterTypeDetails from '../components/transmitter/radarAntenaT
 import AntenaTransmitterTypes from '../components/transmitter/radarAntenaType/RadarAntenaTypes'
 import ScanFunctions from '../components/transmitter/scanfunctions/ScanFunctions'
 import ScanFunctionDetails from '../components/transmitter/scanfunctions/ScanFunctionDetails'
+import RFAgility from '../components/transmitter/rfAgility/RFAgilityDetails'
+import RFAgilities from '../components/transmitter/rfAgility//RFAgilities'
+import PwAgilities from '../components/transmitter/pwagilities/PwAgilities'
+import PwAgilityDetails from '../components/transmitter/pwagilities/PwAgilityDetails'
+import PriAgilities from '../components/transmitter/priagilities/PriAgilities'
+import PriAgilityDetails from '../components/transmitter/priagilities/PriAgilityDetails'
 
 export const fullAccess = (
   <Switch>
@@ -44,6 +50,12 @@ export const fullAccess = (
     <Route path="/antenatransmittertypes" exact component={AntenaTransmitterTypes} />
     <Route path="/scanfunction/:id" exact component={ScanFunctionDetails} />
     <Route path="/scanfunctions" exact component={ScanFunctions} />
+    <Route path="/rfagility/:id" exact component={RFAgility} />
+    <Route path="/rfagilities" exact component={RFAgilities} />
+    <Route path="/pwagility/:id" exact component={PwAgilityDetails} />
+    <Route path="/pwagilities" exact component={PwAgilities} />
+    <Route path="/priagility/:id" exact component={PriAgilityDetails} />
+    <Route path="/priagilities" exact component={PriAgilities} />
     <Redirect to="/" />
   </Switch>
 )

@@ -34,19 +34,22 @@
     "jrfl": "JRFL",
     "tables": "Πάγια Στοιχεία",
     "units": "Μονάδες",
-    "manageNationality": "Εθνικότητες",
-    "nationality": "Νέα Εθνικότητα",
-    "nationalities": "Λίστα Εθνικοτήτων",
-    "waveformtypes": "Τύποι Κυματομορφών",
-    "transmitter": "Πομποί",
-    "emmiterFunctions": "Λειτουργίες Πομπών",
-    "antenaTransmitterTypes": "Τύποι Κεραιών Πομπών",
-    "scanFunctions": "Λειτουργίες Σάρωσης"
+    "manageNationality":"Εθνικότητες",
+    "nationality":"Νέα Εθνικότητα",
+    "nationalities":"Λίστα Εθνικοτήτων",
+    "waveformtypes":"Τύποι Κυματομορφών",
+    "transmitter":"Πομποί",
+    "emmiterFunctions":"Λειτουργίες Πομπών",
+    "antenaTransmitterTypes" : "Τύποι Κεραιών Πομπών",
+    "scanFunctions":"Λειτουργίες Σάρωσης",
+    "rfAgility":"Ευελιξία RF",
+    "pwAgilities":"Ευελιξίες PW",
+    "priAgilities":"Ευελιξίες PRI"
   },
   "popconfirm": {
     "title": "Είστε σίγουρος?",
     "confirm": "ΔΙΑΓΡΑΦΗ",
-    "cancel": "Άκυρο"
+    "cancel": "Άκυρο"    
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -145,11 +148,39 @@
     "headerTitle": "Λειτουργία Σάρωσης",
     "name": "Όνομα Σάρωσης"
   },
+<<<<<<< HEAD
   "enumerations": {
     "ulc_unit": "Μονάδα",
     "ulc_base": "Βάση",
     "ulc_hq": "Αρχηγείο",
     "ulc_staff": "Επιτελείο",
     "ulc_ministry": "Υπουργείο"
+=======
+  "rfAgility": {
+    "headerTitle": "Ευελιξία RF",
+    "name":"Ευελιξία RF",
+    "headerTitleEdit":"Επεξεργασία Ευελιξίας RF",
+    "headerTitleNew":"Νέα Ευελιξία RF"
+  },
+  "rfAgilities": {
+    "headerTitle": "Ευελιξία RF",
+    "name":"Ευελιξία RF"
+  },
+  "pwAgilities": {
+    "headerTitle": "Pw Ευελιξίες",
+    "name": "Όνομα Pw Ευελιξίας"
+  },
+  "pwAgility": {
+    "headerTitle": "Pw Ευελιξία",
+    "name": "Όνομα Pw Ευελιξίας"
+  },
+  "priAgilities": {
+    "headerTitle": "PRI Ευελιξίες",
+    "name": "Όνομα PRI Ευελιξίας"
+  },
+  "priAgility": {
+    "headerTitle": "PRI Ευελιξία",
+    "name": "Όνομα PRI Ευελιξίας"
+>>>>>>> cdbf01d441ee942b174e45b592baadf230281467
   }
 }
