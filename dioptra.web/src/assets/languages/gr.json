@@ -41,7 +41,9 @@
     "transmitter":"Πομποί",
     "emmiterFunctions":"Λειτουργίες Πομπών",
     "antenaTransmitterTypes" : "Τύποι Κεραιών Πομπών",
-    "scanFunctions":"Λειτουργίες Σάρωσης"
+    "scanFunctions":"Λειτουργίες Σάρωσης",
+    "pwAgilities":"Ευελιξίες PW",
+    "priAgilities":"Ευελιξίες PRI"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -139,5 +141,21 @@
   "scanFunction": {
     "headerTitle": "Λειτουργία Σάρωσης",
     "name": "Όνομα Σάρωσης"
+  },
+  "pwAgilities": {
+    "headerTitle": "Pw Ευελιξίες",
+    "name": "Όνομα Pw Ευελιξίας"
+  },
+  "pwAgility": {
+    "headerTitle": "Pw Ευελιξία",
+    "name": "Όνομα Pw Ευελιξίας"
+  },
+  "priAgilities": {
+    "headerTitle": "PRI Ευελιξίες",
+    "name": "Όνομα PRI Ευελιξίας"
+  },
+  "priAgility": {
+    "headerTitle": "PRI Ευελιξία",
+    "name": "Όνομα PRI Ευελιξίας"
   }
 }
