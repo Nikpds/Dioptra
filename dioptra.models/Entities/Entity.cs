@@ -1,6 +1,4 @@
-﻿using Dioptra.Models.Interfaces;
-using Dioptra.Models.Views;
-using MongoDB.Bson;
+﻿using Dioptra.Models.Common;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.IdGenerators;
 using System;

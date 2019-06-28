@@ -21,7 +21,7 @@ namespace Dioptra.Api.Controllers
             _srv = srv;
             _auth = auth;
         }
-
+        
         [HttpPost("token")]
         public async Task<IActionResult> Token([FromBody] LoginView model)
         {

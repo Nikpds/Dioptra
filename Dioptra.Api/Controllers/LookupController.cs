@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Dioptra.Api.Services;
 using Dioptra.Models.Entities.Lookups;
 using Dioptra.Models.Views;
-using Dioptra.Mongo;
+using Dioptra.Mongo.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dioptra.Api.Controllers
@@ -12,8 +12,8 @@ namespace Dioptra.Api.Controllers
     [ApiController]
     public class LookupController : ControllerBase
     {
-        private DataContext _ctx;
-        public LookupController(DataContext ctx)
+        private IDataContext _ctx;
+        public LookupController(IDataContext ctx)
         {
             _ctx = ctx;
         }
@@ -380,5 +380,55 @@ namespace Dioptra.Api.Controllers
 
         #endregion
 
+        #region RadarAntennaTypes
+        [HttpGet("radarantennatypes")]
+        public async Task<IActionResult> GetRadarAntennaTypes()
+        {
+            IEnumerable<RadarAntennaType> result = await BaseService.GetAll(_ctx.RadarAntennaTypes);
+
+            return Ok(result);
+        }
+
+        [HttpGet("radarantennatype/{id}")]
+        public async Task<IActionResult> GetRadarAntennaType(string id)
+        {
+            RadarAntennaType result = await BaseService.GetById(id, _ctx.RadarAntennaTypes);
+
+            return Ok(result);
+        }
+
+        [HttpPost("radarantennatype")]
+        public async Task<IActionResult> CreateRadarAntennaType([FromBody] RadarAntennaType entity)
+        {
+
+            RadarAntennaType result = await BaseService.Insert(entity, _ctx.RadarAntennaTypes);
+
+            return Ok(result);
+        }
+
+        [HttpPut("radarantennatype/{id}")]
+        public async Task<IActionResult> UpdateRadarAntennaType([FromBody] RadarAntennaType entity, string id)
+        {
+            //ScanFn original = await BaseService.GetById(id, _ctx.TransmitterFns);
+
+            RadarAntennaType result = await BaseService.Update(entity, _ctx.RadarAntennaTypes);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("radarantennatype/{id}")]
+        public async Task<IActionResult> DeleteRadarAntennaType(string id)
+        {
+            RadarAntennaType original = await BaseService.GetById(id, _ctx.RadarAntennaTypes);
+            if (original == null)
+            {
+                return BadRequest();
+            }
+            bool success = await BaseService.Delete(original, _ctx.RadarAntennaTypes);
+
+            return Ok(success);
+        }
+
+        #endregion
     }
 }

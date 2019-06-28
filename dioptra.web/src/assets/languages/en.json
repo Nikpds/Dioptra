@@ -34,14 +34,19 @@
     "jrfl": "JRFL",
     "tables": "Lookup Tables",
     "units": "Units",
-    "manageNationality":"Nationalities",
-    "nationality":"New Nationality",
-    "nationalities":"List of Nationalities",
-    "waveformtypes":"Waveform Types",
-    "transmitter":"Transmitters",
-    "emmiterFunctions":"Emmiter Functions",
-    "antenaTransmitterTypes" : "Radar Antena Type",
-    "scanFunctions":"Scan Functions"
+    "manageNationality": "Nationalities",
+    "nationality": "New Nationality",
+    "nationalities": "List of Nationalities",
+    "waveformtypes": "Waveform Types",
+    "transmitter": "Transmitters",
+    "emmiterFunctions": "Emmiter Functions",
+    "antenaTransmitterTypes": "Radar Antena Type",
+    "scanFunctions": "Scan Functions"
+  },
+  "popconfirm": {
+    "title": "Are you sure ?",
+    "confirm": "DELETE",
+    "cancel": "Cancel"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -96,24 +101,24 @@
   },
   "jrfltypes": {
     "headerTitle": "JRFL Types",
-    "name":"Τype name"
+    "name": "Τype name"
   },
   "nationality": {
     "headerTitle": "Nationality",
-    "shortname":"Code Name",
-    "name":"Name",
-    "fof":"Friend or Foe"
+    "shortname": "Code Name",
+    "name": "Name",
+    "fof": "Friend or Foe"
   },
   "nationalities": {
     "headerTitle": "Nationalities List",
-    "shortname":"Code Name",
-    "name":"Name",
-    "fof":"Friend or Foe"
+    "shortname": "Code Name",
+    "name": "Name",
+    "fof": "Friend or Foe"
   },
   "waveformtypes": {
     "headerTitle": "Waveform Types",
     "typename": "Type Name"
-  }, 
+  },
   "waveformtype": {
     "headerTitle": "Waveform Type",
     "typename": "Type Name"
@@ -128,9 +133,9 @@
   },
   "radarAntenaType": {
     "headerTitle": "Radar Antena Type",
-    "name":"Radar Antena Type",
-    "headerTitleEdit":"Edit Radar Antena Type",
-    "headerTitleNew":"New Radar Antena Type"
+    "name": "Radar Antena Type",
+    "headerTitleEdit": "Edit Radar Antena Type",
+    "headerTitleNew": "New Radar Antena Type"
   },
   "scanFunctions": {
     "headerTitle": "Scan Functions",
@@ -139,5 +144,12 @@
   "scanFunction": {
     "headerTitle": "Scan Function",
     "name": "Scan Name"
+  },
+  "enumerations": {
+    "ulc_unit": "Unit",
+    "ulc_base": "Base",
+    "ulc_hq": "HeadQuarters",
+    "ulc_staff": "Staff",
+    "ulc_ministry": "Ministry"
   }
 }

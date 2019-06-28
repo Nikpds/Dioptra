@@ -5,7 +5,7 @@ import api from '../../../../services/api'
 const UnitTypeContainer = props => {
   const { id } = props.match.params
   const { children, history } = props
-  const [unitType, setUnitType] = useState({ level: {} })
+  const [unitType, setUnitType] = useState({})
 
   async function onSave(value) {
     if (value.id) {

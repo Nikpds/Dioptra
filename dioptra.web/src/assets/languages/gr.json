@@ -34,14 +34,19 @@
     "jrfl": "JRFL",
     "tables": "Πάγια Στοιχεία",
     "units": "Μονάδες",
-    "manageNationality":"Εθνικότητες",
-    "nationality":"Νέα Εθνικότητα",
-    "nationalities":"Λίστα Εθνικοτήτων",
-    "waveformtypes":"Τύποι Κυματομορφών",
-    "transmitter":"Πομποί",
-    "emmiterFunctions":"Λειτουργίες Πομπών",
-    "antenaTransmitterTypes" : "Τύποι Κεραιών Πομπών",
-    "scanFunctions":"Λειτουργίες Σάρωσης"
+    "manageNationality": "Εθνικότητες",
+    "nationality": "Νέα Εθνικότητα",
+    "nationalities": "Λίστα Εθνικοτήτων",
+    "waveformtypes": "Τύποι Κυματομορφών",
+    "transmitter": "Πομποί",
+    "emmiterFunctions": "Λειτουργίες Πομπών",
+    "antenaTransmitterTypes": "Τύποι Κεραιών Πομπών",
+    "scanFunctions": "Λειτουργίες Σάρωσης"
+  },
+  "popconfirm": {
+    "title": "Είστε σίγουρος?",
+    "confirm": "ΔΙΑΓΡΑΦΗ",
+    "cancel": "Άκυρο"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -96,24 +101,24 @@
   },
   "jrfltypes": {
     "headerTitle": "Τύποι JRFL",
-    "name":"Ονομασία τύπου"
+    "name": "Ονομασία τύπου"
   },
   "nationality": {
     "headerTitle": "Εθνικότητα",
-    "shortname":"Κωδική Ονομασία",
-    "name":"Όνομα",
-    "fof":"Φίλια ή Εχθρική"
+    "shortname": "Κωδική Ονομασία",
+    "name": "Όνομα",
+    "fof": "Φίλια ή Εχθρική"
   },
   "nationalities": {
     "headerTitle": "Λίστα Εθνικοτήτων ",
-    "shortname":"Κωδική Ονομασία",
-    "name":"Όνομα",
-    "fof":"Φίλια ή Εχθρική"
-  }, 
+    "shortname": "Κωδική Ονομασία",
+    "name": "Όνομα",
+    "fof": "Φίλια ή Εχθρική"
+  },
   "waveformtypes": {
     "headerTitle": "Τύποι Κυματομορφών",
     "typename": "Όνομα Τύπου"
-  }, 
+  },
   "waveformtype": {
     "headerTitle": "Τύπος Κυματομορφής",
     "typename": "Όνομα Τύπου"
@@ -128,9 +133,9 @@
   },
   "radarAntenaType": {
     "headerTitle": "Τύποι Κεραιών Πομπών",
-    "name":"Τύποι Κεραιών Πομπών",
-    "headerTitleEdit":"Επεξεργασία Τύποι Κεραιών Πομπών",
-    "headerTitleNew":"Νέος Τύπος Κεραιών Πομπών"
+    "name": "Τύποι Κεραιών Πομπών",
+    "headerTitleEdit": "Επεξεργασία Τύποι Κεραιών Πομπών",
+    "headerTitleNew": "Νέος Τύπος Κεραιών Πομπών"
   },
   "scanFunctions": {
     "headerTitle": "Λειτουργίες Σάρωσης",
@@ -139,5 +144,12 @@
   "scanFunction": {
     "headerTitle": "Λειτουργία Σάρωσης",
     "name": "Όνομα Σάρωσης"
+  },
+  "enumerations": {
+    "ulc_unit": "Μονάδα",
+    "ulc_base": "Βάση",
+    "ulc_hq": "Αρχηγείο",
+    "ulc_staff": "Επιτελείο",
+    "ulc_ministry": "Υπουργείο"
   }
 }

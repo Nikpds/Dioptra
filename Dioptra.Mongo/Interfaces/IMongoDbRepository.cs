@@ -10,7 +10,13 @@ namespace Dioptra.Mongo
 {
     public interface IMongoDbRepository<T> where T : Entity
     {
+        /// <summary>
+        ///  Async Method with predicate to get IEn. of T entity
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns>IEnumerable of T</returns>
         Task<IEnumerable<T>> Get(Expression<Func<T, bool>> predicate);
+
         Task<IEnumerable<T>> Get(FilterDefinition<T> filter);
         Task<T> GetById(string id);
         Task<IEnumerable<T>> GetAll();

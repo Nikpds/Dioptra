@@ -4,6 +4,6 @@ namespace Dioptra.Models.Entities.Lookups
 {
     public class UnitType : NameEntity
     {
-        public Lookup Level { get; set; }
+        public UnitChainLevels Level { get; set; }
     }
 }

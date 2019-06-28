@@ -39,11 +39,10 @@ namespace Dioptra.Api
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
-            services.AddScoped(typeof(IDbCollection<>), typeof(DbCollection<>));
             services.AddScoped<IAuthenticationProvider, AuthenticationProvider>();
             services.AddScoped<IUserService, UserService>();
 
-            services.AddSingleton((ctx) =>
+            services.AddSingleton<IDataContext, DataContext>((ctx) =>
             {
                 var connectionString = Configuration.GetConnectionString("Dioptra");
                 return new DataContext(connectionString);
