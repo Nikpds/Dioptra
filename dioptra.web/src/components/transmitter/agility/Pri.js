@@ -1,14 +1,19 @@
 import React from 'react'
+import PriAgilitiesContainer from '../../containers/transmitter/agility/PriContainer'
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
 import Table from '../../shared/Table'
-import RFAgilitiesContainer from '../../containers/transmitter/rfAgility/RFAgilitiesContainer'
 
-const RFAgilities = ({ rfAgilities, onCreate, onEdit, onDelete }) => {
+const Pri = ({
+  priAgilities,
+  onCreate,
+  onEdit,
+  onDelete,
+}) => {
   const headers = [
     {
-      title: strings.rfAgility.name,
+      title: strings.priAgility.name,
       dataIndex: 'name',
       key: 'name'
     },
@@ -25,7 +30,12 @@ const RFAgilities = ({ rfAgilities, onCreate, onEdit, onDelete }) => {
           onCancel={null}
           okText="Yes"
           cancelText="No">
-          <Button type="danger" shape="circle" icon="delete" size="small" />
+          <Button
+            type="danger"
+            shape="circle"
+            icon="delete"
+            size="small"
+          />
         </Popconfirm>,
         <Divider key={2} type="vertical" />,
         <Button
@@ -39,12 +49,11 @@ const RFAgilities = ({ rfAgilities, onCreate, onEdit, onDelete }) => {
       ]
     }
   ]
-
   return (
     <div>
       <ActionHeader
-        title={strings.rfAgilities.headerTitle}
-        subtitle={rfAgilities.length}
+        title={strings.priAgilities.headerTitle}
+        subtitle= {priAgilities.length}
         actions={[
           {
             onClick: onCreate,
@@ -53,13 +62,14 @@ const RFAgilities = ({ rfAgilities, onCreate, onEdit, onDelete }) => {
           }
         ]}
       />
-      <Table data={rfAgilities} columns={headers} />
+      <Table data={priAgilities} columns={headers} />
     </div>
   )
 }
-const rfAgilitiesForm = () => (
-  <RFAgilitiesContainer>
-    <RFAgilities />
-  </RFAgilitiesContainer>
+
+const PriForm = () => (
+  <PriAgilitiesContainer>
+    <Pri />
+  </PriAgilitiesContainer>
 )
-export default rfAgilitiesForm
+export default PriForm

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { strings } from '../../../contexts/LocalizationProvider'
-import { Form, Input, Card } from 'antd'
+import { Form, Input } from 'antd'
 import ActionHeader from '../../shared/ActionHeader'
 import UnitMissionContainer from '../../containers/units/unitMission/UnitMissionContainer'
-
+import CardHolder from '../../shared/CardHolder'
 const UnitMissionDetails = ({
   onBack,
   onSave,
@@ -38,6 +38,7 @@ const UnitMissionDetails = ({
           {
             onClick: onDelete,
             name: strings.buttons.delete,
+            isDelete: true,
             type: 'danger',
             show: !unitMissionDetails.id
           },
@@ -47,8 +48,8 @@ const UnitMissionDetails = ({
           }
         ]}
       />
-      <Card style={{ margin: 20 }} className="has-shadow">
-        <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
+      <CardHolder size="small">
+        <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 16 } }}>
           <Form.Item label={strings.unitMission.name}>
             <Input
               name="name"
@@ -57,7 +58,7 @@ const UnitMissionDetails = ({
             />
           </Form.Item>
         </Form>
-      </Card>
+      </CardHolder>
     </div>
   )
 }

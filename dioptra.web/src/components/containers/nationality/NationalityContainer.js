@@ -39,7 +39,7 @@ const NationalityContainer = props => {
         return
       }
       const response = await api.get(`/api/lookup/nationality/${id}`)
-      setNationality(response)
+      if (response) setNationality(response)
     }
     fetchNationality()
   }, [id])

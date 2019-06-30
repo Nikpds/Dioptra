@@ -3,11 +3,11 @@ import { withRouter } from 'react-router-dom'
 import api from '../../../services/api'
 
 const UsersContainer = props => {
-  const { page, pageSize } = props.match.params
+  const { page, pagesize } = props.match.params
   const { children, history } = props
   const [users, setUsers] = useState({
     page: +page,
-    pageSize: +pageSize,
+    pagesize: +pagesize,
     rows: []
   })
 
@@ -15,9 +15,8 @@ const UsersContainer = props => {
     history.push('/user/new')
   }
 
-  const onPaginationChange = (page, pageSize) => {
-    // console.log(page, pageSize)
-    history.push(`/users/${page}/${pageSize}`)
+  const onPaginationChange = (page, pagesize) => {
+    history.push(`/users/${page}/${pagesize}`)
   }
 
   function onEdit(id) {
@@ -33,11 +32,11 @@ const UsersContainer = props => {
 
   useEffect(() => {
     async function fetchUers() {
-      const response = await api.get(`/api/user/${page}/${pageSize}`)
+      const response = await api.get(`/api/user/${page}/${pagesize}`)
       if (response) setUsers(response)      
     }
     fetchUers()
-  }, [page, pageSize])
+  }, [page, pagesize])
 
   return React.Children.map(children, child =>
     React.cloneElement(child, {

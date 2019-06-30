@@ -7,15 +7,15 @@ const RadarAntenaTypesContainer = props => {
   const [radarAntenaTypes, setRadarAntenaTypes] = useState([])
 
   function onCreate() {
-    history.push('/antenatransmittertypedetails/new')
+    history.push('/radarantennatype/new')
   }
 
   function onEdit(id) {
-    history.push(`/antenatransmittertypedetails/${id}`)
+    history.push(`/radarantennatype/${id}`)
   }
 
   async function onDelete(id) {
-    await api.delete(`/api/lookup/radarantenatype/${id}`)
+    await api.delete(`/api/lookup/radarantennatype/${id}`)
     const index = radarAntenaTypes.findIndex(x => (x.id = id))
     radarAntenaTypes.splice(index, 1)
     setRadarAntenaTypes([...radarAntenaTypes])
@@ -23,7 +23,7 @@ const RadarAntenaTypesContainer = props => {
 
   useEffect(() => {
     async function fetchRadarAntenaTypes() {
-      const response = await api.get('/api/lookup/radarantenatype')
+      const response = await api.get('/api/lookup/radarantennatypes')
       if (response && response.length > 0) {
         setRadarAntenaTypes(response)
       }

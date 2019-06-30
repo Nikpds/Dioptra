@@ -36,6 +36,7 @@ const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
             onClick: onDelete,
             name: strings.buttons.delete,
             type: 'danger',
+            isDelete: true,
             show: !unitTypeDetails.id
           },
           {
@@ -59,7 +60,7 @@ const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
           <Form.Item label={strings.unitType.level}>
             <Select
               name="level"
-              value={unitTypeDetails.level}
+              value={strings.enumerations[unitLevels[unitTypeDetails.level]]}
               onChange={value => unitTypeHandler('level', value)}>
               {enumToLookup(unitLevels).map(o => (
                 <Option key={o.id} value={o.id}>

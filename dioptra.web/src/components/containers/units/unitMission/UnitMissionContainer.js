@@ -9,9 +9,7 @@ const UnitMissionContainer = props => {
 
   async function onSave(value) {
     if (value.id) {
-      console.log("eimai sitn on Save");
       const response = await api.put(`/api/lookup/unitmission/${id}`, value)
-      console.log(response)
       if (response) {
         setUnitMission(response)
       }
@@ -43,7 +41,7 @@ const UnitMissionContainer = props => {
         return
       }
       const response = await api.get(`/api/lookup/unitmission/${id}`)
-      setUnitMission(response)
+      if (response) setUnitMission(response)
     }
 
     fetchMission()

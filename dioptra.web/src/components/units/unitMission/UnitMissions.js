@@ -6,7 +6,6 @@ import ActionHeader from '../../shared/ActionHeader'
 import Table from '../../shared/Table'
 
 const UnitMissionList = ({ unitMissions, onCreate, onEdit, onDelete }) => {
-  console.log(unitMissions)
   const headers = [
     {
       title: strings.unitMission.name,
@@ -17,20 +16,16 @@ const UnitMissionList = ({ unitMissions, onCreate, onEdit, onDelete }) => {
       title: strings.buttons.tableActions,
       dataIndex: 'actions',
       key: 'actions',
+      width: 110,
       render: (e, row) => [
         <Popconfirm
           key={1}
-          title="Are you sure ?"
+          title={strings.popconfirm.title}
           onConfirm={() => onDelete(row.id)}
           onCancel={null}
-          okText="Yes"
-          cancelText="No">
-          <Button         
-            type="danger"
-            shape="circle"
-            icon="delete"
-            size="small"
-          />
+          okText={strings.popconfirm.confirm}
+          cancelText={strings.popconfirm.cancel}>
+          <Button type="danger" shape="circle" icon="delete" size="small" />
         </Popconfirm>,
         <Divider key={2} type="vertical" />,
         <Button

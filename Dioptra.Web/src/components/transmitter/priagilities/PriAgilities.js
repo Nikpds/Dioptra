@@ -1,5 +1,5 @@
 import React from 'react'
-import PriAgilitiesContainer from '../../containers/transmitter/priagility/PriAgilitiesContainer'
+import PriAgilitiesContainer from '../../containers/transmitter/agility/PriContainer'
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'

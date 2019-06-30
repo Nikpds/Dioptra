@@ -1,11 +1,11 @@
 import React from 'react'
-import PwAgilitiesContainer from '../../containers/transmitter/pwagility/PwAgilitiesContainer'
+import PwContainer from '../../containers/transmitter/agility/PwContainer'
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
 import Table from '../../shared/Table'
 
-const PwAgilitiesList = ({
+const Pw = ({
   pwAgilities,
   onCreate,
   onEdit,
@@ -67,9 +67,9 @@ const PwAgilitiesList = ({
   )
 }
 
-const PwAgilitiesForm = () => (
-  <PwAgilitiesContainer>
-    <PwAgilitiesList />
-  </PwAgilitiesContainer>
+const PwForm = () => (
+  <PwContainer>
+    <Pw />
+  </PwContainer>
 )
-export default PwAgilitiesForm
+export default PwForm

@@ -1,6 +1,6 @@
 import React from 'react'
 import NationalitiesContainer from '../containers/nationality/NationalitiesContainer'
-import { Button, Divider,Popconfirm } from 'antd'
+import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../contexts/LocalizationProvider'
 import ActionHeader from '../shared/ActionHeader'
 import SSPTable from '../shared/SSPTable'
@@ -16,7 +16,8 @@ const NationalitiesList = ({
     {
       title: strings.nationality.shortname,
       dataIndex: 'shortName',
-      key: 'shortName'
+      key: 'shortName',
+      width: 150
     },
     {
       title: strings.nationality.name,
@@ -26,7 +27,8 @@ const NationalitiesList = ({
     {
       title: strings.nationality.fof,
       dataIndex: 'foF.representation',
-      key: 'fof'
+      key: 'fof',
+      render: e => strings.enumerations[e]
     },
     {
       title: strings.buttons.tableActions,
@@ -36,18 +38,12 @@ const NationalitiesList = ({
       render: (e, row) => [
         <Popconfirm
           key={1}
-          title="Are you sure ?"
+          title={strings.popconfirm.title}
           onConfirm={() => onDelete(row.id)}
           onCancel={null}
-          okText="Yes"
-          cancelText="No">
-          <Button
-            key={1}
-            type="danger"
-            shape="circle"
-            icon="delete"
-            size="small"
-          />
+          okText={strings.popconfirm.confirm}
+          cancelText={strings.popconfirm.cancel}>
+          <Button type="danger" shape="circle" icon="delete" size="small" />
         </Popconfirm>,
         <Divider key={2} type="vertical" />,
         <Button
@@ -66,7 +62,7 @@ const NationalitiesList = ({
     <div>
       <ActionHeader
         title={strings.nationalities.headerTitle}
-        subtitle= {nationalities.rows.length}
+        subtitle={nationalities.rows.length}
         actions={[
           {
             onClick: onCreate,

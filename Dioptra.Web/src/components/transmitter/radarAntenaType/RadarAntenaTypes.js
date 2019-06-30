@@ -20,11 +20,11 @@ const RadarAntenaTypes = ({ radarAntenaTypes, onCreate, onEdit, onDelete }) => {
       render: (e, row) => [
         <Popconfirm
           key={1}
-          title="Are you sure ?"
+          title={strings.popconfirm.title}
           onConfirm={() => onDelete(row.id)}
           onCancel={null}
-          okText="Yes"
-          cancelText="No">
+          okText={strings.popconfirm.confirm}
+          cancelText={strings.popconfirm.cancel}>
           <Button type="danger" shape="circle" icon="delete" size="small" />
         </Popconfirm>,
         <Divider key={2} type="vertical" />,
@@ -57,9 +57,9 @@ const RadarAntenaTypes = ({ radarAntenaTypes, onCreate, onEdit, onDelete }) => {
   )
 }
 
-const RadarAntenaTypesForm = () => (
+const RadarAntenaTypesTable = () => (
   <RadarAntenaTypesContainer>
     <RadarAntenaTypes />
   </RadarAntenaTypesContainer>
 )
-export default RadarAntenaTypesForm
+export default RadarAntenaTypesTable

@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import api from '../../../../services/api'
 
-const PriAgilitiesContainer = props => {
+const PriContainer = props => {
   const { children, history } = props
   const [priAgilities, setPriAgilities] = useState([])
 
   function onCreate() {
-    history.push('/priagility/new')
+    history.push('/agility/pri/new')
   }
 
   function onEdit(id) {
-    history.push(`/priagility/${id}`)
+    history.push(`/agility/pri/${id}`)
   }
 
   async function onDelete(id) {
-    await api.delete(`/api/lookup/scan/function/${id}`)
+    await api.delete(`/api/lookup/agility/pri/${id}`)
     const index = priAgilities.findIndex(x => (x.id = id))
     priAgilities.splice(index, 1)
     setPriAgilities([...priAgilities])
@@ -23,7 +23,7 @@ const PriAgilitiesContainer = props => {
 
   useEffect(() => {
     async function fetchPriAgilities() {
-      const response = await api.get('/api/lookup/scan/function')
+      const response = await api.get('/api/lookup/agility/pri')
       if (response && response.length > 0) {
         setPriAgilities(response)
       }
@@ -41,4 +41,4 @@ const PriAgilitiesContainer = props => {
   )
 }
 
-export default withRouter(PriAgilitiesContainer)
+export default withRouter(PriContainer)

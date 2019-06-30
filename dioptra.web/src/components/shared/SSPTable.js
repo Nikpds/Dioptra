@@ -4,6 +4,7 @@ import './shared.less'
 import Paginator from './Paginator'
 
 const SSPTable = ({ columns, data, onPaginationChange }) => {
+  console.log(data)
   return (
     <Card
       style={{ margin: 20 }}
@@ -20,7 +21,7 @@ const SSPTable = ({ columns, data, onPaginationChange }) => {
         <Paginator
           total={data.totalRows}
           current={data.page}
-          pageSize={data.pageSize}
+          pagesize={data.pagesize}
           onPaginationChange={onPaginationChange}
         />
       </div>

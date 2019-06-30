@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { strings } from '../../../contexts/LocalizationProvider'
 import { Form, Input, Card } from 'antd'
 import ActionHeader from '../../shared/ActionHeader'
-import RFAgilityContainer from '../../containers//transmitter/rfAgility/RFAgilityContainer'
+import RFAgilityContainer from '../../containers/transmitter/agility/RfDetailsContainer'
 
-const RFAgilityDetails = ({
+const RfDetails = ({
   onBack,
   onSave,
   onDelete,
@@ -62,9 +62,9 @@ const RFAgilityDetails = ({
     </div>
   )
 }
-const RFAgilityForm = () => (
+const RfDetailsForm = () => (
   <RFAgilityContainer>
-    <RFAgilityDetails />
+    <RfDetails />
   </RFAgilityContainer>
 )
-export default RFAgilityForm
+export default RfDetailsForm

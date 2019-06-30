@@ -29,11 +29,18 @@ const Sidebar = ({ open, setOpen }) => {
           hasSubMenu: true,
           submenu: [
             {
+              path: '/units/1/10',
+              icon: 'table',
+              caption: strings.sidebar.units,
+              hasSubMenu: false
+            },
+            {
               path: '/unitmissions',
               icon: 'table',
               caption: strings.sidebar.unitMission,
               hasSubMenu: false
             },
+
             {
               path: '/unittypes',
               icon: 'table',
@@ -61,7 +68,7 @@ const Sidebar = ({ open, setOpen }) => {
               caption: strings.sidebar.emmiterFunctions
             },
             {
-              path: '/antenatransmittertypes',
+              path: '/radarantennatypes',
               icon: 'wifi',
               hasSubMenu: false,
               caption: strings.sidebar.antenaTransmitterTypes
@@ -71,25 +78,25 @@ const Sidebar = ({ open, setOpen }) => {
               icon: 'scan',
               hasSubMenu: false,
               caption: strings.sidebar.scanFunctions
-             },
+            },
             {
-              path: '/rfagilities',
+              path: '/agilities/rf',
               icon: 'scan',
               hasSubMenu: false,
               caption: strings.sidebar.rfAgility
-             },
-             {
-               path: '/pwagilities',
-               hasSubMenu: false,
-               icon: 'table',
-               caption: strings.sidebar.pwAgilities
-             },
-             {
-               path: '/priagilities',
-               hasSubMenu: false,
-               icon: 'table',
-               caption: strings.sidebar.priAgilities
-             }
+            },
+            {
+              path: '/agilities/pw',
+              hasSubMenu: false,
+              icon: 'table',
+              caption: strings.sidebar.pwAgilities
+            },
+            {
+              path: '/agilities/pri',
+              hasSubMenu: false,
+              icon: 'table',
+              caption: strings.sidebar.priAgilities
+            }
           ]
         },
         {

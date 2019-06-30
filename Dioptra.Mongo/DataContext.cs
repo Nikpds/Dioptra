@@ -15,12 +15,15 @@ namespace Dioptra.Mongo
         public IMongoDbRepository<JRFLType> JRFLTypes { get; private set; }
         public IMongoDbRepository<Nationality> Nationalities { get; private set; }
         public IMongoDbRepository<UnitType> UnitTypes { get; private set; }
+        public IMongoDbRepository<Unit> Units { get; private set; }
         public IMongoDbRepository<WaveformType> WaveformTypes { get; private set; }
         public IMongoDbRepository<UnitMission> UnitMissions { get; private set; }
         public IMongoDbRepository<TransmitterFn> TransmitterFns { get; private set; }
         public IMongoDbRepository<ScanFn> ScanFns { get; private set; }
-
         public IMongoDbRepository<RadarAntennaType> RadarAntennaTypes { get; private set; }
+        public IMongoDbRepository<AgilityPRI> AgilityPRI { get; private set; }
+        public IMongoDbRepository<AgilityPW> AgilityPW { get; private set; }
+        public IMongoDbRepository<AgilityRF> AgilityRF { get; private set; }
 
         public DataContext(string connectionString)
         {
@@ -43,6 +46,10 @@ namespace Dioptra.Mongo
             TransmitterFns = new MongoDbRepository<TransmitterFn>(Database, "TransmitterFunctions");
             ScanFns = new MongoDbRepository<ScanFn>(Database, "ScanFunctions");
             RadarAntennaTypes = new MongoDbRepository<RadarAntennaType>(Database, "RadarAntennaTypes");
+            AgilityPRI = new MongoDbRepository<AgilityPRI>(Database, "AgilityPRI");
+            AgilityPW = new MongoDbRepository<AgilityPW>(Database, "AgilityPW");
+            AgilityRF = new MongoDbRepository<AgilityRF>(Database, "AgilityRF");
+            Units = new MongoDbRepository<Unit>(Database, "Units");
         }
 
         public IMongoCollection<T> GetCollection<T>(string collectionName)
@@ -51,3 +58,4 @@ namespace Dioptra.Mongo
         }
     }
 }
+

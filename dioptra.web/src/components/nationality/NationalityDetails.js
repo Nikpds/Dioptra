@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { strings } from '../../contexts/LocalizationProvider'
-import { Form, Input, Card, Select, Col } from 'antd'
+import { Form, Input, Select } from 'antd'
+import CardHolder from '../shared/CardHolder'
 import ActionHeader from '../shared/ActionHeader'
 import NationalityContainer from '../containers/nationality/NationalityContainer'
+import { friendOrFoe } from '../../services/Enumerations'
+import { enumToLookup } from '../../services/Utilities'
 
 const NationalityDetails = ({
   onBack,
@@ -12,7 +15,6 @@ const NationalityDetails = ({
   onCancel
 }) => {
   const [nationalityDetails, setNationalityDetails] = useState(nationality)
-  let shortnameMaxInput = 2
   const nationalityHandler = (name, value) => {
     setNationalityDetails({
       ...nationalityDetails,
@@ -21,7 +23,7 @@ const NationalityDetails = ({
   }
 
   const fof = value => {
-    return { id: value, representation: 'TEST' }
+    return { id: value, representation: friendOrFoe[value] }
   }
   useEffect(() => {
     setNationalityDetails(nationality)
@@ -37,6 +39,7 @@ const NationalityDetails = ({
           {
             onClick: onDelete,
             name: strings.buttons.delete,
+            isDelete: true,
             type: 'danger',
             show: !nationality.id
           },
@@ -46,13 +49,13 @@ const NationalityDetails = ({
           }
         ]}
       />
-      <Card style={{ margin: 20 }} className="has-shadow">
-        <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
+      <CardHolder size="small">
+        <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 16 } }}>
           <Form.Item label={strings.nationality.shortname}>
             <Input
               name="shortName"
               value={nationalityDetails.shortName}
-              maxLength = {shortnameMaxInput}
+              maxLength={2}
               onChange={e => nationalityHandler(e.target.name, e.target.value)}
             />
           </Form.Item>
@@ -64,18 +67,17 @@ const NationalityDetails = ({
             />
           </Form.Item>
           <Form.Item label={strings.nationalities.fof}>
-            <Col span={12}>
-              <Select
-                style={{ width: 120 }}
-                value={nationalityDetails.foF.id}
-                onChange={value => nationalityHandler('foF', fof(value))}>
-                <Select.Option value={0}>Test1</Select.Option>
-                <Select.Option value={1}>Test213123</Select.Option>
-              </Select>
-            </Col>
+            <Select
+              style={{ width: '100%' }}
+              value={nationalityDetails.foF.id}
+              onChange={value => nationalityHandler('foF', fof(value))}>
+              {enumToLookup(friendOrFoe).map(o => (
+                <Select.Option key={o.id} value={o.id}>{o.description}</Select.Option>
+              ))}
+            </Select>
           </Form.Item>
         </Form>
-      </Card>
+      </CardHolder>
     </div>
   )
 }

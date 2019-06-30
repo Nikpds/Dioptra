@@ -29,27 +29,27 @@
     "user": "Νέος Χρήστης",
     "logout": " Αποσύνδεση",
     "minimize": "Απόκρυψη",
-    "unitMission": "Αποστολή Μονάδας",
+    "unitMission": "Αποστολές Μονάδας",
     "unitType": "Τύποι Μονάδων",
     "jrfl": "JRFL",
     "tables": "Πάγια Στοιχεία",
     "units": "Μονάδες",
-    "manageNationality":"Εθνικότητες",
-    "nationality":"Νέα Εθνικότητα",
-    "nationalities":"Λίστα Εθνικοτήτων",
-    "waveformtypes":"Τύποι Κυματομορφών",
-    "transmitter":"Πομποί",
-    "emmiterFunctions":"Λειτουργίες Πομπών",
-    "antenaTransmitterTypes" : "Τύποι Κεραιών Πομπών",
-    "scanFunctions":"Λειτουργίες Σάρωσης",
-    "rfAgility":"Ευελιξία RF",
-    "pwAgilities":"Ευελιξίες PW",
-    "priAgilities":"Ευελιξίες PRI"
+    "manageNationality": "Εθνικότητες",
+    "nationality": "Νέα Εθνικότητα",
+    "nationalities": "Λίστα Εθνικοτήτων",
+    "waveformtypes": "Τύποι Κυματομορφών",
+    "transmitter": "Πομποί",
+    "emmiterFunctions": "Λειτουργίες Πομπών",
+    "antenaTransmitterTypes": "Τύποι Κεραιών Πομπών",
+    "scanFunctions": "Λειτουργίες Σάρωσης",
+    "rfAgility": "Ευελιξία RF",
+    "pwAgilities": "Ευελιξίες PW",
+    "priAgilities": "Ευελιξίες PRI"
   },
   "popconfirm": {
     "title": "Είστε σίγουρος?",
     "confirm": "ΔΙΑΓΡΑΦΗ",
-    "cancel": "Άκυρο"    
+    "cancel": "Άκυρο"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -87,7 +87,7 @@
     "headerTitleEdit": "Επεξεργασία Αποστολής Μονάδας"
   },
   "unitMissions": {
-    "headerTitle": "Αποστολές Μονάδων"
+    "headerTitle": "Αποστολές Μονάδας"
   },
   "unitType": {
     "name": "Όνομα Τύπου Μονάδας",
@@ -97,6 +97,16 @@
   },
   "unitTypes": {
     "headerTitle": "Τύποι Μονάδων"
+  },
+  "units": {
+    "headerTitle": "Μονάδες",
+    "name": "Ονομασία",
+    "natoName": "ΝΑΤΟ Ονομασία"
+  },
+  "unit": {
+    "headerTitle": "Μονάδα",
+    "name": "Ονομασία",
+    "natoName": "ΝΑΤΟ Ονομασία"
   },
   "jrfltype": {
     "headerTitle": "Ονομασία Τύπου",
@@ -148,23 +158,26 @@
     "headerTitle": "Λειτουργία Σάρωσης",
     "name": "Όνομα Σάρωσης"
   },
-<<<<<<< HEAD
   "enumerations": {
     "ulc_unit": "Μονάδα",
     "ulc_base": "Βάση",
     "ulc_hq": "Αρχηγείο",
     "ulc_staff": "Επιτελείο",
-    "ulc_ministry": "Υπουργείο"
-=======
+    "ulc_ministry": "Υπουργείο",
+    "foF_Friend": "Φίλιος/α",
+    "foF_Foe": "Εχθρικός/ή",
+    "foF_Neutral": "Ουδέτερος/η",
+    "foF_Unknown": "Άγνωστος/η"
+  },
   "rfAgility": {
     "headerTitle": "Ευελιξία RF",
-    "name":"Ευελιξία RF",
-    "headerTitleEdit":"Επεξεργασία Ευελιξίας RF",
-    "headerTitleNew":"Νέα Ευελιξία RF"
+    "name": "Ευελιξία RF",
+    "headerTitleEdit": "Επεξεργασία Ευελιξίας RF",
+    "headerTitleNew": "Νέα Ευελιξία RF"
   },
   "rfAgilities": {
     "headerTitle": "Ευελιξία RF",
-    "name":"Ευελιξία RF"
+    "name": "Ευελιξία RF"
   },
   "pwAgilities": {
     "headerTitle": "Pw Ευελιξίες",
@@ -181,6 +194,5 @@
   "priAgility": {
     "headerTitle": "PRI Ευελιξία",
     "name": "Όνομα PRI Ευελιξίας"
->>>>>>> cdbf01d441ee942b174e45b592baadf230281467
   }
 }

@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Dioptra.Mongo\Dioptra.Mongo.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Factories\" />
-  </ItemGroup>
-
 </Project>

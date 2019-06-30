@@ -5,3 +5,10 @@ export const unitLevels = {
   3: 'ulc_staff',
   4: 'ulc_ministry'
 }
+
+export const friendOrFoe = {
+  0: 'foF_Friend',
+  1: 'foF_Foe',
+  2: 'foF_Neutral',
+  3: 'foF_Unknown'
+}

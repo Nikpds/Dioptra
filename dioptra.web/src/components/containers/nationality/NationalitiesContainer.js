@@ -3,11 +3,11 @@ import { withRouter } from 'react-router-dom'
 import api from '../../../services/api'
 
 const NationalitiesContainer = props => {
-  const { page, pageSize } = props.match.params
+  const { page, pagesize } = props.match.params
   const { children, history } = props
   const [nationalities, setNationalities] = useState({
     page: +page,
-    pageSize: +pageSize,
+    pagesize: +pagesize,
     rows: []
   })
 
@@ -15,8 +15,8 @@ const NationalitiesContainer = props => {
     history.push('/nationality/new')
   }
 
-  const onPaginationChange = (page, pageSize) => {
-    history.push(`/nationalities/${page}/${pageSize}`)
+  const onPaginationChange = (page, pagesize) => {
+    history.push(`/nationalities/${page}/${pagesize}`)
   }
 
   function onEdit(id) {
@@ -27,18 +27,18 @@ const NationalitiesContainer = props => {
     await api.delete(`/api/lookup/nationality/${id}`)
     const index = nationalities.rows.findIndex(x => (x.id = id))
     nationalities.rows.splice(index, 1)
-    setNationalities({...nationalities})
+    setNationalities({ ...nationalities })
   }
 
   useEffect(() => {
     async function fetchNationalities() {
       const response = await api.get(
-        `/api/lookup/nationality/${page}/${pageSize}`
+        `/api/lookup/nationality/${page}/${pagesize}`
       )
-      if (response) setNationalities(response)
+      if (response && response.rows.length > 0) setNationalities(response)
     }
     fetchNationalities()
-  }, [page, pageSize])
+  }, [page, pagesize])
 
   return React.Children.map(children, child =>
     React.cloneElement(child, {
