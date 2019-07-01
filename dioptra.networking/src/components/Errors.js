@@ -19,7 +19,7 @@ const Errors = () => {
                     <span onClick={ctx.clearErrors} className="mb-0 is-link">καθαρισμός όλων</span></div>}
                 bordered
                 dataSource={data}
-                renderItem={item => (<ErrorItem error={item} />)}></List >
+                renderItem={item => (<ErrorItem error={item} />)}></List>
         </Card>
     );
 };

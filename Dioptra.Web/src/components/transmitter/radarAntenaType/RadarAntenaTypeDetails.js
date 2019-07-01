@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { strings } from '../../../contexts/LocalizationProvider'
-import { Form, Input, Card } from 'antd'
+import { Form, Input } from 'antd'
 import ActionHeader from '../../shared/ActionHeader'
+import CardHolder from '../../shared/CardHolder'
 import RadarAntenaTypeContainer from '../../containers/transmitter/radarAntennaType/RadarAntennaTypeContainer'
 
 const RadarAntenaTypeDetails = ({
@@ -11,7 +12,9 @@ const RadarAntenaTypeDetails = ({
   onCancel,
   radarAntenaType
 }) => {
-  const [radarAntenaTypeDetails, setRadarAntenaTypeDetails] = useState(radarAntenaType)
+  const [radarAntenaTypeDetails, setRadarAntenaTypeDetails] = useState(
+    radarAntenaType
+  )
 
   const radarAntenaTypeHandler = (name, value) => {
     setRadarAntenaTypeDetails({
@@ -28,7 +31,8 @@ const RadarAntenaTypeDetails = ({
     <div>
       <ActionHeader
         onBack={onBack}
-        title={radarAntenaTypeDetails.id
+        title={
+          radarAntenaTypeDetails.id
             ? strings.radarAntenaType.headerTitleEdit
             : strings.radarAntenaType.headerTitleNew
         }
@@ -38,6 +42,7 @@ const RadarAntenaTypeDetails = ({
             onClick: onDelete,
             name: strings.buttons.delete,
             type: 'danger',
+            isDelete: true,
             show: !radarAntenaTypeDetails.id
           },
           {
@@ -46,8 +51,8 @@ const RadarAntenaTypeDetails = ({
           }
         ]}
       />
-      <Card style={{ margin: 20 }} className="has-shadow">
-        <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
+      <CardHolder size="small">
+        <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 16 } }}>
           <Form.Item label={strings.radarAntenaType.name}>
             <Input
               name="name"
@@ -58,7 +63,7 @@ const RadarAntenaTypeDetails = ({
             />
           </Form.Item>
         </Form>
-      </Card>
+      </CardHolder>
     </div>
   )
 }

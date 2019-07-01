@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Dioptra.Models.Views
+namespace Dioptra.Models.Common
 {
     public class UpdateInformation
     {

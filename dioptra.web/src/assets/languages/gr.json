@@ -29,19 +29,27 @@
     "user": "Νέος Χρήστης",
     "logout": " Αποσύνδεση",
     "minimize": "Απόκρυψη",
-    "unitMission": "Αποστολή Μονάδας",
+    "unitMission": "Αποστολές Μονάδας",
     "unitType": "Τύποι Μονάδων",
     "jrfl": "JRFL",
     "tables": "Πάγια Στοιχεία",
     "units": "Μονάδες",
-    "manageNationality":"Εθνικότητες",
-    "nationality":"Νέα Εθνικότητα",
-    "nationalities":"Λίστα Εθνικοτήτων",
-    "waveformtypes":"Τύποι Κυματομορφών",
-    "transmitter":"Πομποί",
-    "emmiterFunctions":"Λειτουργίες Πομπών",
-    "antenaTransmitterTypes" : "Τύποι Κεραιών Πομπών",
-    "scanFunctions":"Λειτουργίες Σάρωσης"
+    "manageNationality": "Εθνικότητες",
+    "nationality": "Νέα Εθνικότητα",
+    "nationalities": "Λίστα Εθνικοτήτων",
+    "waveformtypes": "Τύποι Κυματομορφών",
+    "transmitter": "Πομποί",
+    "emmiterFunctions": "Λειτουργίες Πομπών",
+    "antenaTransmitterTypes": "Τύποι Κεραιών Πομπών",
+    "scanFunctions": "Λειτουργίες Σάρωσης",
+    "rfAgility": "Ευελιξία RF",
+    "pwAgilities": "Ευελιξίες PW",
+    "priAgilities": "Ευελιξίες PRI"
+  },
+  "popconfirm": {
+    "title": "Είστε σίγουρος?",
+    "confirm": "ΔΙΑΓΡΑΦΗ",
+    "cancel": "Άκυρο"
   },
   "pagination": {
     "totalItems": "Σύνολο"
@@ -79,7 +87,7 @@
     "headerTitleEdit": "Επεξεργασία Αποστολής Μονάδας"
   },
   "unitMissions": {
-    "headerTitle": "Αποστολές Μονάδων"
+    "headerTitle": "Αποστολές Μονάδας"
   },
   "unitType": {
     "name": "Όνομα Τύπου Μονάδας",
@@ -90,30 +98,40 @@
   "unitTypes": {
     "headerTitle": "Τύποι Μονάδων"
   },
+  "units": {
+    "headerTitle": "Μονάδες",
+    "name": "Ονομασία",
+    "natoName": "ΝΑΤΟ Ονομασία"
+  },
+  "unit": {
+    "headerTitle": "Μονάδα",
+    "name": "Ονομασία",
+    "natoName": "ΝΑΤΟ Ονομασία"
+  },
   "jrfltype": {
     "headerTitle": "Ονομασία Τύπου",
     "name": "'Ονομα"
   },
   "jrfltypes": {
     "headerTitle": "Τύποι JRFL",
-    "name":"Ονομασία τύπου"
+    "name": "Ονομασία τύπου"
   },
   "nationality": {
     "headerTitle": "Εθνικότητα",
-    "shortname":"Κωδική Ονομασία",
-    "name":"Όνομα",
-    "fof":"Φίλια ή Εχθρική"
+    "shortname": "Κωδική Ονομασία",
+    "name": "Όνομα",
+    "fof": "Φίλια ή Εχθρική"
   },
   "nationalities": {
     "headerTitle": "Λίστα Εθνικοτήτων ",
-    "shortname":"Κωδική Ονομασία",
-    "name":"Όνομα",
-    "fof":"Φίλια ή Εχθρική"
-  }, 
+    "shortname": "Κωδική Ονομασία",
+    "name": "Όνομα",
+    "fof": "Φίλια ή Εχθρική"
+  },
   "waveformtypes": {
     "headerTitle": "Τύποι Κυματομορφών",
     "typename": "Όνομα Τύπου"
-  }, 
+  },
   "waveformtype": {
     "headerTitle": "Τύπος Κυματομορφής",
     "typename": "Όνομα Τύπου"
@@ -128,9 +146,9 @@
   },
   "radarAntenaType": {
     "headerTitle": "Τύποι Κεραιών Πομπών",
-    "name":"Τύποι Κεραιών Πομπών",
-    "headerTitleEdit":"Επεξεργασία Τύποι Κεραιών Πομπών",
-    "headerTitleNew":"Νέος Τύπος Κεραιών Πομπών"
+    "name": "Τύποι Κεραιών Πομπών",
+    "headerTitleEdit": "Επεξεργασία Τύποι Κεραιών Πομπών",
+    "headerTitleNew": "Νέος Τύπος Κεραιών Πομπών"
   },
   "scanFunctions": {
     "headerTitle": "Λειτουργίες Σάρωσης",
@@ -139,5 +157,42 @@
   "scanFunction": {
     "headerTitle": "Λειτουργία Σάρωσης",
     "name": "Όνομα Σάρωσης"
+  },
+  "enumerations": {
+    "ulc_unit": "Μονάδα",
+    "ulc_base": "Βάση",
+    "ulc_hq": "Αρχηγείο",
+    "ulc_staff": "Επιτελείο",
+    "ulc_ministry": "Υπουργείο",
+    "foF_Friend": "Φίλιος/α",
+    "foF_Foe": "Εχθρικός/ή",
+    "foF_Neutral": "Ουδέτερος/η",
+    "foF_Unknown": "Άγνωστος/η"
+  },
+  "rfAgility": {
+    "headerTitle": "Ευελιξία RF",
+    "name": "Ευελιξία RF",
+    "headerTitleEdit": "Επεξεργασία Ευελιξίας RF",
+    "headerTitleNew": "Νέα Ευελιξία RF"
+  },
+  "rfAgilities": {
+    "headerTitle": "Ευελιξία RF",
+    "name": "Ευελιξία RF"
+  },
+  "pwAgilities": {
+    "headerTitle": "Pw Ευελιξίες",
+    "name": "Όνομα Pw Ευελιξίας"
+  },
+  "pwAgility": {
+    "headerTitle": "Pw Ευελιξία",
+    "name": "Όνομα Pw Ευελιξίας"
+  },
+  "priAgilities": {
+    "headerTitle": "PRI Ευελιξίες",
+    "name": "Όνομα PRI Ευελιξίας"
+  },
+  "priAgility": {
+    "headerTitle": "PRI Ευελιξία",
+    "name": "Όνομα PRI Ευελιξίας"
   }
 }

@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { strings } from '../../../contexts/LocalizationProvider'
-import { Form, Input, Card, Select } from 'antd'
+import { Form, Input, Select } from 'antd'
 import ActionHeader from '../../shared/ActionHeader'
 import UnitTypeContainer from '../../containers/units/unitType/UnitTypeContainer'
+import { enumToLookup } from '../../../services/Utilities'
+import { unitLevels } from '../../../services/Enumerations'
+import CardHolder from '../../shared/CardHolder'
 
 const { Option } = Select
 
 const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
   const [unitTypeDetails, setunitTypeDetails] = useState(unitType)
-
   const unitTypeHandler = (name, value) => {
     setunitTypeDetails({
       ...unitTypeDetails,
       [name]: value
     })
-  }
-  const createLevel = value => {
-    return { id: value, representation: 'asdas' }
   }
   useEffect(() => {
     setunitTypeDetails(unitType)
@@ -37,6 +36,7 @@ const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
             onClick: onDelete,
             name: strings.buttons.delete,
             type: 'danger',
+            isDelete: true,
             show: !unitTypeDetails.id
           },
           {
@@ -45,8 +45,11 @@ const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
           }
         ]}
       />
-      <Card style={{ margin: 20 }} className="has-shadow">
-        <Form labelCol={{ xs: { span: 8 } }} wrapperCol={{ xs: { span: 8 } }}>
+      <CardHolder size="small">
+        <Form
+          layout="horizontal"
+          labelCol={{ xs: { span: 8 } }}
+          wrapperCol={{ xs: { span: 16 } }}>
           <Form.Item label={strings.unitType.name}>
             <Input
               name="name"
@@ -57,13 +60,17 @@ const UnitTypeDetails = ({ onBack, onSave, onDelete, onCancel, unitType }) => {
           <Form.Item label={strings.unitType.level}>
             <Select
               name="level"
-              value={unitTypeDetails.level.id}
-              onChange={value => unitTypeHandler('level', createLevel(value))}>
-              <Option value="0">Jack</Option>
+              value={strings.enumerations[unitLevels[unitTypeDetails.level]]}
+              onChange={value => unitTypeHandler('level', value)}>
+              {enumToLookup(unitLevels).map(o => (
+                <Option key={o.id} value={o.id}>
+                  {o.description}
+                </Option>
+              ))}
             </Select>
           </Form.Item>
         </Form>
-      </Card> 
+      </CardHolder>
     </div>
   )
 }

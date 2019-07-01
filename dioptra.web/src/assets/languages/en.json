@@ -29,19 +29,27 @@
     "user": "New User",
     "logout": " Logout",
     "minimize": "Minimze",
-    "unitMission": "Unit Mission",
+    "unitMission": "Unit Missions",
     "unitType": "Unit Type",
     "jrfl": "JRFL",
     "tables": "Lookup Tables",
     "units": "Units",
-    "manageNationality":"Nationalities",
-    "nationality":"New Nationality",
-    "nationalities":"List of Nationalities",
-    "waveformtypes":"Waveform Types",
-    "transmitter":"Transmitters",
-    "emmiterFunctions":"Emmiter Functions",
-    "antenaTransmitterTypes" : "Radar Antena Type",
-    "scanFunctions":"Scan Functions"
+    "manageNationality": "Nationalities",
+    "nationality": "New Nationality",
+    "nationalities": "List of Nationalities",
+    "waveformtypes": "Waveform Types",
+    "transmitter": "Transmitters",
+    "emmiterFunctions": "Emmiter Functions",
+    "antenaTransmitterTypes": "Radar Antena Type",
+    "scanFunctions": "Scan Functions",
+    "rfAgility": "RF agility",
+    "pwAgilities": "PW Agilities",
+    "priAgilities": "PRI Agilities"
+  },
+  "popconfirm": {
+    "title": "Are you sure ?",
+    "confirm": "DELETE",
+    "cancel": "Cancel"
   },
   "pagination": {
     "totalItems": "Total Items"
@@ -79,7 +87,7 @@
     "headerTitleEdit": "Edit Unit Mission"
   },
   "unitMissions": {
-    "headerTitle": "Αποστολές Μονάδων"
+    "headerTitle": "Unit Missons"
   },
   "unitType": {
     "name": "Unit Type Name",
@@ -90,30 +98,40 @@
   "unitTypes": {
     "headerTitle": "Unit Types"
   },
+  "units": {
+    "headerTitle": "Units",
+    "name": "Name",
+    "natoName": "ΝΑΤΟ Name"
+  },
+  "unit": {
+    "headerTitle": "Unit",
+    "name": "Name",
+    "natoName": "ΝΑΤΟ Name"
+  },
   "jrfltype": {
     "headerTitle": "JRFL Type",
     "name": "Name"
   },
   "jrfltypes": {
     "headerTitle": "JRFL Types",
-    "name":"Τype name"
+    "name": "Τype name"
   },
   "nationality": {
     "headerTitle": "Nationality",
-    "shortname":"Code Name",
-    "name":"Name",
-    "fof":"Friend or Foe"
+    "shortname": "Code Name",
+    "name": "Name",
+    "fof": "Friend or Foe"
   },
   "nationalities": {
     "headerTitle": "Nationalities List",
-    "shortname":"Code Name",
-    "name":"Name",
-    "fof":"Friend or Foe"
+    "shortname": "Code Name",
+    "name": "Name",
+    "fof": "Friend or Foe"
   },
   "waveformtypes": {
     "headerTitle": "Waveform Types",
     "typename": "Type Name"
-  }, 
+  },
   "waveformtype": {
     "headerTitle": "Waveform Type",
     "typename": "Type Name"
@@ -128,9 +146,9 @@
   },
   "radarAntenaType": {
     "headerTitle": "Radar Antena Type",
-    "name":"Radar Antena Type",
-    "headerTitleEdit":"Edit Radar Antena Type",
-    "headerTitleNew":"New Radar Antena Type"
+    "name": "Radar Antena Type",
+    "headerTitleEdit": "Edit Radar Antena Type",
+    "headerTitleNew": "New Radar Antena Type"
   },
   "scanFunctions": {
     "headerTitle": "Scan Functions",
@@ -139,5 +157,42 @@
   "scanFunction": {
     "headerTitle": "Scan Function",
     "name": "Scan Name"
+  },
+  "enumerations": {
+    "ulc_unit": "Unit",
+    "ulc_base": "Base",
+    "ulc_hq": "HeadQuarters",
+    "ulc_staff": "Staff",
+    "ulc_ministry": "Ministry",
+    "foF_Friend": "Friend",
+    "foF_Foe": "Hostile",
+    "foF_Neutral": "Neutral",
+    "foF_Unknown": "Unknown"
+  },
+  "rfAgility": {
+    "headerTitle": "RF agility",
+    "name": "RF agility",
+    "headerTitleEdit": "Edit RF agility",
+    "headerTitleNew": "New RF agility"
+  },
+  "rfAgilities": {
+    "headerTitle": "RF agility",
+    "name": "RF agility"
+  },
+  "pwAgilities": {
+    "headerTitle": "Pw Agilities",
+    "name": "Pw Agility Name"
+  },
+  "pwAgility": {
+    "headerTitle": "Pw Agility",
+    "name": "Pw Agility Name"
+  },
+  "priAgilities": {
+    "headerTitle": "PRI Agilities",
+    "name": "PRI name"
+  },
+  "priAgility": {
+    "headerTitle": "PRI Agility",
+    "name": "PRI name"
   }
 }

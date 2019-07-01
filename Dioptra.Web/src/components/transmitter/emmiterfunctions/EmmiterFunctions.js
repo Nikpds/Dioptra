@@ -1,5 +1,5 @@
 import React from 'react'
-import EmmiterFunctionsContainer from '../../containers/transmitter/emmiterfunction/EmmiterFunctionsContainer'
+import EmmiterFunctionsContainer from '../../containers/transmitter/emmiterFunction/EmmiterFunctionsContainer'
 import { Button, Divider, Popconfirm } from 'antd'
 import { strings } from '../../../contexts/LocalizationProvider'
 import ActionHeader from '../../shared/ActionHeader'
@@ -9,7 +9,7 @@ const EmmiterFunctionsList = ({
   emmiterFunctions,
   onCreate,
   onEdit,
-  onDelete,
+  onDelete
 }) => {
   const headers = [
     {
@@ -25,17 +25,12 @@ const EmmiterFunctionsList = ({
       render: (e, row) => [
         <Popconfirm
           key={1}
-          title="Are you sure ?"
+          title={strings.popconfirm.title}
           onConfirm={() => onDelete(row.id)}
           onCancel={null}
-          okText="Yes"
-          cancelText="No">
-          <Button
-            type="danger"
-            shape="circle"
-            icon="delete"
-            size="small"
-          />
+          okText={strings.popconfirm.confirm}
+          cancelText={strings.popconfirm.cancel}>
+          <Button type="danger" shape="circle" icon="delete" size="small" />
         </Popconfirm>,
         <Divider key={2} type="vertical" />,
         <Button
@@ -53,7 +48,7 @@ const EmmiterFunctionsList = ({
     <div>
       <ActionHeader
         title={strings.emmiterFunctions.headerTitle}
-        subtitle= {emmiterFunctions.length}
+        subtitle={emmiterFunctions.length}
         actions={[
           {
             onClick: onCreate,

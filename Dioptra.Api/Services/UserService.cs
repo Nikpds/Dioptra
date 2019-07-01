@@ -2,7 +2,7 @@
 using Dioptra.Api.Services.Interfaces;
 using Dioptra.Models.Entities;
 using Dioptra.Models.Views;
-using Dioptra.Mongo;
+using Dioptra.Mongo.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,9 @@ namespace Dioptra.Api.Services
 {
     public class UserService : IUserService
     {
-        private DataContext _ctx;
+        private IDataContext _ctx;
 
-        public UserService(DataContext ctx)
+        public UserService(IDataContext ctx)
         {
             _ctx = ctx;
         }

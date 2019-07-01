@@ -8,29 +8,24 @@ const RadarAntenaTypeContainer = props => {
   const [radarAntenaType, setRadarAntenaType] = useState({})
   async function onSave(value) {
     if (value.id) {
-      // για αλλαγή όταν γίνουν οι κλήσεις
       const response = await api.put(
-        `/api/lookup/radarantenatype/${id}`,
+        `/api/lookup/radarantennatype/${id}`,
         value
       )
       if (response) {
         setRadarAntenaType(response)
       }
     } else {
-      // για αλλαγή όταν γίνουν οι κλήσεις
-      const response = await api.post(
-        `/api/lookup/radarantenatype/${id}`,
-        value
-      )
+      const response = await api.post(`/api/lookup/radarantennatype/`, value)
       if (response) {
         setRadarAntenaType(response)
-        history.push('/antenatransmittertypedetails/' + response.id)
+        history.push('/radarantennatype/' + response.id)
       }
     }
   }
 
   function onBack() {
-    history.push('/antenatransmittertypes')
+    history.push('/radarantennatypes')
   }
 
   function onCancel() {
@@ -38,8 +33,7 @@ const RadarAntenaTypeContainer = props => {
   }
 
   async function onDelete() {
-    // για αλλαγή όταν γίνουν οι κλήσεις
-    await api.delete(`/api/lookup/radarantenatype/${id}`)
+    await api.delete(`/api/lookup/radarantennatype/${id}`)
     onBack()
   }
 
@@ -48,9 +42,8 @@ const RadarAntenaTypeContainer = props => {
       if (id === 'new') {
         return
       }
-      // για αλλαγή όταν γίνουν οι κλήσεις
-      const response = await api.get(`/api/lookup/radarantenatype/${id}`)
-      setRadarAntenaType(response)
+      const response = await api.get(`/api/lookup/radarantennatype/${id}`)
+      if (response) setRadarAntenaType(response)
     }
     fetchRadarAntenaType()
   }, [id])

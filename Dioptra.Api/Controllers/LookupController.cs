@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Dioptra.Api.Services;
 using Dioptra.Models.Entities.Lookups;
 using Dioptra.Models.Views;
-using Dioptra.Mongo;
+using Dioptra.Mongo.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dioptra.Api.Controllers
@@ -12,8 +12,8 @@ namespace Dioptra.Api.Controllers
     [ApiController]
     public class LookupController : ControllerBase
     {
-        private DataContext _ctx;
-        public LookupController(DataContext ctx)
+        private IDataContext _ctx;
+        public LookupController(IDataContext ctx)
         {
             _ctx = ctx;
         }
@@ -380,5 +380,202 @@ namespace Dioptra.Api.Controllers
 
         #endregion
 
+        #region RadarAntennaTypes
+        [HttpGet("radarantennatypes")]
+        public async Task<IActionResult> GetRadarAntennaTypes()
+        {
+            IEnumerable<RadarAntennaType> result = await BaseService.GetAll(_ctx.RadarAntennaTypes);
+
+            return Ok(result);
+        }
+
+        [HttpGet("radarantennatype/{id}")]
+        public async Task<IActionResult> GetRadarAntennaType(string id)
+        {
+            RadarAntennaType result = await BaseService.GetById(id, _ctx.RadarAntennaTypes);
+
+            return Ok(result);
+        }
+
+        [HttpPost("radarantennatype")]
+        public async Task<IActionResult> CreateRadarAntennaType([FromBody] RadarAntennaType entity)
+        {
+
+            RadarAntennaType result = await BaseService.Insert(entity, _ctx.RadarAntennaTypes);
+
+            return Ok(result);
+        }
+
+        [HttpPut("radarantennatype/{id}")]
+        public async Task<IActionResult> UpdateRadarAntennaType([FromBody] RadarAntennaType entity, string id)
+        {
+            //ScanFn original = await BaseService.GetById(id, _ctx.TransmitterFns);
+
+            RadarAntennaType result = await BaseService.Update(entity, _ctx.RadarAntennaTypes);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("radarantennatype/{id}")]
+        public async Task<IActionResult> DeleteRadarAntennaType(string id)
+        {
+            RadarAntennaType original = await BaseService.GetById(id, _ctx.RadarAntennaTypes);
+            if (original == null)
+            {
+                return BadRequest();
+            }
+            bool success = await BaseService.Delete(original, _ctx.RadarAntennaTypes);
+
+            return Ok(success);
+        }
+
+        #endregion
+
+        #region AgilityPRI
+        [HttpGet("agility/pri")]
+        public async Task<IActionResult> GetAgilityPRI()
+        {
+            IEnumerable<AgilityPRI> result = await BaseService.GetAll(_ctx.AgilityPRI);
+
+            return Ok(result);
+        }
+
+        [HttpGet("agility/pri/{id}")]
+        public async Task<IActionResult> GetAgilityPRI(string id)
+        {
+            AgilityPRI result = await BaseService.GetById(id, _ctx.AgilityPRI);
+
+            return Ok(result);
+        }
+
+        [HttpPost("agility/pri")]
+        public async Task<IActionResult> CreateAgilityPRI([FromBody] AgilityPRI entity)
+        {
+
+            AgilityPRI result = await BaseService.Insert(entity, _ctx.AgilityPRI);
+
+            return Ok(result);
+        }
+
+        [HttpPut("agility/pri/{id}")]
+        public async Task<IActionResult> UpdateAgilityPRI([FromBody] AgilityPRI entity, string id)
+        {   
+            AgilityPRI result = await BaseService.Update(entity, _ctx.AgilityPRI);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("agility/pri/{id}")]
+        public async Task<IActionResult> DeleteAgilityPRI(string id)
+        {
+            AgilityPRI original = await BaseService.GetById(id, _ctx.AgilityPRI);
+            if (original == null)
+            {
+                return BadRequest();
+            }
+            bool success = await BaseService.Delete(original, _ctx.AgilityPRI);
+
+            return Ok(success);
+        }
+
+        #endregion
+
+        #region AgilityPW
+        [HttpGet("agility/pw")]
+        public async Task<IActionResult> GetAgilityPW()
+        {
+            IEnumerable<AgilityPW> result = await BaseService.GetAll(_ctx.AgilityPW);
+
+            return Ok(result);
+        }
+
+        [HttpGet("agility/pw/{id}")]
+        public async Task<IActionResult> GetAgilityPW(string id)
+        {
+            AgilityPW result = await BaseService.GetById(id, _ctx.AgilityPW);
+
+            return Ok(result);
+        }
+
+        [HttpPost("agility/pw")]
+        public async Task<IActionResult> CreateAgilityPW([FromBody] AgilityPW entity)
+        {
+
+            AgilityPW result = await BaseService.Insert(entity, _ctx.AgilityPW);
+
+            return Ok(result);
+        }
+
+        [HttpPut("agility/pw/{id}")]
+        public async Task<IActionResult> UpdateAgilityPW([FromBody] AgilityPW entity, string id)
+        {
+            AgilityPW result = await BaseService.Update(entity, _ctx.AgilityPW);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("agility/pw/{id}")]
+        public async Task<IActionResult> DeleteAgilityPW(string id)
+        {
+            AgilityPW original = await BaseService.GetById(id, _ctx.AgilityPW);
+            if (original == null)
+            {
+                return BadRequest();
+            }
+            bool success = await BaseService.Delete(original, _ctx.AgilityPW);
+
+            return Ok(success);
+        }
+
+        #endregion
+
+        #region AgilityRF
+        [HttpGet("agility/rf")]
+        public async Task<IActionResult> GetAgilityRF()
+        {
+            IEnumerable<AgilityRF> result = await BaseService.GetAll(_ctx.AgilityRF);
+
+            return Ok(result);
+        }
+
+        [HttpGet("agility/rf/{id}")]
+        public async Task<IActionResult> GetAgilityRF(string id)
+        {
+            AgilityRF result = await BaseService.GetById(id, _ctx.AgilityRF);
+
+            return Ok(result);
+        }
+
+        [HttpPost("agility/rf")]
+        public async Task<IActionResult> CreateAgilityPW([FromBody] AgilityRF entity)
+        {
+
+            AgilityRF result = await BaseService.Insert(entity, _ctx.AgilityRF);
+
+            return Ok(result);
+        }
+
+        [HttpPut("agility/rf/{id}")]
+        public async Task<IActionResult> UpdateAgilityRF([FromBody] AgilityRF entity, string id)
+        {
+            AgilityRF result = await BaseService.Update(entity, _ctx.AgilityRF);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("agility/rf/{id}")]
+        public async Task<IActionResult> DeleteAgilityRF(string id)
+        {
+            AgilityRF original = await BaseService.GetById(id, _ctx.AgilityRF);
+            if (original == null)
+            {
+                return BadRequest();
+            }
+            bool success = await BaseService.Delete(original, _ctx.AgilityRF);
+
+            return Ok(success);
+        }
+
+        #endregion
     }
 }
