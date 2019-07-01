@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { strings } from '../../../contexts/LocalizationProvider'
 import { Form, Input, Card } from 'antd'
 import ActionHeader from '../../shared/ActionHeader'
-import EmmiterFunctionContainer from '../../containers/transmitter/emmiterfunction/EmmiterFunctionContainer'
+import EmmiterFunctionContainer from '../../containers/transmitter/emmiterfunction/EmmiterFunctionContainer' 
 
 const EmmiterFunctionDetails = ({
     onBack,
