@@ -63,7 +63,7 @@ const EmmiterFunctionDetails = ({
   )
 }
 
-const EmmiterFunctionForm = () => (
+const EmmiterFunctionForm = () => ( 
   <EmmiterFunctionContainer>
     <EmmiterFunctionDetails />
   </EmmiterFunctionContainer>
